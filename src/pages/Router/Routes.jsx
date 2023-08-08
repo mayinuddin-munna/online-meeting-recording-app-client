@@ -11,6 +11,7 @@ import Main from "../Layout/Main";
 import Login from "../Register/Login";
 import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
+import ForgotPassword from "../Register/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/email-verification",
         element: <EmailVerification></EmailVerification>,
+      },
+      {
+        path: "/forget-password",
+        element: <ForgotPassword></ForgotPassword>,
       },
     ],
   },

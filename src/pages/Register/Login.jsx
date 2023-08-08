@@ -57,7 +57,7 @@ const Login = () => {
                             {errors.password && <p className="text-red-500 text-xs mt-1">Password is required</p>}
                             
                         </div>
-                        <p className='mb-6'><span className=" text-green-500" >Forget Password</span></p>
+                        <Link to='/forget-password'><p className='mb-6'><span className=" text-green-500" >Forget Password</span></p></Link>
                         <div>
                             <button
                                 type="submit"
