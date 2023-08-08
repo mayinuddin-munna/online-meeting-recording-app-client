@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
+import Login from "../Register/Login";
+import Register from "../Register/Register";
+import EmailVerification from "../Register/EmailVerification";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <div>Home</div>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/email-verification",
+        element: <EmailVerification></EmailVerification>,
       },
     ],
   },
