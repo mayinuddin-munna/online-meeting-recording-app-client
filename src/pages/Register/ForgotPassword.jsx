@@ -12,7 +12,7 @@ const ForgotPassword = () => {
         <div className="flex justify-center items-center p-10 lg:p-48 md:p-20 bg-cover bg-center h-screen ms-0" style={{ backgroundImage: `url(${backgroundImage})`}}>
             <div className='flex flex-container md:flex-row'>
                 {/* left div */}
-                <div className="flex flex-col p-8 bg-primary rounded-t-lg w-1/2 justify-between md:rounded-l-3xl md:w-1/2 " style={{ backgroundColor: '#084B3E' }}>
+                <div className="flex flex-col p-8 bg-primary rounded-t-lg w-1/2 justify-between md:rounded-l-3xl md:w-1/2 h-[600px] " style={{ backgroundColor: '#084B3E' }}>
                     <div className="flex text-left  rounded-full h-20 w-20 ms-0">
                         <img src="" alt="Logo" className="h-16" />
                     </div>
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
                     </p>
                 </div>
                 {/* right div */}
-                <div className= "bg-white rounded-r-3xl p-8 shadow-md w-1/2 h-96 flex flex-col items-center justify-center">
+                <div className= "bg-white rounded-r-3xl p-8 shadow-md w-1/2 flex flex-col items-center justify-center">
                     <p className="mb-4 text-xl">Forgot password?</p>
                     <p>
                         <span>Enter the email address you used when you joined and we'll send you instructions to reset your password.
