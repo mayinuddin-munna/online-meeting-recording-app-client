@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
-import { RiStarFill } from "react-icons/ri";
 
 const Register = () => {
   const {
@@ -21,17 +20,15 @@ const Register = () => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="registerSubContainer">
-        {/* left div */}
         <div className="registerLeftDiv">
           <div className="registerLogoDiv">
-            <img src="" alt="Logo" className="h-16" />
+            <img src="logo" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
             Your text here. Lorem ipsum dolor sit amet consectetur adipisicing
             elit.
           </p>
         </div>
-        {/* right div */}
         <div className="registerRightDiv">
           <p className="registerRightHeading">
             Let's get started
@@ -91,12 +88,12 @@ const Register = () => {
                 Sign Up
               </button>
             </div>
-            <div className="mt-20">
+            <div className="mt-10">
               <p>By signing up, you agree to our Terms of Service.</p>
               <p>
                 <span>
                   Already have an account?{" "}
-                  <Link className=" greenText" to="/login">
+                  <Link className="greenText" to="/login">
                     Log in
                   </Link>
                 </span>

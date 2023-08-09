@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "../../Register/Login";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
