@@ -1,6 +1,7 @@
 import React from 'react';
 import backgroundImage from '../../assets/register-bg.png';
 
+//  Todo:  It is not used yet
 const EmailVerification = () => {
     return (
         <div className="flex justify-center items-center p-5 md:p-20 h-screen ms-0" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>

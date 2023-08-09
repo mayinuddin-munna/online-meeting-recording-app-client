@@ -41,7 +41,7 @@ const Register = () => {
                                 type="email"
                                 name="email"
                                 {...register("email", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2"
+                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
                             />
                             {errors.email && <p className="text-red-500 text-xs mt-1 text-right">Email is required</p>}
                         </div>
@@ -54,7 +54,7 @@ const Register = () => {
                                 type="name"
                                 name="name"
                                 {...register("name", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2"
+                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
                             />
                             {errors.name && <p className="text-red-500 text-xs mt-1 text-right">Name is required</p>}
                         </div>
@@ -67,7 +67,7 @@ const Register = () => {
                                 type="password"
                                 name="password"
                                 {...register("password", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2"
+                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
                             />
                             {errors.password && <p className="text-red-500 text-xs mt-1 text-right">Password is required</p>}
                         </div>

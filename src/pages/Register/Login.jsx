@@ -38,7 +38,7 @@ const Login = () => {
                                 type="email"
                                 name="email"
                                 {...register("email", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2"
+                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
                             />
                             {errors.email && <p className="text-red-500 text-xs mt-1">Email is required</p>}
                         </div>
@@ -51,7 +51,7 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 {...register("password", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2"
+                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
                             />
                             {errors.password && <p className="text-red-500 text-xs mt-1">Password is required</p>}
                             
