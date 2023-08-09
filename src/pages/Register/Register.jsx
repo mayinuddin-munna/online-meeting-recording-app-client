@@ -33,7 +33,7 @@ const Register = () => {
                         <div className="mb-4">
                             <label className="text-sm font-medium flex items-center">
                                     <span className=' mr-2'>Email</span>
-                                    <span className='text-red-700 text-xs'><RiStarFill/></span>
+                                    <span className='text-red-700 text-xs'>*</span>
 
                             </label>
                             <input
@@ -47,7 +47,7 @@ const Register = () => {
                         <div className="mb-4">
                             <label className="flex text-sm font-medium">
                             <span className=' mr-2'>Full name</span>
-                            <span className='text-red-700 text-xs mt-1'><RiStarFill/></span>
+                            <span className='text-red-700 text-xs mt-1'>*</span>
                             </label>
                             <input
                                 type="name"
@@ -60,7 +60,7 @@ const Register = () => {
                         <div className="mb-4">
                             <label className="flex text-sm font-medium">
                             <span className=' mr-2'>Password</span>
-                            <span className='text-red-700 text-xs mt-1'><RiStarFill/></span>
+                            <span className='text-red-700 text-xs mt-1'>*</span>
                             </label>
                             <input
                                 type="password"
