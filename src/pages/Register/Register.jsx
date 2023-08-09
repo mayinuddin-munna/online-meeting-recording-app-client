@@ -7,7 +7,6 @@ import { RiStarFill } from 'react-icons/ri';
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     
-
     const onSubmit = data => {
         console.log(data);
     };
