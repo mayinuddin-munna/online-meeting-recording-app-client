@@ -1,6 +1,7 @@
 import React from "react";
 import backgroundImage from "../../assets/register-bg.png";
 
+//  Todo:  It is not used yet
 const EmailVerification = () => {
   return (
     <div
