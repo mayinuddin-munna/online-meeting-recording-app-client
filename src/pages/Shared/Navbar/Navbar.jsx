@@ -12,10 +12,10 @@ const Navbar = () => {
 
   const navItem = <>
     <Link className="text-red" to="/">Home</Link>
-    <Link to="/">Feature</Link>
-    <Link to="/">Comunity</Link>
-    <Link to="/">New Metting</Link>
-    <Link to="/">Login</Link>
+    <Link to="/features">Feature</Link>
+    <Link to="/community">Community</Link>
+    <Link to="/new-metting">New Metting</Link>
+    <Link to="/login">Login</Link>
   </>
 
   return (
