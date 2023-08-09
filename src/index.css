@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+/* Register */
+ .registerContainer{
+  @apply flex justify-center items-center p-5 md:p-20 h-screen bg-cover bg-center ms-0
+ }
+ .registerSubContainer{
+  @apply flex md:flex-row rounded-xl h-[600px]
+ }
+ .registerLeftDiv{
+  @apply flex flex-col p-8 rounded-l-lg w-1/2 md:rounded-l-3xl justify-between md:w-1/2  bg-[#084B3E]
+ }
+ .registerLogoDiv{
+  @apply flex text-left  rounded-full h-20 w-20 ms-0
+ }
+ .registerLeftPara{
+  @apply text-left items-end text-3xl  text-yellow-100 mb-0
+ }
+ .registerRightDiv{
+  @apply  bg-white rounded-r-3xl p-8 shadow-md w-1/2
+ }
+ .registerRightHeading{
+  @apply mb-4 text-xl
+ }
+ .registerFormLabel{
+  @apply flex text-sm font-medium items-center
+ }
+ .registerFormStar{
+  @apply text-red-700 text-xs mt-1
+ }
+ .registerError{
+  @apply text-red-500 text-xs mt-1 text-right
+ }
+ .registerInputBorder{
+  @apply w-full border-b border-gray-300 px-3 py-2 mt-2
+ }
+ .registerBtn{
+  @apply w-full font-bold text-white p-5 rounded hover:bg-green-800
+ }
+ .greenText{
+  @apply text-green-500
+ }

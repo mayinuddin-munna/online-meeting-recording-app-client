@@ -13,68 +13,68 @@ const Register = () => {
     };
 
     return (
-        <div className="flex justify-center items-center p-5 md:p-20 h-screen bg-cover bg-center ms-0" style={{ backgroundImage: `url(${backgroundImage})`}}>
-            <div className='flex flex-container md:flex-row rounded-xl'>
+        <div className="registerContainer" style={{ backgroundImage: `url(${backgroundImage})`}}>
+            <div className='registerSubContainer'>
                 {/* left div */}
-                <div className="flex flex-col p-8 bg-primary rounded-l-lg w-1/2 md:rounded-l-3xl justify-between md:w-1/2" style={{backgroundColor: '#084B3E'}}>
+                <div className="registerLeftDiv">
                     
-                    <div className="flex text-left  rounded-full h-20 w-20 ms-0">
+                    <div className="registerLogoDiv">
                         <img src="" alt="Logo" className="h-16" />
                     </div>
-                    <p className="text-left items-end text-3xl  text-yellow-100 mb-0">
+                    <p className="registerLeftPara">
                         Your text here. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                 </div>
                 {/* right div */}
-                <div className=" bg-white rounded-r-3xl p-8 shadow-md w-1/2">
-                    <p className="mb-4 text-xl">Let's get started
+                <div className="registerRightDiv">
+                    <p className="registerRightHeading">Let's get started
                     <br />
                         with a few simple steps</p>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4">
-                            <label className="text-sm font-medium flex items-center">
+                            <label className="registerFormLabel">
                                     <span className=' mr-2'>Email</span>
-                                    <span className='text-red-700 text-xs'>*</span>
+                                    <span className='registerFormStar'>*</span>
 
                             </label>
                             <input
                                 type="email"
                                 name="email"
                                 {...register("email", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
+                                className="registerInputBorder"
                             />
-                            {errors.email && <p className="text-red-500 text-xs mt-1 text-right">Email is required</p>}
+                            {errors.email && <p className="registerError">Email is required</p>}
                         </div>
                         <div className="mb-4">
-                            <label className="flex text-sm font-medium">
+                            <label className="registerFormLabel">
                             <span className=' mr-2'>Full name</span>
-                            <span className='text-red-700 text-xs mt-1'>*</span>
+                            <span className='registerFormStar'>*</span>
                             </label>
                             <input
                                 type="name"
                                 name="name"
                                 {...register("name", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
+                                className="registerInputBorder"
                             />
-                            {errors.name && <p className="text-red-500 text-xs mt-1 text-right">Name is required</p>}
+                            {errors.name && <p className="registerError">Name is required</p>}
                         </div>
                         <div className="mb-4">
-                            <label className="flex text-sm font-medium">
+                            <label className="registerFormLabel">
                             <span className=' mr-2'>Password</span>
-                            <span className='text-red-700 text-xs mt-1'>*</span>
+                            <span className='registerFormStar'>*</span>
                             </label>
                             <input
                                 type="password"
                                 name="password"
                                 {...register("password", { required: true })}
-                                className="w-full border-b border-gray-300 px-3 py-2 mt-2"
+                                className="registerInputBorder"
                             />
-                            {errors.password && <p className="text-red-500 text-xs mt-1 text-right">Password is required</p>}
+                            {errors.password && <p className="registerError">Password is required</p>}
                         </div>
                         <div>
                             <button
                                 type="submit"
-                                className="w-full font-bold text-white p-5 rounded hover:bg-green-800"
+                                className="registerBtn"
                                 style={{backgroundColor: '#00C38B'}}
                             >
                                 Sign Up
@@ -83,7 +83,7 @@ const Register = () => {
                         </div>
                         <div className='mt-20'>
                             <p>By signing up, you agree to our Terms of Service.</p>
-                            <p><span>Already have an account? <Link className=" text-green-500" to='/login'>Log in</Link></span></p>
+                            <p><span>Already have an account? <Link className=" greenText" to='/login'>Log in</Link></span></p>
                         </div>
                     </form>
                 </div>
