@@ -7,10 +7,10 @@
   @apply flex justify-center items-center p-5 md:p-20 h-screen bg-cover bg-center ms-0
  }
  .registerSubContainer{
-  @apply flex md:flex-row rounded-xl pl-80 pr-80 h-[600px]
+  @apply flex md:flex-row rounded-xl lg:px-80 h-[600px]
  }
  .registerLeftDiv{
-  @apply flex flex-col p-8 rounded-l-lg w-1/2 md:rounded-l-3xl justify-between md:w-1/2  bg-[#084B3E]
+  @apply flex flex-col p-5 lg:p-8 rounded-l-lg md:rounded-l-3xl justify-between md:w-1/2 hidden md:block  bg-[#084B3E]
  }
  .registerLogoDiv{
   @apply flex text-left  rounded-full h-20 w-20 ms-0
@@ -19,7 +19,7 @@
   @apply text-left items-end text-3xl  text-yellow-100 mb-0
  }
  .registerRightDiv{
-  @apply  bg-white rounded-r-3xl p-8 shadow-md w-1/2
+  @apply  bg-white rounded-2xl md:rounded md:rounded-r-3xl p-8 shadow-md w-full
  }
  .registerRightHeading{
   @apply mb-4 text-xl

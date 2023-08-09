@@ -15,7 +15,7 @@ const Login = () => {
         <div className="registerContainer" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className='registerSubContainer'>
                 {/* left div */}
-                <div className="registerLeftDiv">
+                <div className="registerLeftDiv hidden sm:flex md:block">
                     <div className="registerLogoDiv">
                         <img src="" alt="Logo" className="h-16" />
                     </div>
