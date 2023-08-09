@@ -22,7 +22,7 @@ const ForgotPassword = () => {
                 </div>
                 {/* right div */}
                 <div className= "registerRightDiv">
-                    <p className="mb-4 text-xl">Forgot password?</p>
+                    <p className="mb-4 text-xl pt-10">Forgot password?</p>
                     <p>
                         <span>Enter the email address you used when you joined and we'll send you instructions to reset your password.
                         For security reasons, we do NOT store your password. So rest assured that we will never send your password via email.</span>
