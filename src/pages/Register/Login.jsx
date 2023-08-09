@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import backgroundImage from '../../assets/register-bg.png';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
         console.log(data);
     };
 
-  return (
-    <div className="registerContainer" style={{ backgroundImage: `url(${backgroundImage})`}}>
+    return (
+        <div className="registerContainer" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className='registerSubContainer'>
                 {/* left div */}
                 <div className="registerLeftDiv">
@@ -25,13 +26,13 @@ const Login = () => {
                 {/* right div */}
                 <div className=" registerRightDiv">
                     <p className="mb-4 text-xl">Let's get started
-                    <br />
+                        <br />
                         with a few simple steps</p>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4">
                             <label className="registerFormLabel">
-                                    <span className=' mr-2'>Email</span>
-                                    <span className='registerFormStar'>*</span>
+                                <span className=' mr-2'>Email</span>
+                                <span className='registerFormStar'>*</span>
 
                             </label>
                             <input
@@ -44,8 +45,8 @@ const Login = () => {
                         </div>
                         <div className="mb-4">
                             <label className="registerFormLabel">
-                            <span className=' mr-2'>Password</span>
-                            <span className='registerFormStar'>*</span>
+                                <span className=' mr-2'>Password</span>
+                                <span className='registerFormStar'>*</span>
                             </label>
                             <input
                                 type="password"
@@ -54,20 +55,23 @@ const Login = () => {
                                 className="registerInputBorder"
                             />
                             {errors.password && <p className="registerError">Password is required</p>}
-                            
+
                         </div>
                         <Link to='/forget-password'><p className='mb-6'><span className=" greenText" >Forget Password</span></p></Link>
                         <div>
                             <button
                                 type="submit"
                                 className="registerBtn"
-                                style={{backgroundColor: '#00C38B'}}
+                                style={{ backgroundColor: '#00C38B' }}
                             >
-                               Login
+                                Login
                             </button>
-                            
+
                         </div>
-                        <div className='mt-20'>
+                                <div className="flex justify-center mt-4">
+                                    <FcGoogle size={40} />
+                                </div>
+                        <div className='mt-6'>
                             <p>By signing up, you agree to our Terms of Service.</p>
                             <p><span>Don't have an account? <Link className=" greenText" to='/register'>Sign Up</Link></span></p>
                         </div>
@@ -76,7 +80,7 @@ const Login = () => {
             </div>
 
         </div>
-  );
+    );
 };
 
 export default Login;
