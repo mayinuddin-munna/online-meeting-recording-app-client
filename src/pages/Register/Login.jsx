@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import backgroundImage from '../../assets/register-bg.png';
-import { RiStarFill } from 'react-icons/ri';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -32,7 +31,7 @@ const Login = () => {
                         <div className="mb-4">
                             <label className="text-sm font-medium flex items-center">
                                     <span className=' mr-2'>Email</span>
-                                    <span className='text-red-700 text-xs'><RiStarFill/></span>
+                                    <span className='text-red-700 text-xs'>*</span>
 
                             </label>
                             <input
@@ -46,7 +45,7 @@ const Login = () => {
                         <div className="mb-4">
                             <label className="flex text-sm font-medium">
                             <span className=' mr-2'>Password</span>
-                            <span className='text-red-700 text-xs mt-1'><RiStarFill/></span>
+                            <span className='text-red-700 text-xs mt-1'>*</span>
                             </label>
                             <input
                                 type="password"
