@@ -1,6 +1,5 @@
 import React from 'react'
 import aboutImg from '../../assets/bunner-image/about-features.png'
-import ButtonArrow from '../../components/ButtonArrow'
 import ButtonGradient from '../../components/ButtonGradient'
 const AboutClient = () => {
   return (
