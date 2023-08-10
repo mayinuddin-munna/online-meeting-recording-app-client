@@ -9,6 +9,13 @@ import {
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
 import Home from "../Home/Home";
+<<<<<<< HEAD
+=======
+import Login from "../Register/Login";
+import Register from "../Register/Register";
+import EmailVerification from "../Register/EmailVerification";
+import ForgotPassword from "../Register/ForgotPassword";
+>>>>>>> 0084d01efb25f1635fd531d9564d9bdc8549aaf1
 
 const router = createBrowserRouter([
   {
