@@ -42,3 +42,7 @@
  .greenText{
   @apply text-green-500
  }
+
+ .btnGradient:hover{
+    @apply transform hover:translate-x-[10px] transition-all duration-300
+ }
