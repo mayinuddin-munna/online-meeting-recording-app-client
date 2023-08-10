@@ -28,3 +28,30 @@
     background-color: #504DFF;
     color: #fff;
 }
+
+
+.nav-items-responsive {
+    border-radius: 20px 0 0 20px;
+    position: absolute;
+    top: 60px;
+    background-color: #504DFF;
+    padding: 10px 36px 20px;
+    right: -5px;
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+}
+.nav-items-responsive a{
+    display: block;
+    margin-top: 15px;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+}
+.nav-items-responsive a:hover{
+    color: #fff;
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import './Navbar.css'
 const Navbar = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(true);
 
   const handleNavToggle = () => {
     setIsNavOpen(!isNavOpen);
@@ -30,8 +30,13 @@ const Navbar = () => {
           }
 
         </button>
-        <ul className={`absolute md:static ${isNavOpen ? "-top-96": "top-12 right-12"}`}>
+        <ul className="hidden md:block">
           <li className="nav-items font-semibold text-lg">
+            {navItem}
+          </li>
+        </ul>
+        <ul className={`md:hidden ${isNavOpen ? 'hidden' : 'static'}`}>
+          <li className="nav-items-responsive font-semibold text-lg">
             {navItem}
           </li>
         </ul>
