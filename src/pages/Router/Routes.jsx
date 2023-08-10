@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
+import Home from "../Home/Home";
 import Login from "../Register/Login";
 import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home</div>,
+        element: <Home/>,
       },
       {
         path: "/login",
