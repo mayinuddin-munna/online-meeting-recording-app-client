@@ -12,6 +12,7 @@ import Login from "../Register/Login";
 import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
 import ForgotPassword from "../Register/ForgotPassword";
+import Home from "../Home/Home/Home";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home</div>,
+        element: <Home>Home</Home>,
       },
       {
         path: "/login",
