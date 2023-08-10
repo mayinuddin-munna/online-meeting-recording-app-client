@@ -1,9 +1,12 @@
 import React from 'react'
 import HomeImage from '../../assets/bunner-image/bunner-image.png'
 import HomeIcon from '../../assets/home-icon.png'
+import Poster from './Poster'
+import AboutClient from './AboutClient'
 
 const Home = () => {
     return (
+        <>
         <div className='container mx-auto flex md:items-center justify-around flex-col md:flex-row py-10 px-8 lg:px-0'>
             <div className="flex-1 lg:pl-12">
                 <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold inline text-black'>Galaxy meet <br /> without a <br /> Hitch <span><img src={HomeIcon} alt="home-icon" className='inline w-10 md:w-12' /></span></h1>
@@ -17,6 +20,9 @@ const Home = () => {
                 <img src={HomeImage} alt="glaxy-meet bunner" className='w-full' />
             </div>
         </div>
+        <Poster/>
+        <AboutClient/>
+        </>
     )
 }
 
