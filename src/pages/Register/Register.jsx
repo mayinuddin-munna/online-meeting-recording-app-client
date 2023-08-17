@@ -2,6 +2,14 @@ import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import app from "../../../firebase.config";
+const auth = getAuth(app);
 
 const Register = () => {
 
