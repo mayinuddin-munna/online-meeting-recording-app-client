@@ -13,6 +13,7 @@ import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
 import ForgotPassword from "../Register/ForgotPassword";
 import Home from "../Home/Home/Home";
+import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/email-verification",
         element: <EmailVerification></EmailVerification>,
+      },
+      {
+        path: "/online-meeting",
+        element: <OnlineMeeting></OnlineMeeting>,
       },
       {
         path: "/forget-password",
