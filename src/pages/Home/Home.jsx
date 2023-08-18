@@ -4,6 +4,7 @@ import Poster from "./Poster";
 import AboutClient from "./AboutClient";
 import Banner from "./Banner/Banner";
 import Testimonials from "./Home/Testimonials";
+import Video from "./Video";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutClient />
       <Parallax />
       <Testimonials/>
+      <Video/>
     </>
   );
 };
