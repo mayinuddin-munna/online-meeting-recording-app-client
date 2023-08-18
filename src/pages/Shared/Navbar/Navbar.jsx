@@ -32,7 +32,7 @@ const Navbar = () => {
         Home
       </Link>
       <Link to="/features">Feature</Link>
-      <Link to="/community">Community</Link>
+      <Link to="/solutions">Solutions</Link>
       <Link to="/online-meeting">New Meeting</Link>
       {
         user ? <>
