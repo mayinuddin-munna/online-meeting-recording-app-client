@@ -3,9 +3,25 @@ import React, { useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import app from "../../../../firebase.config";
+import { logoutUser } from "../../../features/userSlice";
+
+const auth = getAuth(app);
+
 
 const Navbar = () => {
+
+  const user = useSelector((state) => state.data.user.user);
+  const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
+
+
+  const handelLogout = () => {
+    dispatch(logoutUser());
+    signOut(auth);
+  };
 
   const handleNavToggle = () => {
     setIsNavOpen(!isNavOpen);
@@ -19,7 +35,13 @@ const Navbar = () => {
       <Link to="/features">Feature</Link>
       <Link to="/community">Community</Link>
       <Link to="/new-metting">New Metting</Link>
-      <Link to="/login">Login</Link>
+      {
+        user ? <>
+          <Link onClick={handelLogout}>Logout</Link>
+        </> : <>
+          <Link to="/login">Login</Link>
+        </>
+      }
     </>
   );
 

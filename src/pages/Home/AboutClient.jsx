@@ -1,6 +1,7 @@
 import React from 'react'
 import aboutImg from '../../assets/bunner-image/about-image-main.png'
 import ButtonGradient from '../../components/ButtonGradient'
+
 const AboutClient = () => {
   return (
     <div className='container mx-auto my-20'>

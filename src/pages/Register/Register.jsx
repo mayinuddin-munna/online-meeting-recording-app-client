@@ -1,18 +1,38 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import app from "../../../firebase.config";
+const auth = getAuth(app);
 
 const Register = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((authUser) => {
+        signInWithEmailAndPassword(auth, email, password).then(
+          updateProfile(auth.currentUser, {
+            displayName: username,
+          })
+        );
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
+
+  console.log(email, username, password);
 
   return (
     <div
@@ -20,6 +40,7 @@ const Register = () => {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="registerSubContainer">
+
         <div className="registerLeftDiv">
           <div className="registerLogoDiv">
             <img src="logo" alt="Logo" className="h-16" />
@@ -29,58 +50,74 @@ const Register = () => {
             elit.
           </p>
         </div>
+
         <div className="registerRightDiv">
           <p className="registerRightHeading">
-            Let's get started
+            Lets get started
             <br />
             with a few simple steps
           </p>
-          <form onSubmit={handleSubmit(onSubmit)}>
+
+          <form>
+
             <div className="mb-4">
               <label className="registerFormLabel">
                 <span className=" mr-2">Email</span>
                 <span className="registerFormStar">*</span>
               </label>
+
               <input
+                onChange={e => setEmail(e.target.value)}
                 type="email"
                 name="email"
-                {...register("email", { required: true })}
+                value={email}
+                //{...register("email", { required: true })}
                 className="registerInputBorder"
               />
-              {errors.email && (
+              {/* {errors.email && (
                 <p className="registerError">Email is required</p>
-              )}
+              )} */}
             </div>
+
             <div className="mb-4">
               <label className="registerFormLabel">
-                <span className=" mr-2">Full name</span>
+                <span className=" mr-2">Username</span>
                 <span className="registerFormStar">*</span>
               </label>
+
               <input
+                onChange={e => setUsername(e.target.value)}
                 type="name"
-                name="name"
-                {...register("name", { required: true })}
+                name="username"
+                value={username}
+                //  {...register("name", { required: true })}
                 className="registerInputBorder"
               />
-              {errors.name && <p className="registerError">Name is required</p>}
+              {/* {errors.name && <p className="registerError">Name is required</p>} */}
             </div>
+
             <div className="mb-4">
               <label className="registerFormLabel">
                 <span className=" mr-2">Password</span>
                 <span className="registerFormStar">*</span>
               </label>
+
               <input
+                onChange={e => setPassword(e.target.value)}
                 type="password"
                 name="password"
-                {...register("password", { required: true })}
+                value={password}
+                // {...register("password", { required: true })}
                 className="registerInputBorder"
               />
-              {errors.password && (
+              {/* {errors.password && (
                 <p className="registerError">Password is required</p>
-              )}
+              )} */}
             </div>
+
             <div>
               <button
+                onClick={handleSignUp}
                 type="submit"
                 className="registerBtn"
                 style={{ backgroundColor: "#00C38B" }}
@@ -88,6 +125,7 @@ const Register = () => {
                 Sign Up
               </button>
             </div>
+
             <div className="mt-10">
               <p>By signing up, you agree to our Terms of Service.</p>
               <p>
@@ -99,6 +137,7 @@ const Register = () => {
                 </span>
               </p>
             </div>
+
           </form>
         </div>
       </div>
