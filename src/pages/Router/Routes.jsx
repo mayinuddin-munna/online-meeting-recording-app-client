@@ -13,6 +13,7 @@ import Login from "../Register/Login";
 import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
 import ForgotPassword from "../Register/ForgotPassword";
+import Feature from "../FeaturePage/Feature";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>,
+      },
+      {
+        path: "/features",
+        element: <Feature/>,
       },
       {
         path: "/login",
