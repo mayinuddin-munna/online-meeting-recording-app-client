@@ -18,7 +18,7 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <Link to="/community">Community</Link>
-      <Link to="/new-metting">New Metting</Link>
+      <Link to="/new-meeting">New Meeting</Link>
       <Link to="/login">Login</Link>
     </>
   );
