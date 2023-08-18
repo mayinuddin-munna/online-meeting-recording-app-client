@@ -10,7 +10,6 @@ import { logoutUser } from "../../../features/userSlice";
 
 const auth = getAuth(app);
 
-
 const Navbar = () => {
 
   const user = useSelector((state) => state.data.user.user);
@@ -34,7 +33,7 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <Link to="/community">Community</Link>
-      <Link to="/new-metting">New Metting</Link>
+      <Link to="/online-meeting">New Meeting</Link>
       {
         user ? <>
           <Link onClick={handelLogout}>Logout</Link>

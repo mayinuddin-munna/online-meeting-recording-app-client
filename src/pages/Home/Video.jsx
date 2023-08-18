@@ -93,7 +93,7 @@ function Video() {
             key={index}
             ref={(el) => (remoteVideosRef.current[index] = el)}
             autoPlay
-            className="w-1/2 rounded-lg shadow"
+            className=" rounded-lg shadow"
           />
         ))}
       </div>

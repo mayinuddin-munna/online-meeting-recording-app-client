@@ -14,7 +14,6 @@ const Home = () => {
       <AboutClient />
       <Parallax />
       <Testimonials/>
-      <Video/>
     </>
   );
 };
