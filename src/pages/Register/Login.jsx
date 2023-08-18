@@ -3,11 +3,20 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import { FcGoogle } from "react-icons/fc";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from "../../../firebase.config";
+
+const auth = getAuth(app);
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(auth, email, password);
+  };
 
   // const {
   //   register, handleSubmit, formState: { errors }, } = useForm();
@@ -16,7 +25,7 @@ const Login = () => {
   //   console.log(data);
   // };
 
-  console.log(email, password)
+  // console.log(email, password)
 
   return (
     <div
@@ -93,6 +102,7 @@ const Login = () => {
 
             <div>
               <button
+                onClick={handleLogin}
                 type="submit"
                 className="registerBtn"
                 style={{ backgroundColor: "#00C38B" }}

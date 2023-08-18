@@ -6,6 +6,7 @@ import Footer from "../Shared/Footer/Footer";
 import { loginUser, setLoading } from "../../features/userSlice";
 import { getAuth } from "firebase/auth";
 import app from "../../../firebase.config";
+import LoadingSpinner from "../Shared/LoadingSpinner/LoadingSpinner";
 
 const auth = getAuth(app);
 
@@ -25,7 +26,7 @@ const Main = () => {
         dispatch(setLoading(false));
       } else {
         dispatch(setLoading(false));
-        console.log("User is not logged in.");
+        // console.log("User is not logged in.");
       }
     });
   }, []);
@@ -36,14 +37,19 @@ const Main = () => {
 
   return (
     <div>
-      <Navbar />
-      <div>
-        {user ? `welcome ${user.username}` : ""}
-      </div>
-      <div className="min-h-[calc(100vh-1rem)]">
-        <Outlet />
-      </div>
-      <Footer />
+
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <>  <Navbar />
+          <div className="min-h-[calc(100vh-1rem)]">
+            <Outlet />
+          </div>
+          <Footer />
+        </>
+      )
+      }
+
     </div>
   );
 };
