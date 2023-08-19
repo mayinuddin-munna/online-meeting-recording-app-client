@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from '../../assets/bunner-image/about-features.png'
+import aboutImg from '../../assets/bunner-image/about-image-main.png'
 import ButtonGradient from '../../components/ButtonGradient'
 
 const AboutClient = () => {
@@ -16,7 +16,7 @@ const AboutClient = () => {
                  <ButtonGradient bg="bg-gradient-to-r from-purple-500 to-red-500">Learn More</ButtonGradient>
             </div>
             <div className="about-image flex-1">
-                <img src={aboutImg} alt="" className='rounded' />
+                <img src={aboutImg} alt="" className='rounded w-2/3 mx-auto' />
             </div>
         </div>
     </div>
