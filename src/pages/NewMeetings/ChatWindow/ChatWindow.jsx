@@ -12,7 +12,6 @@ const ChatWindow = ({ user, messages, handleMessage }) => {
             <img src={img} />
           </div>
         </div>
-
         <div className="text-xl lg:text-5xl text-center Caprasimo">
           Logged in as{" "}
           <span className="text-2xl lg:text-7xl font-bold">
@@ -20,7 +19,6 @@ const ChatWindow = ({ user, messages, handleMessage }) => {
           </span>
         </div>
       </div>
-
       <ScrollableFeed className="max-h-[calc(100%-2px)] overflow-y-auto">
         <div className="h-[60vh] overflow-auto relative text-center mt-5 flex flex-col p-4">
           {messages.map((message, i) => {

@@ -8,7 +8,6 @@ import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
-  
 
   useEffect(() => {
     fetch('review.json')

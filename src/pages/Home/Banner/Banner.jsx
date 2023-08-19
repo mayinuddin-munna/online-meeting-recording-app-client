@@ -1,5 +1,5 @@
 import React from "react";
-import HomeImage from "../../../assets/bunner-image/bunner-image.png";
+import HomeImage from "../../../assets/banner-image/banner-image.png";
 import HomeIcon from "../../../assets/home-icon.png";
 
 const Banner = () => {
@@ -33,7 +33,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="flex-1">
-          <img src={HomeImage} alt="glaxy-meet bunner" className="w-full" />
+          <img src={HomeImage} alt="galaxy-meet banner" className="w-full" />
         </div>
       </div>
     </div>

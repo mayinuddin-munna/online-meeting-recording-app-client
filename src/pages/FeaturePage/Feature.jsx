@@ -8,7 +8,6 @@ const Feature = () => {
         <div>
             <FeatureBanner></FeatureBanner>
             <FeatureFacilities></FeatureFacilities>
-
         </div>
     );
 };

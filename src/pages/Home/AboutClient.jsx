@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from '../../assets/bunner-image/about-image-main.png'
+import aboutImg from '../../assets/banner-image/about-image-main.png'
 import ButtonGradient from '../../components/ButtonGradient'
 
 const AboutClient = () => {
