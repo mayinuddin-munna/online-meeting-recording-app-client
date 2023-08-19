@@ -29,15 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: <Login/>,
       },
       {
         path: "/register",
-        element: <Register></Register>,
+        element: <Register/>,
       },
       {
         path: "/email-verification",
-        element: <EmailVerification></EmailVerification>,
+        element: <EmailVerification/>,
       },
       {
         path: "/online-meeting",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/forget-password",
-        element: <ForgotPassword></ForgotPassword>,
+        element: <ForgotPassword/>,
       },
     ],
   },

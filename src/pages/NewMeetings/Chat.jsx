@@ -101,9 +101,9 @@ const Chat = () => {
     <>
       <div className={user.userId ? "hidden" : "block"}>
         <div>
-        <h1 className="text-2xl lg:text-4xl text-center mt-10">
-          Welcome Galaxy Meeting
-        </h1>
+          <h1 className="text-2xl lg:text-4xl text-center mt-10">
+            Welcome Galaxy Meeting
+          </h1>
           <Player
             autoplay
             loop

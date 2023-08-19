@@ -11,11 +11,9 @@ import { logoutUser } from "../../../features/userSlice";
 const auth = getAuth(app);
 
 const Navbar = () => {
-
   const user = useSelector((state) => state.data.user.user);
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
-
 
   const handelLogout = () => {
     dispatch(logoutUser());
@@ -34,13 +32,15 @@ const Navbar = () => {
       <Link to="/features">Feature</Link>
       <Link to="/solutions">Solutions</Link>
       <Link to="/online-meeting">New Meeting</Link>
-      {
-        user ? <>
+      {user ? (
+        <>
           <Link onClick={handelLogout}>Logout</Link>
-        </> : <>
+        </>
+      ) : (
+        <>
           <Link to="/login">Login</Link>
         </>
-      }
+      )}
     </>
   );
 
