@@ -16,7 +16,7 @@ const Home = () => {
       <Parallax />
       <Reviews/>
       {/* <Testimonials/> */}
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <Video/>
     </>
   );
