@@ -47,7 +47,7 @@
   @apply transform hover:translate-x-[10px] transition-all duration-300;
 }
 
-/* Clip-path */
+/* Clip-path Reviws*/
 .clip-path-reviews {
    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
    background-color: #222222;
