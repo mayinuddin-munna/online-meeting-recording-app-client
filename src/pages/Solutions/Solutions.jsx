@@ -142,7 +142,7 @@ const Solutions = () => {
                                 />
                                 {/* Content */}
                                 <div className="text-left">
-                                    <h3 className="text-xl font-semibold mb-2">For Healthcare
+                                    <h3 className="text-3xl font-semibold mb-2">For Healthcare
                                     </h3>
                                     <p className="text-gray-600">
                                     Conduct secure telemedicine consultations with patients, share medical reports, and offer professional medical advice remotely for better healthcare access.
