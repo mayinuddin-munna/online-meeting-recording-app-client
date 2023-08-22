@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Solutions = () => {
   useEffect(() => {
@@ -167,7 +168,7 @@ const Solutions = () => {
 
                 {/* Content */}
                 <div className="text-left">
-                  <h3 className="text-xl font-semibold mb-2">
+                  <h3 className="text-3xl font-semibold mb-2">
                     For Secure Finance
                   </h3>
                   <p className="text-gray-600">
@@ -192,9 +193,9 @@ const Solutions = () => {
           <p className="text-lg mb-8">
             Join millions who trust us for their virtual communication needs.
           </p>
-          <button className="bg-white text-green-600 rounded-full px-6 py-3 font-semibold">
+          <Link to='/register'><button className="bg-white text-green-600 rounded-full px-6 py-3 font-semibold">
             Sign Up for Free
-          </button>
+          </button></Link>
         </div>
       </section>
     </div>
