@@ -8,13 +8,14 @@ import {
 } from "react-router-dom";
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
+import Home from "../Home/Home";
 import Login from "../Register/Login";
 import Register from "../Register/Register";
 import EmailVerification from "../Register/EmailVerification";
 import ForgotPassword from "../Register/ForgotPassword";
-import Home from "../Home/Home/Home";
-import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
 import Solutions from "../Solutions/Solutions";
+import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
+import Feature from "../FeaturePage/Feature";
 
 const router = createBrowserRouter([
   {
@@ -24,31 +25,35 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home>Home</Home>,
+        element: <Home/>,
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: <Login/>,
       },
       {
         path: "/register",
-        element: <Register></Register>,
+        element: <Register/>,
       },
       {
         path: "/email-verification",
-        element: <EmailVerification></EmailVerification>,
+        element: <EmailVerification/>,
       },
       {
         path: "/online-meeting",
-        element: <OnlineMeeting></OnlineMeeting>,
+        element: <OnlineMeeting/>,
       },
       {
         path: "/solutions",
-        element: <Solutions></Solutions>,
+        element: <Solutions/>,
+      },
+      {
+        path: "/features",
+        element: <Feature/>,
       },
       {
         path: "/forget-password",
-        element: <ForgotPassword></ForgotPassword>,
+        element: <ForgotPassword/>,
       },
     ],
   },

@@ -8,7 +8,6 @@ import { FaQuoteLeft } from 'react-icons/fa';
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
-  
 
   useEffect(() => {
     fetch('review.json')
@@ -45,8 +44,7 @@ const Testimonials = () => {
           },
         }}
         modules={[Pagination]}
-        className="mySwiper"
-      >
+        className="mySwiper">
             {reviews.map(review => (
               <SwiperSlide key={review._id}>
                 <div className="bg-white rounded-lg shadow p-6 border lg:flex-col h-[400px]">
