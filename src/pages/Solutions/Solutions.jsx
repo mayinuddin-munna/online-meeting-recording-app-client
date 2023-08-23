@@ -128,7 +128,7 @@ const Solutions = () => {
                 {/* Content */}
                 <div className="text-left">
                   <h3 className="text-3xl font-semibold mb-2">For Marketing</h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-2xl">
                     Ignite innovation in your marketing endeavors with Galaxy Meet. Facilitate dynamic teamwork by seamlessly sharing marketing materials, brainstorming ideas during online meetings. Elevate your campaigns with real-time collaboration, ensuring that your marketing efforts are fueled by collective creativity and expertise.
                   </p>
                 </div>
