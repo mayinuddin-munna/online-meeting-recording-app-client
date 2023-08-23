@@ -1,7 +1,6 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import Logo from "../../../assets/Logo.png";
-import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className="bg-[#6EE7B7]  py-12">
