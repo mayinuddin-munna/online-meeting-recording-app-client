@@ -16,6 +16,7 @@ import ForgotPassword from "../Register/ForgotPassword";
 import Solutions from "../Solutions/Solutions";
 import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
 import Feature from "../FeaturePage/Feature";
+import Contact from "../Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/features",
         element: <Feature/>,
+      },
+      {
+        path: "/contact",
+        element: <Contact/>,
       },
       {
         path: "/forget-password",

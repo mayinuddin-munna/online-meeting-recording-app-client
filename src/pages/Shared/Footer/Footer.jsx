@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import Logo from "../../../assets/Logo.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#6EE7B7]  py-12">
@@ -18,9 +19,8 @@ const Footer = () => {
           <a href="#" className="hover:text-emerald-900 transition-colors">
             Feature
           </a>
-          <a href="#" className="hover:text-emerald-900 transition-colors">
-            Contact
-          </a>
+          {/* contact page linked */}
+          <Link to='/contact' className="hover:text-emerald-900 transition-colors">Contact</Link>
         </div>
         <div className="flex space-x-4">
           <a href="#" className=" hover:text-emerald-900 transition-transform transform hover:scale-110">
