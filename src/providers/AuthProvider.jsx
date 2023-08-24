@@ -4,7 +4,7 @@ import { createContext } from 'react';
 import { useSelector } from 'react-redux';
 import app from '../../firebase.config';
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
