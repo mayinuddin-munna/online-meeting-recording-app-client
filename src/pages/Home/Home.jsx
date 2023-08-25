@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner"
 import AboutClient from "./AboutClient";
 import Reviews from "./Reviews/Reviews";
 import Parallax from "./Parallax/Parallax";
+import ReactTab from "./ReactTab/ReactTab";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutClient />
       <Parallax />
       <Reviews/>
+      <ReactTab/>
     </>
   );
 };
