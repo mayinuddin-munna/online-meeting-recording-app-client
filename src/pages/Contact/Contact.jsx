@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 // import Lottie from "lottie-react";
 // import contact from '../../assets/contact.json'
 
-
 const Contact = () => {
     return (
         <div className=" container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto mt-[100px] text-slate-600">
