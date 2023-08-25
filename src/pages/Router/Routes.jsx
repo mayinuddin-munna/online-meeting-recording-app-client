@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/features",
-        element: <PrivateRoute><Feature /></PrivateRoute>,
+        element: <Feature />,
       },
       {
         path: "/forget-password",
