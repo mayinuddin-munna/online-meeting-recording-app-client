@@ -20,6 +20,7 @@ import Contact from "../Contact/Contact";
 
 // Blog page
 import Blog from "../Blog/Blog";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {

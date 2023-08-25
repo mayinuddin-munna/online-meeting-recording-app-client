@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 //import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import { FcGoogle } from "react-icons/fc";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from "../../../firebase.config";
+import Swal from "sweetalert2";
 
 const auth = getAuth(app);
 
@@ -13,9 +14,25 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password)
+      .then(result => {
+        const user = result?.user;
+        // console.log(user);
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Login Successful',
+          showConfirmButton: false,
+          timer: 1000
+        });
+        navigate(from, { replace: true });
+      });
   };
 
   // const {
