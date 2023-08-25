@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner"
 import AboutClient from "./AboutClient";
 import Reviews from "./Reviews/Reviews";
 import Parallax from "./Parallax/Parallax";
+import NoWorries from "./Noworries/NoWorries";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AboutClient />
       <Parallax />
       <Reviews/>
+      <NoWorries/>
     </>
   );
 };
