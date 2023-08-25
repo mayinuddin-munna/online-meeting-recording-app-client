@@ -49,6 +49,17 @@
 
 /* Clip-path Reviws*/
 .clip-path-reviews {
-   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-   background-color: #222222;
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background-color: #222222;
+}
+.icon-worries {
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
