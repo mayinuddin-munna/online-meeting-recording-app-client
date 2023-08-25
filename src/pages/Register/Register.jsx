@@ -33,7 +33,7 @@ const Register = () => {
           .then(() => {
             const userData = { email: email, username: username }
 
-            fetch('https://silver-sport-server.vercel.app/users', {
+            fetch('https://galaxy-meeting.vercel.app/add-users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"
