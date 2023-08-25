@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { useForm } from "react-hook-form";
 import backgroundImage from "../../assets/register-bg.png";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import app from "../../../firebase.config";
+import Swal from "sweetalert2";
 
 const auth = getAuth(app);
 
 const ForgotPassword = () => {
 
   const emailRef = useRef();
+  const navigate = useNavigate();
 
   // const {
   //   register,
@@ -21,12 +23,25 @@ const ForgotPassword = () => {
     event.preventDefault();
     const email = (emailRef.current.value);
     if (!email) {
-      alert('Please provide valid email to reset password');
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Please provide valid email to reset password!',
+        showConfirmButton: false,
+        timer: 1500
+      })
       return;
     }
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert('Please check your email')
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Please Check your email address to reset password!',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        navigate('/login');
       })
       .catch(error => {
         console.log(error);
@@ -69,6 +84,7 @@ const ForgotPassword = () => {
                 type="email"
                 name="email"
                 ref={emailRef}
+                required
                 // {...register("email", { required: true })}
                 className="registerInputBorder"
               />
