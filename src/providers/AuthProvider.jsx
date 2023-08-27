@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, updateProfile } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import React from 'react';
 import { createContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +29,16 @@ const AuthProvider = ({ children }) => {
         });
     }
 
+    const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const googleSignIn = () => {
+        // setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (authUser) => {
             if (authUser) {
@@ -55,7 +65,9 @@ const AuthProvider = ({ children }) => {
         user,
         isLoading,
         createUser,
-        updateUserProfile
+        updateUserProfile,
+        signIn,
+        googleSignIn
     }
 
     return (

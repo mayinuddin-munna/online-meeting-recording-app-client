@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 //import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import { FcGoogle } from "react-icons/fc";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import app from "../../../firebase.config";
 import Swal from "sweetalert2";
-
-const auth = getAuth(app);
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,10 +19,9 @@ const Login = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    signIn(email, password)
       .then(result => {
         const user = result?.user;
-        // console.log(user);
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -35,14 +33,14 @@ const Login = () => {
       });
   };
 
-  // const {
-  //   register, handleSubmit, formState: { errors }, } = useForm();
-
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
-
-  // console.log(email, password)
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const googleLoggedInUser = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch(error => console.error(error));
+  }
 
   return (
     <div
@@ -128,7 +126,9 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="flex justify-center mt-4">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex justify-center mt-4">
               <FcGoogle size={40} />
             </div>
 
