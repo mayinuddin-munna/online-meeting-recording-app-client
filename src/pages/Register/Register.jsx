@@ -19,20 +19,36 @@ const Register = () => {
 
   const handleSignUp = (event) => {
     event.preventDefault();
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((authUser) => {
-        signInWithEmailAndPassword(auth, email, password).then(
-          updateProfile(auth.currentUser, {
-            displayName: username,
+        // signInWithEmailAndPassword(auth, email, password)
+        //   .then(
+        updateProfile(auth.currentUser, {
+          displayName: username,
+        })
+          .then(() => {
+            const userData = { email: email, username: username }
+
+            fetch('https://galaxy-meeting.vercel.app/add-users', {
+              method: "POST",
+              headers: {
+                "content-type": "application/json"
+              },
+              body: JSON.stringify(userData)
+            })
+              .then(res => res.json())
+              .then(data => console.log(data))
           })
-        );
+          .catch(error => console.log(error))
+        // );
       })
       .catch((err) => {
         alert(err);
       });
   };
 
-  console.log(email, username, password);
+  // console.log(email, username, password);
 
   return (
     <div

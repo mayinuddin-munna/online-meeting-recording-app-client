@@ -16,6 +16,11 @@ import ForgotPassword from "../Register/ForgotPassword";
 import Solutions from "../Solutions/Solutions";
 import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
 import Feature from "../FeaturePage/Feature";
+import Contact from "../Contact/Contact";
+
+// Blog page
+import Blog from "../Blog/Blog";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,35 +30,48 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/login",
-        element: <Login/>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register/>,
+        element: <Register />,
       },
       {
         path: "/email-verification",
-        element: <EmailVerification/>,
+        element: <EmailVerification />,
       },
       {
         path: "/online-meeting",
-        element: <OnlineMeeting/>,
+        element: <OnlineMeeting />,
       },
       {
         path: "/solutions",
-        element: <Solutions/>,
+        element: <Solutions />,
       },
       {
         path: "/features",
-        element: <Feature/>,
+        element: <Feature />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/forget-password",
-        element: <ForgotPassword/>,
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+
+      {
+        path: "/blog/:id",
+        element: <Blog />,
       },
     ],
   },

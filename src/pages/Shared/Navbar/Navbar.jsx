@@ -26,9 +26,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -40,7 +40,6 @@ const Navbar = () => {
   const handleNavToggle = () => {
     setIsNavOpen(!isNavOpen);
   };
-
 
   const navItem = (
     <>
@@ -68,9 +67,17 @@ const Navbar = () => {
   // ${isSticky ? '-translate-y-16' : 'translate-y-0'}
 
   return (
-    <div className={`${isSticky ? ' backdrop-opacity-60 backdrop-invert bg-[#6EE7B7]  sticky top-0' : 'bg-transparent -top-24'
-      } transition duration-300 ease-in-out z-10`} style={{ transition: "all 0.3s ease" }}>
-      <div className={`container mx-auto py-2 flex items-center justify-between`}>
+    <div
+      className={`${
+        isSticky
+          ? " backdrop-opacity-60 backdrop-invert bg-[#6EE7B7]  sticky top-0"
+          : "bg-transparent -top-24"
+      } transition duration-300 ease-in-out z-10`}
+      style={{ transition: "all 0.3s ease" }}
+    >
+      <div
+        className={`container mx-auto py-2 flex items-center justify-between`}
+      >
         <div>
           <img className="w-16" src={Logo} alt="Logo" />
         </div>

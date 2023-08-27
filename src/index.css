@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  background: #f5f5f5;
+}
 /* Register */
 .registerContainer {
   @apply flex justify-center items-center p-5 md:p-20 h-screen bg-cover bg-center ms-0;
@@ -62,4 +64,9 @@
     0% 25%
   );
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.bg-colors{
+  /* height: 40px; */
+  background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
 }
