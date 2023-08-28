@@ -38,8 +38,8 @@ const ReactTab = () => {
                 {tab.map((item) => (
                     <TabPanel key={item._id}>
                         {/* Content for each tab */}
-                        <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row mb-5">
-                            <div className="ms-5 ">
+                        <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row mb-5 ">
+                            <div className="ms-5">
                                 <h1 className="text-5xl font-bold mb-4 md:text-3xl lg:text-5xl text-center">
                                     {item.title}
                                 </h1>
@@ -47,13 +47,11 @@ const ReactTab = () => {
                                     {item.content}
                                 </p>
                             </div>
-                            {/* TODO: margin bottom  */}
-                            <div className="sm:mb-4">
-                                <img className="w-[400px] h-[400]" src={item.img} alt="" />
-                            </div>
+                            <img className="w-[400px] h-[400]" src={item.img} alt="" />
                         </div>
                     </TabPanel>
                 ))}
+
             </Tabs>
         </div>
 
