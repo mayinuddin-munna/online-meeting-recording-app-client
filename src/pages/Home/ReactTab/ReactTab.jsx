@@ -20,18 +20,19 @@ const ReactTab = () => {
             <Tabs>
 
                 {/* Todo: border green is not working */}
-                <TabList className='text-center text-2xl border-b-4 border-transparent flex space-x-4 mb-10'>
+                <TabList className='text-center text-2xl border-b-2 border-transparent flex space-x-4 mb-10'>
                     {tab.map((item) => (
                         <Tab
                             key={item._id}
                             onClick={() => setActiveTab(item._id)}
-                            className={`w-1/2 md:w-1/4 lg:w-1/5 ${activeTab === item._id ? "border-b-4 border-green-500" : ""
+                            className={`w-1/2 md:w-1/4 lg:w-1/5 ${activeTab === item._id ? "border-b-2 border-green-500 outline-none" : ""
                                 }`}
                         >
                             {item.name}
                         </Tab>
                     ))}
                 </TabList>
+
 
 
                 {tab.map((item) => (
