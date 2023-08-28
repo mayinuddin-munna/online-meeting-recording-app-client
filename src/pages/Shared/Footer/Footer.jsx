@@ -5,7 +5,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const Footer = () => {
 
   return (
-    <footer className="bg-gradient-to-r from-green-400 to-blue-400 py-12">
+    <footer className=" bg-gradient-to-r from-green-400 to-blue-400 py-12">
       <div className="max-w-2xl mx-auto py-10">
         <div className="text-center">
         <div className="text-4xl mb-5">
