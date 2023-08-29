@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import app from "../../../firebase.config";
 import Swal from "sweetalert2";
-const auth = getAuth(app);
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -23,17 +18,13 @@ const Register = () => {
   const handleSignUp = (event) => {
     event.preventDefault();
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUser(email, password)
       .then((authUser) => {
-        // signInWithEmailAndPassword(auth, email, password)
-        //   .then(
-        updateProfile(auth.currentUser, {
-          displayName: username,
-        })
+        updateUserProfile(username)
           .then(() => {
             const userData = { email: email, username: username }
 
-            fetch('https://galaxy-meeting.vercel.app/add-users', {
+            fetch('https://silver-sport-server.vercel.app/users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"
@@ -55,7 +46,6 @@ const Register = () => {
               })
           })
           .catch(error => console.log(error))
-        // );
       })
       .catch((err) => {
         alert(err);
