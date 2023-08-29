@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <div className={`${
-      isSticky ? ' backdrop-opacity-60 backdrop-invert bg-[#6EE7B7]  sticky top-0' :  'bg-transparent -top-24'
+      isSticky ? ' backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0' :  'bg-transparent -top-24'
     } transition duration-300 ease-in-out z-10`} style={{transition: "all 0.3s ease"}}>
       <div className={`container mx-auto py-2 flex items-center justify-between`}>
       <div>
