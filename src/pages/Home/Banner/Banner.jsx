@@ -1,5 +1,4 @@
 import React from "react";
-import HomeImage from "../../../assets/banner-image/banner-image.png";
 import HomeIcon from "../../../assets/home-icon.png";
 
 const Banner = () => {
