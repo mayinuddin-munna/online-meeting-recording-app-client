@@ -7,6 +7,7 @@ import { loginUser, setLoading } from "../../features/userSlice";
 import { getAuth } from "firebase/auth";
 import app from "../../../firebase.config";
 import LoadingSpinner from "../Shared/LoadingSpinner/LoadingSpinner";
+import DropDwonMenu from "../Shared/Navbar/DropDwonMenu";
 
 const auth = getAuth(app);
 
@@ -41,7 +42,9 @@ const Main = () => {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <>  <Navbar />
+        <>
+          {/* <Navbar /> */}
+          <DropDwonMenu/>
           <div className="min-h-[calc(100vh-1rem)]">
             <Outlet />
           </div>

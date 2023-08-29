@@ -61,11 +61,7 @@ const Navbar = () => {
     </>
   );
 
-  // className={`${
-  //   isSticky ? 'bg-blue-500' : 'bg-transparent'
-  // } fixed w-full top-0 transition duration-300 ease-in-out z-10`}
-  // ${isSticky ? '-translate-y-16' : 'translate-y-0'}
-
+  
   return (
     <div
       className={`${
