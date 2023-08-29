@@ -2,11 +2,15 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { FaBars, FaXmark } from "react-icons/fa6";
+// import { FaBars, FaXmark } from "react-icons/fa6";
+import { ImMenu3 } from 'react-icons/im';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
+import SolutionsDropdown from "./SolutionsDropdown";
+
 
 const auth = getAuth(app);
 
@@ -47,7 +51,8 @@ const Navbar = () => {
         Home
       </Link>
       <Link to="/features">Feature</Link>
-      <Link to="/solutions">Solutions</Link>
+      <SolutionsDropdown />
+
       <Link to="/online-meeting">New Meeting</Link>
       {user ? (
         <>
@@ -55,7 +60,11 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <Link to="/login">Login</Link>
+          <Link to="/login">
+            <button className="p-3 w-[110px] rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
+              Login
+            </button>
+          </Link>
         </>
       )}
     </>
@@ -82,8 +91,8 @@ const Navbar = () => {
           <img className="w-16" src={Logo} alt="Logo" />
         </div>
         <div>
-          <button onClick={handleNavToggle} className="md:hidden text-3xl">
-            {isNavOpen ? <FaBars></FaBars> : <FaXmark></FaXmark>}
+          <button onClick={handleNavToggle} className="pe-3 md:hidden text-3xl">
+            {isNavOpen ? <ImMenu3 /> : <AiFillCloseCircle />}
           </button>
           <ul className="hidden md:block">
             <li className="nav-items font-semibold text-lg">{navItem}</li>
