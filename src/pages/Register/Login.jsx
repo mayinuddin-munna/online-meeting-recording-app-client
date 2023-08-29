@@ -53,7 +53,7 @@ const Login = () => {
         {/* left div */}
         <div className="registerLeftDiv hidden sm:flex md:block">
           <div className="registerLogoDiv">
-            <img src="" alt="Logo" className="h-16" />
+            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
             Your text here. Lorem ipsum dolor sit amet consectetur adipisicing

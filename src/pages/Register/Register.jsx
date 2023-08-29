@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import {
   createUserWithEmailAndPassword,
@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../../../firebase.config";
+import Swal from "sweetalert2";
 const auth = getAuth(app);
 
 const Register = () => {
@@ -16,6 +17,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -38,7 +41,18 @@ const Register = () => {
               body: JSON.stringify(userData)
             })
               .then(res => res.json())
-              .then(data => console.log(data))
+              .then(data => {
+                if (data.insertedId) {
+                  Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Account created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate('/');
+                }
+              })
           })
           .catch(error => console.log(error))
         // );
@@ -59,7 +73,7 @@ const Register = () => {
 
         <div className="registerLeftDiv">
           <div className="registerLogoDiv">
-            <img src="logo" alt="Logo" className="h-16" />
+            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
             Your text here. Lorem ipsum dolor sit amet consectetur adipisicing
