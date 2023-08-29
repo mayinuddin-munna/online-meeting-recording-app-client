@@ -11,40 +11,6 @@
 .nav-items a:hover{
     color: #5EC38B;
 }
-/* .nav-items :nth-last-child(-n+2){
-    border: 2px solid #504DFF;
-    border-radius: 25px;
-    transition: 0.4s ease-in-out;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
-    -webkit-transition: 0.4s ease-in-out;
-    -moz-transition: 0.4s ease-in-out;
-    -ms-transition: 0.4s ease-in-out;
-    -o-transition: 0.4s ease-in-out;
-}  */
-/* .nav-items :nth-last-child(-n+2):hover{
-    border: 2px solid transparent;
-    background-color: #504DFF;
-    color: #fff;
-} */
-
-
-/* .nav-items-responsive {
-    border: 1px solid gray;
-    border-radius: 20px 0 0 20px;
-    position: absolute;
-    top: 60px;
-    background-color: #5EC38B;
-    padding: 10px 36px 20px;
-    right: -5px;
-    transition: 0.5s ease-in-out;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -ms-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-} */
 .nav-items-responsive a{
     display: block;
     margin-top: 15px;

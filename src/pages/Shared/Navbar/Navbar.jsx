@@ -2,7 +2,6 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-// import { FaBars, FaXmark } from "react-icons/fa6";
 import { ImMenu3 } from 'react-icons/im';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useDispatch, useSelector } from "react-redux";
@@ -70,11 +69,7 @@ const Navbar = () => {
     </>
   );
 
-  // className={`${
-  //   isSticky ? 'bg-blue-500' : 'bg-transparent'
-  // } fixed w-full top-0 transition duration-300 ease-in-out z-10`}
-  // ${isSticky ? '-translate-y-16' : 'translate-y-0'}
-
+  
   return (
     <div
       className={`${
