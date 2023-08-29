@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
+import DropdownMenu from "./DropdownMenu";
 
 const auth = getAuth(app);
 
@@ -49,6 +50,7 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <Link to="/solutions">Solutions</Link>
+      
       <Link to="/online-meeting">New Meeting</Link>
       {user ? (
         <>
