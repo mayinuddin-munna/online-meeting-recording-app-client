@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../Shared/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import { loginUser, setLoading } from "../../features/userSlice";
 import { getAuth } from "firebase/auth";
 import app from "../../../firebase.config";
 import LoadingSpinner from "../Shared/LoadingSpinner/LoadingSpinner";
-// import Navbar1 from "../Shared/Navbar/Navbar1";
+import Navbar from "../Shared/Navbar/Navbar";
 
 const auth = getAuth(app);
 

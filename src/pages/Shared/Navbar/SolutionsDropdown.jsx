@@ -28,6 +28,7 @@ const SolutionsDropdown = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      <div className='flex'>
       <Link
         to='/solutions'
         className="px-3 py-2 rounded-md font-medium group-hover:text-red"
@@ -35,7 +36,8 @@ const SolutionsDropdown = () => {
         Solutions
         
       </Link>
-      <p className='ps-10'><FaCaretDown /> </p>
+      <p className='mt-3 ms-[-16px]'><FaCaretDown /> </p>
+      </div>
       {isDropdownOpen && (
         <div className="absolute z-20 left-0 top-full w-40 mt-2 bg-white shadow-lg rounded sm:w-auto">
           {solutions.map((solution, index) => (
