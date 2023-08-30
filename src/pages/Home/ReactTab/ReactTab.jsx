@@ -44,7 +44,7 @@ const ReactTab = () => {
                 </p>
               </div>
               <div className="w-1/2">
-                <img className="" src={item.img} alt="" />
+              <img className="w-full h-[50%] object-cover" src={item.img} alt="" />
               </div>
             </div>
           </TabPanel>
