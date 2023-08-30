@@ -1,0 +1,38 @@
+[
+    {
+      "_id": "1",
+      "name": "calling",
+      "title": "Connect with calling",
+      "img": "https://images.pexels.com/photos/7245797/pexels-photo-7245797.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+      "content": "With our advanced calling technology, you can foster seamless communication across borders, time zones, and platforms. Whether it's team meetings, client presentations, or international conferences, our calling solution ensures crystal-clear audio and smooth video connections. Say goodbye to geographical limitations and hello to productive and efficient interactions."
+    },
+    {
+      "_id": "2",
+      "name": "meeting",
+      "title": "Meet from anywhere",
+      "img": "https://as1.ftcdn.net/v2/jpg/04/42/15/70/1000_F_442157068_ggmhQgo3HksGHbFQSrhtw0cwSm2J6dAN.jpg",
+      "content": "Connect and collaborate seamlessly, no matter where you are. Our cutting-edge video conferencing technology empowers you to hold productive meetings and discussions from the comfort of your own space. Whether you're at the office, at home, or on the go, our platform ensures that you're always just a click away from meaningful interactions."
+    },
+    {
+      "_id": "3",
+      "name": "webinar",
+      "title": "Make impactful webinars",
+      "img": "https://media.istockphoto.com/id/1314784131/ja/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E4%B8%80%E7%B7%92%E3%81%AB%E5%A4%9A%E3%81%8F%E3%81%AE%E5%90%8C%E5%83%9A%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%93%E3%83%87%E3%82%AA%E6%8E%A5%E7%B6%9A%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%82%A2%E3%83%97%E3%83%AA.jpg?s=612x612&w=0&k=20&c=4n-UxWYghLRvUAIiCf8RsFhFi-l-c4Uq4kV0fQy-YAY=",
+      "content": " Dive into our engaging webinar series and uncover the magic of digital transformation. Learn how companies are using smart technology to make their work smoother, impress customers, and keep up with changes. Our friendly experts will guide you through simple ideas and practical tips, no matter if you're new to this or already know a bit. Get ready to boost your skills and ride the wave of the future!"
+    },
+    {
+      "_id": "4",
+      "name": "event",
+      "title": "Healthy Lifestyle Habits",
+      "img": "https://images.unsplash.com/photo-1585974738771-84483dd9f89f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2272&q=80",
+      "content": "Transform your event into a seamless, global experience with Galaxy Meet. Engage participants worldwide through interactive features, high-quality communication, and customization options. Benefit from secure privacy features, real-time collaboration, and valuable insights to enhance future events. Say goodbye to geographical barriers and hello to impactful, convenient, and memorable virtual gatherings."
+    },
+    {
+      "_id": "5",
+      "name": "chatting",
+      "title": "Team Strategy Meeting",
+      "img": "https://images.unsplash.com/photo-1488998287214-1e668a8e0dc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+      "content": "Connect, collaborate, and engage effortlessly using Galaxy Meet's powerful chat feature. Instantly communicate with colleagues, partners, or event participants in real time, facilitating seamless discussions and quick information sharing. From group chats to private conversations, Galaxy Meet's chat feature empowers effective communication, keeping everyone connected and informed, no matter the distance."
+    }
+  ]
+  

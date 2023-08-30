@@ -1,31 +1,46 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 //import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import { FcGoogle } from "react-icons/fc";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import app from "../../../firebase.config";
-
-const auth = getAuth(app);
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const handleLogin = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password);
+    signIn(email, password)
+      .then(result => {
+        const user = result?.user;
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Login Successful',
+          showConfirmButton: false,
+          timer: 1000
+        });
+        navigate(from, { replace: true });
+      });
   };
 
-  // const {
-  //   register, handleSubmit, formState: { errors }, } = useForm();
-
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
-
-  // console.log(email, password)
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const googleLoggedInUser = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch(error => console.error(error));
+  }
 
   return (
     <div
@@ -36,7 +51,7 @@ const Login = () => {
         {/* left div */}
         <div className="registerLeftDiv hidden sm:flex md:block">
           <div className="registerLogoDiv">
-            <img src="" alt="Logo" className="h-16" />
+            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
             Your text here. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -111,7 +126,9 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="flex justify-center mt-4">
+            <div
+              onClick={handleGoogleSignIn}
+              className="flex justify-center mt-4">
               <FcGoogle size={40} />
             </div>
 

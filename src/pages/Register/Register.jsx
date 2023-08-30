@@ -1,38 +1,58 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import app from "../../../firebase.config";
-const auth = getAuth(app);
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSignUp = (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+
+    createUser(email, password)
       .then((authUser) => {
-        signInWithEmailAndPassword(auth, email, password).then(
-          updateProfile(auth.currentUser, {
-            displayName: username,
+        updateUserProfile(username)
+          .then(() => {
+            const userData = { email: email, username: username }
+
+            fetch('https://silver-sport-server.vercel.app/users', {
+              method: "POST",
+              headers: {
+                "content-type": "application/json"
+              },
+              body: JSON.stringify(userData)
+            })
+              .then(res => res.json())
+              .then(data => {
+                if (data.insertedId) {
+                  Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Account created successfully.',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate('/');
+                }
+              })
           })
-        );
+          .catch(error => console.log(error))
       })
       .catch((err) => {
         alert(err);
       });
   };
 
-  console.log(email, username, password);
+  // console.log(email, username, password);
 
   return (
     <div
@@ -43,7 +63,7 @@ const Register = () => {
 
         <div className="registerLeftDiv">
           <div className="registerLogoDiv">
-            <img src="logo" alt="Logo" className="h-16" />
+            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
             Your text here. Lorem ipsum dolor sit amet consectetur adipisicing

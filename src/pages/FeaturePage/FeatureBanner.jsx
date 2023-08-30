@@ -30,7 +30,7 @@ const FeatureBanner = () => {
         </div>
       </div>
       <img
-        src="https://i.ibb.co/5nDnxmt/friends-family-making-videocall-catching-up.jpg"
+        src="https://i.ibb.co/4RdMSDj/Feature-cover.jpg"
         alt="meeting"
         className="w-4/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-44 dark:bg-gray-500"
       />
