@@ -2,14 +2,13 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { ImMenu3 } from 'react-icons/im';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { ImMenu3 } from "react-icons/im";
+import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
 import SolutionsDropdown from "./SolutionsDropdown";
-
 
 const auth = getAuth(app);
 
@@ -69,7 +68,6 @@ const Navbar = () => {
     </>
   );
 
-  
   return (
     <div
       className={`${

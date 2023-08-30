@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { BsStarHalf, BsStarFill } from "react-icons/bs";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("review.json")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setReviews(data));
   }, []);
 
   return (
-    <div className="container mx-auto">
-      {/* title */}
+    <div className="container mx-auto h-full">
       <div className="md:w-4/12 mx-auto text-center my-8">
         <p className="text-red-600 mb-2">REVIEWS</p>
         <h3 className="text-2xl uppercase">
           What People Say About Our Services
         </h3>
       </div>
-      {/* slider  */}
       <div>
         <div className="max-w-7xl my-12 mx-auto px-4 sm:px-6 lg:px-8">
           <Swiper
@@ -57,7 +56,7 @@ const Reviews = () => {
                         <img
                           className="rounded-full w-24 sm:w-32  h-24 sm:h-32 my-2 mt-4"
                           src={review.img}
-                          alt=""
+                          alt="client image"
                         />
                       </div>
                       <div>
