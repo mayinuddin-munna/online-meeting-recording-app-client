@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="space-y-4">
-          <p className="font-semibold">About Us</p>
+          <p className="font-semibold">Our Team</p>
           <p>FAQ</p>
           <p>Contact</p>
           <p>Reviews</p>
@@ -44,7 +44,7 @@ const Footer = () => {
               placeholder="Your Email"
               className="px-2 py-1 border text-gray-500 border-gray-400 rounded-l outline-none"
             />
-            <button className="p-3 w-[110px] rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
+            <button className="p-3 w-[110px] rounded rounded-l-none hover:bg-[#5EC38B] hover:text-white border shadow border-l-0">
               Subscribe
             </button>
           </div>
