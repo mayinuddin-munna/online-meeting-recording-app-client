@@ -2,15 +2,13 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-// import { FaBars, FaXmark } from "react-icons/fa6";
-import { ImMenu3 } from 'react-icons/im';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { ImMenu3 } from "react-icons/im";
+import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
 import SolutionsDropdown from "./SolutionsDropdown";
-
 
 const auth = getAuth(app);
 
@@ -30,9 +28,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -44,7 +42,6 @@ const Navbar = () => {
   const handleNavToggle = () => {
     setIsNavOpen(!isNavOpen);
   };
-
 
   const navItem = (
     <>
@@ -71,16 +68,19 @@ const Navbar = () => {
     </>
   );
 
-  // className={`${
-  //   isSticky ? 'bg-blue-500' : 'bg-transparent'
-  // } fixed w-full top-0 transition duration-300 ease-in-out z-10`}
-  // ${isSticky ? '-translate-y-16' : 'translate-y-0'}
-
   return (
-    <div className={`${isSticky ? ' backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0' : 'bg-transparent -top-24'
-      } transition duration-300 ease-in-out z-10`} style={{ transition: "all 0.3s ease" }} >
-      <div className={`container mx-auto py-2 flex items-center justify-between`}>
-        <div className="ps-5">
+    <div
+      className={`${
+        isSticky
+          ? " backdrop-opacity-60 backdrop-invert bg-[#6EE7B7]  sticky top-0"
+          : "bg-transparent -top-24"
+      } transition duration-300 ease-in-out z-10`}
+      style={{ transition: "all 0.3s ease" }}
+    >
+      <div
+        className={`container mx-auto py-2 flex items-center justify-between`}
+      >
+        <div>
           <img className="w-16" src={Logo} alt="Logo" />
         </div>
         <div>
