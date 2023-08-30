@@ -70,3 +70,8 @@ body {
   /* height: 40px; */
   background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
 }
+
+/* react tab */
+.tab-border{
+  @apply border-b-2 border-green-500 outline-none
+}
