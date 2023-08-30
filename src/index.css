@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body {
-  background: #f5f5f5;
+  background: rgb(248, 248, 248);
 }
 /* Register */
 .registerContainer {
