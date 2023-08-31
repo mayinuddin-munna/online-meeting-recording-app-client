@@ -14,7 +14,7 @@ const Banner = () => {
           alt=""
         />
 
-        <div className="relative p-0 xl:p-48 bg-opacity-20 bg-emerald-400">
+        <div className="relative p-0 xl:p-48 bg-opacity-20 bg-slate-950">
 
           <svg
             className="absolute inset-x-0 bottom-0 text-white"
@@ -34,13 +34,16 @@ const Banner = () => {
                   without a Hitch
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                  Distance does not matter. It is the meeting that matters the
-                  most.
+                  In the huge space of the universe,
+                  how far things are does not really
+                  matter when compared to the importance
+                  of people coming together. Galaxy Meeting - it is
+                  like stars and planets getting together.
                 </p>
                 <Link
                   to="/register"
                   aria-label=""
-                  className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
+                  className="text-white inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                 >
                   Sign up Now
                   <svg
@@ -53,30 +56,23 @@ const Banner = () => {
                 </Link>
               </div>
 
-              <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
+              <div className="relative inline-flex w-full max-w-xl lg:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                  <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                    Sign up for updates
-                  </h3>
-                  <form>
-                    <div className="mb-1 sm:mb-2">
-                      <Link
-                        className="inline-flex justify-center items-center h-12 px-6 mr-6 font-medium tracking-wide bg-[#5EC38B] text-white"
-                      >
-                        Join a meeting
-                      </Link>
-                      <input
-                        placeholder="Join with code or link"
-                        required
-                        type="text"
-                        className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                        id="firstName"
-                        name="firstName"
-                      />
 
-                    </div>
+                  <div className="grid gap-4 justify-center items-center mb-1 sm:mb-2">
 
-                  </form>
+                    <input
+                      type="text"
+                      placeholder="Enter meeting link"
+                      className="px-8 py-3 text-gray-200 border rounded-sm border-black">
+                    </input>
+                    <select className="px-6 py-3 text-lg rounded-sm bg-[#5EC38B] text-white">
+                      <option>Join with a link</option>
+                      <option>Create a new meeting</option>
+                    </select>
+
+                  </div>
+
                 </div>
               </div>
             </div>
