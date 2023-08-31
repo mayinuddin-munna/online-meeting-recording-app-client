@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <Banner />
-      {/* <Poster /> */}
-    <UserGrowth />
+      <Poster />
+      <UserGrowth />
       {/* <AboutClient /> */}
       <Parallax />
       <Reviews />

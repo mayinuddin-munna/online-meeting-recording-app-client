@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import bannerImg from "../../../assets/banner-image/gm.jpg"
 
 
 const Banner = () => {
@@ -9,12 +10,12 @@ const Banner = () => {
       <div className="relative">
 
         <img
-          src="https://i.ibb.co/Jx5sBD9/man-eating-coffe.jpg"
+          src={bannerImg}
           className="absolute inset-0 object-cover w-full h-full"
           alt=""
         />
 
-        <div className="relative p-0 xl:p-48 bg-opacity-20 bg-slate-950">
+        <div className="relative p-0 xl:p-56 bg-opacity-10 bg-slate-950">
 
           <svg
             className="absolute inset-x-0 bottom-0 text-white"
