@@ -75,10 +75,10 @@ body {
 .tab-border{
   @apply border-b-2 border-green-500 outline-none
 }
-
+/* 
 body {
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
   overflow: hidden;
   padding: 0;
@@ -167,4 +167,4 @@ li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+} */
