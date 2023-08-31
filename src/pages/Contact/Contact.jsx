@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
-        <div>
-            <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600">
+        <>
+            <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600 mb-8 md:mt-[-100px] lg:pt-50 lg:h-[60vh] ">
 
                 {/* left side */}
                 <div className=" p-10">
-                    <h1 className="text-3xl mb-4">Let's get in touch.</h1>
+                    <h1 className="md:text-6xl text-5xl mb-9">Let's get in touch.</h1>
                     <p>Talk to a member of our team to get to know about our 'Galaxy Meet'.</p>
                     <h3 className='text-xl font-bold mt-4 pl-4 mb-4 border-l-4 border-green-500'>Support</h3>
                     <p>Please visit our <Link to='/' className='text-green-500'>support page</Link> for more information</p>
@@ -18,7 +18,7 @@ const Contact = () => {
                 </div>
                 {/* right side */}
                 <div className="bg-white-500 p-10">
-                    <h1 className='text-3xl mb-4'>Contact us</h1>
+                    <h1 className='md:text-6xl text-5xl mb-9'>Contact us</h1>
                     <p>Please fill out the form below, and we'will contact you shortly.</p>
                     <div className="mt-4">
                         <label className="block text-sm font-medium text-slate-600">Email</label>
@@ -51,7 +51,7 @@ const Contact = () => {
 
 
             </div>
-        </div>
+        </>
 
     );
 };
