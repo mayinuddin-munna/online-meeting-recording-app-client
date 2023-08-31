@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Contact = () => {
     return (
         <>
-            <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600 mb-8 md:mt-[-100px] lg:pt-50 lg:h-[60vh] ">
+            <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600 mt-[130px] mb-8 md:mt-[-100px] lg:pt-50 lg:h-[60vh] ">
 
                 {/* left side */}
                 <div className=" p-10">
