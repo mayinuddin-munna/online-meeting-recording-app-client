@@ -7,6 +7,7 @@ import Parallax from "./Parallax/Parallax";
 import ReactTab from "./ReactTab/ReactTab";
 import NoWorries from "./Noworries/NoWorries";
 import Contact from "../Contact/Contact";
+import UserReviews from "../Shared/UserReviews/UserReviews";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner />
       <Poster />
       <AboutClient />
+      <UserReviews/>
       <Parallax />
       <Reviews />
       <NoWorries />

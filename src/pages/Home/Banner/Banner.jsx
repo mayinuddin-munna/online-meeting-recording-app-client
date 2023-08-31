@@ -9,16 +9,14 @@ const Banner = () => {
         <div className="flex-1 lg:pl-12">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold inline text-black">
             Galaxy meet <br /> without a <br /> Hitch{" "}
-            <span>
               <img
                 src={HomeIcon}
                 alt="home-icon"
                 className="inline w-10 md:w-12"
               />
-            </span>
           </h1>
           <p className="my-8 md:my-12">
-            Distance doesn t matter. Ii's the meeting <br /> that matter the
+            Distance does not matter. It is the meeting <br /> that matter the
             most.
           </p>
           <div className="flex flex-row md:flex-col lg:flex-row gap-4">
@@ -33,7 +31,7 @@ const Banner = () => {
           </div>
         </div>
         <div className="flex-1">
-          <img src={HomeImage} alt="galaxy-meet banner" className="w-full" />
+          <img src="https://i.ibb.co/N2wTm98/Galaxy-Meet-Banner.png" alt="galaxy-meet banner" className="w-full" />
         </div>
       </div>
     </div>
