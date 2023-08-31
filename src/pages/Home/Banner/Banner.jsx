@@ -1,6 +1,6 @@
 import React from "react";
-import HomeIcon from "../../../assets/home-icon.png";
 import { Link } from "react-router-dom";
+
 
 const Banner = () => {
   return (
@@ -9,7 +9,7 @@ const Banner = () => {
       <div className="relative">
 
         <img
-          src="https://images.unsplash.com/photo-1664575196044-195f135295df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          src="https://i.ibb.co/Jx5sBD9/man-eating-coffe.jpg"
           className="absolute inset-0 object-cover w-full h-full"
           alt=""
         />
