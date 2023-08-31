@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Banner />
-      <Poster />
+      {/* <Poster /> */}
     <UserGrowth />
       {/* <AboutClient /> */}
       <Parallax />
