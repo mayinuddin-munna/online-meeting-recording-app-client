@@ -5,6 +5,7 @@ import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import { Outlet } from "react-router-dom";
+import styles from './Dashboard.module.css';
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -32,16 +33,17 @@ const Dashboard = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <motion.nav className="navv"
+    <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
+      className={styles.navContainer} // Use the imported CSS Module class
     >
-      <motion.div className="background" variants={sidebar} />
+      <motion.div className={styles.background} variants={sidebar} />
       <Navigation />
-      <Outlet/>
-      <h1 className="text-2xl text-white ml-96">Welcome Galaxy Meeting!</h1>
+      <Outlet />
+      <h1 className={`${styles.title} text-2xl text-white lg:ml-96 ml-24`}>Welcome to Galaxy Meeting!</h1>
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );
