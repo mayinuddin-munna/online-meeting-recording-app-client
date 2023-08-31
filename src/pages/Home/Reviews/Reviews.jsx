@@ -18,7 +18,6 @@ const Reviews = () => {
   return (
     <div className="container mx-auto h-full">
       <div className="md:w-4/12 mx-auto text-center my-8">
-        <p className="text-red-600 mb-2">REVIEWS</p>
         <h3 className="text-4xl font-bold uppercase">
           What People Say About Our Services
         </h3>
@@ -57,20 +56,25 @@ const Reviews = () => {
                         }
                         fractions={2}
                         readonly
-                        placeholderSymbol={<div className="text-pink-600"><BsStarHalf /></div>}
+                        placeholderSymbol={
+                          <div className="text-pink-600">
+                            <BsStarHalf />
+                          </div>
+                        }
                       />
                     </p>
                     <h5 className="font-semibold text-2xl">{review.name}</h5>
                   </div>
-                  <div className="flex-1 clip-path-reviews pl-3 md:pl-12 py-3 md:py-12 lg:py-24">
+                  <div className="flex-1 clip-path-reviews h-full flex flex-col justify-center pl-3 md:pl-12 py-[40px] md:py-[136px] lg:py-[152px]">
                     <div className="flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-3 text-white md:ml-16 xl:ml-24">
-                      <div className="">
+                      <div className="rounded-full my-2 mt-4 h-20 w-20 overflow-hidden">
                         <img
-                          className="rounded-full w-24 sm:w-32  h-24 sm:h-32 my-2 mt-4"
+                          className="w-full h-full object-cover"
                           src={review.img}
                           alt="client image"
                         />
                       </div>
+
                       <div>
                         <h2 className="text-xl font-semibold">
                           Junishi Tsuneoka
