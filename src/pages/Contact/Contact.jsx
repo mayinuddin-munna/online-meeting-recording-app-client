@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Contact = () => {
   return (
     <>
-      <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600 mb-8 lg:pb-[100px]">
+      <div className="container grid grid-cols-1 lg:grid-cols-2  justify-items-center mx-auto text-slate-600 my-5 mb-8">
        
           {/* title */}
         
