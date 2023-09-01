@@ -22,7 +22,7 @@ const Reviews = () => {
   // getUserData()
 
   useEffect(() => {
-    fetch("http://localhost:8000/get-review")
+    fetch("http://localhost:8000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

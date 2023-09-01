@@ -54,7 +54,8 @@ const Navbar = () => {
       <SolutionsDropdown />
       {/* <Link to="/blog">Blog</Link> */}
       {user && <Link to="/dashboard">Dashboard</Link>}
-      <Link to="/online-meeting">New Meeting</Link>
+      {/* <Link to="/online-meeting">New Meeting</Link> */}
+      <Link to="/join">New Meeting</Link>
       {user ? (
         <>
           <Link onClick={handelLogout}>Logout</Link>
