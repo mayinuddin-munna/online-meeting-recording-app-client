@@ -12,11 +12,16 @@ const variants = {
 };
 
 export const Navigation = () => (
-  <motion.ul variants={variants}>
+  <motion.ul variants={variants} style={{margin: "0",
+  // padding: "0",
+  padding: "25px",
+  position: "absolute",
+  top: "100px",
+  width: "230px",}}>
     {itemIds.map((i) => (
       <MenuItem i={i} key={i} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = [0, 2];

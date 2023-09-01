@@ -2,14 +2,16 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { ImMenu3 } from "react-icons/im";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { ImMenu3, ImCross } from "react-icons/im";
+
+// import { ImMenu3 } from "react-icons/im";
+// import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
 import SolutionsDropdown from "./SolutionsDropdown";
-import { FaBars, FaXmark } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
 
 const auth = getAuth(app);
 
@@ -19,7 +21,6 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
 
-  // Stricky Navbar
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
@@ -51,7 +52,8 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <SolutionsDropdown />
-
+      {/* <Link to="/blog">Blog</Link> */}
+      {user && <Link to="/dashboard">Dashboard</Link>}
       <Link to="/online-meeting">New Meeting</Link>
       {user ? (
         <>
@@ -60,7 +62,7 @@ const Navbar = () => {
       ) : (
         <>
           <Link to="/login">
-            <button className="p-3 w-[110px] rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
+            <button className="p-3 w-32 rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
               Login
             </button>
           </Link>
@@ -79,22 +81,25 @@ const Navbar = () => {
       style={{ transition: "all 0.3s ease" }`}
     >
       <div
-        className={'container mx-auto py-2 flex items-center justify-between'}
+        className={`container mx-auto py-2 flex items-center justify-between`}
       >
-        <div>
-          <img className="w-16" src={Logo} alt="Logo" />
+        <div className="flex items-center">
+          <img className="w-16 ms-5" src={Logo} alt="Logo" />
         </div>
         <div>
-          <button onClick={handleNavToggle} className="pe-3 md:hidden text-3xl">
-            {isNavOpen ? <ImMenu3 /> : <AiFillCloseCircle />}
+          <button
+            onClick={handleNavToggle}
+            className="md:hidden me-4 text-3xl ml-28"
+          >
+            {isNavOpen ? <FaBars /> : <ImCross />}
           </button>
-          <ul className="hidden md:block">
-            <li className="nav-items font-semibold text-lg">{navItem}</li>
-          </ul>
           <ul className={`md:hidden ${isNavOpen ? "hidden" : "static"}`}>
             <li className="nav-items-responsive font-semibold text-lg">
               {navItem}
             </li>
+          </ul>
+          <ul className="hidden md:block">
+            <li className="nav-items font-semibold text-lg">{navItem}</li>
           </ul>
         </div>
       </div>
