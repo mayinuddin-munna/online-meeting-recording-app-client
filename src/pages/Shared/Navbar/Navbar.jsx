@@ -72,7 +72,7 @@ const Navbar = () => {
     <div
       className={`${
         isSticky
-          ? " backdrop-opacity-60 backdrop-invert bg-[#6EE7B7]  sticky top-0"
+          ? " backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
       } transition duration-300 ease-in-out z-10`}
       style={{ transition: "all 0.3s ease" }}

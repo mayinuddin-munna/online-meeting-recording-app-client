@@ -16,14 +16,14 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="container mx-auto h-full">
-      <div className="md:w-4/12 mx-auto text-center my-8">
+    <div className="container mx-auto h-full my-24">
+      <div className="mx-auto text-center my-12">
         <h3 className="text-4xl font-bold uppercase">
           What People Say About Our Services
         </h3>
       </div>
       <div>
-        <div className="max-w-7xl my-12 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="my-12 mx-auto px-32">
           <Swiper
             navigation={true}
             autoplay={{
