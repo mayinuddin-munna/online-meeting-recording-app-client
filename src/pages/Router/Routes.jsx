@@ -17,10 +17,10 @@ import Solutions from "../Solutions/Solutions";
 import OnlineMeeting from "../OnlineMeeting/OnlineMeeting";
 import Feature from "../FeaturePage/Feature";
 import Contact from "../Contact/Contact";
-
-// Blog page
 import Blog from "../Blog/Blog";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import UserReviews from "../Shared/UserReviews/UserReviews";
 
 const router = createBrowserRouter([
   {
@@ -76,8 +76,14 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "about",
-    element: <div>About</div>,
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "/dashboard/userReviews",
+        element: <UserReviews />,
+      },
+    ]
   },
 ]);
 
