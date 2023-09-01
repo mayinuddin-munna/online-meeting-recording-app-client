@@ -60,7 +60,7 @@ const Solutions = () => {
                 >
                   <img
                     src={solution.img}
-                    alt=""
+                    alt={solution.title}
                     className="md:w-1/2 rounded-lg "
                   />
 
@@ -70,7 +70,7 @@ const Solutions = () => {
 
                       <p>
                         {solution.title === "Education" && <MdSchool className="text-3xl" />}
-                        {solution.title === "IT" && <GiTechnoHeart className="text-3xl" />}
+                        {solution.title === "Information technology" && <GiTechnoHeart className="text-3xl" />}
                         {solution.title === "Service" && <RiCustomerService2Fill className="text-3xl" />}
                         {solution.title === "Sales" && <FaCashRegister className="text-3xl" />}
                         {solution.title === "Marketing" && <MdHomeRepairService className="text-3xl" />}
