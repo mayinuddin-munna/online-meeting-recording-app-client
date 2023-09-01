@@ -17,9 +17,9 @@ const ReactTab = () => {
 
   // TODO: responsive for small device
   return (
-    <div className=" mt-20 container mx-auto mb-10 h-[70vh]">
+    <div className=" mt-20 container mx-auto mb-16 lg:mb-32 ">
       <Tabs>
-        <TabList className="text-center text-xl border-b-2 border-transparent flex space-x-4 overflow-x-auto mb-10">
+        <TabList className="text-center text-xl border-b-2 border-transparent flex space-x-4 overflow-x-auto mb-16">
           {tab.map((item) => (
             <Tab
             key={item._id}
@@ -37,18 +37,19 @@ const ReactTab = () => {
 
         {tab.map((item) => (
           <TabPanel key={item._id}>
-            <div className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row mb-5">
-              <div className="ms-5 me-5 md:w-1/2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mb-5">
+            <div className="">
+              <img className="w-full object-cover" src={item.img} alt="" />
+              </div>
+              <div className="ms-5 me-5">
                 <h1 className="text-5xl font-bold mt-5 mb-4 md:text-3xl lg:text-5xl text-center">
                   {item.title}
                 </h1>
-                <p className="text-left leading-9 text-2xl md:text-xl text-slate-600 ms-5 me-5 lg:block">
+                <p className="text-left leading-9 text-base lg:text-2xl text-slate-600 ms-5 md:me-5 inline-block p-9">
                   {item.content}
                 </p>
               </div>
-              <div className="w-1/2">
-              <img className="w-full h-[50%] object-cover" src={item.img} alt="" />
-              </div>
+              
             </div>
           </TabPanel>
         ))}
