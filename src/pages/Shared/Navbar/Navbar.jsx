@@ -100,30 +100,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-
-  // return (
-  //     <div className={`${isSticky ? ' backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0' : 'bg-transparent -top-24'
-  //       } transition duration-300 ease-in-out z-10`} style={{ transition: "all 0.3s ease" }}>
-  //       <div className={`container mx-auto py-2 flex items-center justify-between`}>
-  //         <div>
-  //           <img className="w-16" src={Logo} alt="Logo" />
-  //         </div>
-  //         <div>
-  //           <button onClick={handleNavToggle} className="md:hidden text-3xl">
-  //             {isNavOpen ? <FaBars></FaBars> : <FaXmark></FaXmark>}
-  //           </button>
-  //           <ul className="hidden md:block">
-  //             <li className="nav-items font-semibold text-lg">{navItem}</li>
-  //           </ul>
-  //           <ul className={`md:hidden ${isNavOpen ? "hidden" : "static"}`}>
-  //             <li className="nav-items-responsive font-semibold text-lg">
-  //               {navItem}
-  //             </li>
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  // );
 };
 
 export default Navbar;
