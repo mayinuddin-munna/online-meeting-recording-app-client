@@ -5,12 +5,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { BsStarHalf, BsStarFill } from "react-icons/bs";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import ReactRating from "react-rating";
+import axios from "axios";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
+  // async function getUserData() {
+  //   try {
+  //     const response = await axios.get("http://localhost:8000/get-review");
+  //     setReviews(response.data);
+  //   }
+  //   catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // getUserData()
+
   useEffect(() => {
-    fetch("review.json")
+    fetch("http://localhost:8000/get-review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
