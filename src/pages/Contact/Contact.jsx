@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto text-center pt-[130px] pb-28 sm:pb-28 h-auto lg:h-[75vh]">
-      <h3 className="text-5xl font-bold uppercase mb-9">Contact Us</h3>
+    <div className="container mx-auto  pt-32 pb-28 sm:pb-28 h-auto lg:h-[75vh]">
+      <h3 className="text-5xl font-bold text-center uppercase mb-9">Contact Us</h3>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center mx-auto text-slate-600">
         <div className="p-6 md:p-10">
