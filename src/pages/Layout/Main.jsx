@@ -8,22 +8,19 @@ import LoadingSpinner from "../Shared/LoadingSpinner/LoadingSpinner";
 const Main = () => {
   const isLoading = useSelector((state) => state.data.user.isLoading);
 
-
   return (
     <div>
-
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <>  <Navbar />
+        <>
+          <Navbar />
           <div className="min-h-[calc(100vh-1rem)]">
             <Outlet />
           </div>
           <Footer />
         </>
-      )
-      }
-
+      )}
     </div>
   );
 };
