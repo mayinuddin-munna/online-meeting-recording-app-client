@@ -22,6 +22,13 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserReviews from "../Shared/UserReviews/UserReviews";
 
+// Room route
+import Join from "../Join";
+import Room from "../Room";
+
+// Room Provider don't touch this code my team ⚠️⚠️⚠️
+import { RoomProvider } from "../../context/RoomContext";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,7 +90,25 @@ const router = createBrowserRouter([
         path: "/dashboard/userReviews",
         element: <UserReviews />,
       },
-    ]
+    ],
+  },
+
+  {
+    path: "join",
+    element: (
+      <RoomProvider>
+        <Join />
+      </RoomProvider>
+    ),
+  },
+
+  {
+    path: "room/:id",
+    element: (
+      <RoomProvider>
+        <Room />
+      </RoomProvider>
+    ),
   },
 ]);
 
