@@ -73,7 +73,7 @@ body {
 
 /* react tab */
 .tab-border{
-  @apply border-b-2 border-green-500 outline-none
+  @apply border-b-2 border-green-500 outline-none bg-green-600
 }
 /* 
 body {

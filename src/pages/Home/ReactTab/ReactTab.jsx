@@ -15,20 +15,23 @@ const ReactTab = () => {
       });
   }, []);
 
+  // TODO: responsive for small device
   return (
     <div className=" mt-20 container mx-auto mb-10 h-[70vh]">
       <Tabs>
         <TabList className="text-center text-xl border-b-2 border-transparent flex space-x-4 overflow-x-auto mb-10">
           {tab.map((item) => (
             <Tab
-              key={item._id}
-              onClick={() => setActiveTab(item._id)}
-              className={`px-3 py-1 md:w-1/4 lg:w-1/5 uppercase cursor-pointer ${
-                activeTab === item._id ? "tab-border" : ""
-              } hover:text-[#5EC38B]`}
-            >
-              {item.name}
-            </Tab>
+            key={item._id}
+            onClick={() => setActiveTab(item._id)}
+            className={`px-3 py-1 md:w-1/4 lg:w-1/5 uppercase cursor-pointer rounded transition duration-300 ${
+              activeTab === item._id
+                ? "bg-[#5EC38B] text-white"
+                : "bg-gray-200 text-gray-600 hover:bg-[#5EC38B] hover:text-white"
+            }`}
+          >
+            {item.name}
+          </Tab>
           ))}
         </TabList>
 
