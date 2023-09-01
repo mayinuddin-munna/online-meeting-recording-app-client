@@ -1,22 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import bannerImg from "../../../assets/banner-image/gm.jpg"
-
+import bannerImg from "../../../assets/banner-image/gm.jpg";
 
 const Banner = () => {
   return (
     <section className="mb-16 lg:mb-40">
-
       <div className="relative">
-
         <img
           src={bannerImg}
           className="absolute inset-0 object-cover w-full h-full"
-          alt=""
+          alt="banner image"
         />
-
         <div className="relative p-0 xl:p-56 bg-opacity-10 bg-slate-950">
-
           <svg
             className="absolute inset-x-0 bottom-0 text-white"
             viewBox="0 0 1160 160"
@@ -35,11 +30,10 @@ const Banner = () => {
                   without a Hitch
                 </h2>
                 <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                  In the huge space of the universe,
-                  how far things are does not really
-                  matter when compared to the importance
-                  of people coming together. Galaxy Meeting - it is
-                  like stars and planets getting together.
+                  In the huge space of the universe, how far things are does not
+                  really matter when compared to the importance of people coming
+                  together. Galaxy Meeting - it is like stars and planets
+                  getting together.
                 </p>
                 <Link
                   to="/register"
@@ -59,21 +53,17 @@ const Banner = () => {
 
               <div className="relative inline-flex w-full max-w-xl lg:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-
                   <div className="grid gap-4 justify-center items-center mb-1 sm:mb-2">
-
                     <input
                       type="text"
                       placeholder="Enter meeting link"
-                      className="px-8 py-3 text-gray-200 border rounded-sm border-black">
-                    </input>
+                      className="px-8 py-3 text-gray-200 border rounded-sm border-black"
+                    ></input>
                     <select className="px-6 py-3 text-lg rounded-sm bg-[#5EC38B] text-white">
                       <option>Join with a link</option>
                       <option>Create a new meeting</option>
                     </select>
-
                   </div>
-
                 </div>
               </div>
             </div>
