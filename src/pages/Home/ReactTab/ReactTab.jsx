@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
 
 const ReactTab = () => {
   const [tab, setTab] = useState([]);
