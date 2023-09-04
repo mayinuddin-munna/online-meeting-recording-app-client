@@ -51,13 +51,13 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="mt-8 border-t border-gray-600" />
-      <div className="text-center pt-2 text-sm mb-0">
+      <hr className="my-4 border-t border-gray-600" />
+      <div className="flex flex-col md:flex-row items-center justify-center gap-5 py-2 text-sm mb-0">
         <p>
-          <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> |{" "}
+          <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | {" "}
           <a href="#">Cookies</a>
         </p>
-        <p className="mt-2">@ 2023. Galaxy Meet. All rights reserved.</p>
+        <p>@ 2023. Galaxy Meet. All rights reserved.</p>
       </div>
     </footer>
   );

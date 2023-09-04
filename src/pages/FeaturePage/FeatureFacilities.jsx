@@ -2,7 +2,7 @@ import React from "react";
 
 const FeatureFacilities = () => {
   return (
-    <section className="grid grid-cols-4 justify-items-center bg-white text-black p-24 ">
+    <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center bg-white text-black gap-10 my-10 ">
       <div
         className="w-8/12 p-4 lg:p-8 shadow-xl text-center
             rounded-md bg-gradient-to-t from-blue-100 to-cyan-100"
