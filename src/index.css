@@ -18,13 +18,13 @@ body {
   @apply flex text-left  rounded-full h-20 w-20 ms-0;
 }
 .registerLeftPara {
-  @apply text-left items-end text-3xl text-yellow-100 mb-0;
+  @apply text-3xl text-yellow-100 md:mt-[50%] mb-0;
 }
 .registerRightDiv {
-  @apply bg-white rounded-2xl md:rounded md:rounded-r-3xl p-8 shadow-md w-full;
+  @apply bg-white rounded-2xl md:rounded  md:rounded-r-3xl p-8 shadow-md w-full;
 }
 .registerRightHeading {
-  @apply mb-4 text-xl;
+  @apply mb-4 text-center text-xl;
 }
 .registerFormLabel {
   @apply flex text-sm font-medium items-center;

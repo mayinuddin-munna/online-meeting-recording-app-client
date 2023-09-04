@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bannerImg from "../../../assets/banner-image/gm.jpg";
+import { FaArrowAltCircleDown } from 'react-icons/fa';
 
 const Banner = () => {
   return (
@@ -59,10 +60,24 @@ const Banner = () => {
                       placeholder="Enter meeting link"
                       className="px-8 py-3 text-gray-200 border rounded-sm border-black"
                     ></input>
-                    <select className="px-6 py-3 text-lg rounded-sm bg-[#5EC38B] text-white">
-                      <option>Join with a link</option>
-                      <option>Create a new meeting</option>
-                    </select>
+                    <div style={{ position: 'relative' }}>
+                      <select
+                        className="px-6 py-3 text-lg rounded-sm bg-[#5EC38B] text-white appearance-none w-[250px] cursor-pointer"
+                      >
+                        <option>Join with a link</option>
+                        <option>Create a new meeting</option>
+                      </select>
+                      <FaArrowAltCircleDown
+                        style={{
+                          position: 'absolute',
+                          top: '50%',
+                          right: '15px',
+                          transform: 'translateY(-50%)',
+                          pointerEvents: 'none',
+                          color: 'white'
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

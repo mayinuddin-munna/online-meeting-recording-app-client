@@ -3,8 +3,20 @@ import Logo from "../../../assets/Logo.png";
 import { FaDribbble, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaTwitter as FaTwitterAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Footer = () => {
+
+  const handleSubscribe = (event) =>{
+    event.preventDefault();
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `${event.target.email.value} subscribe successful`,
+      showConfirmButton: false,
+      timer: 1000
+    });
+  }
   return (
     <footer className="bg-gray-800 text-white  pb-5">
       <div className="container md:text-center mx-auto py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -37,17 +49,19 @@ const Footer = () => {
           <p>Reviews</p>
         </div>
         <div className="flex flex-col md:text-center md:ms-5 md:mt-3 space-y-4 ">
-          <p className="font-semibold">Subscribe to connect with us</p>
-          <div className="flex">
+          <p className="font-semibold text-2xl text-start">Newsletter</p>
+          <form onSubmit={handleSubscribe} className="flex">
             <input
               type="email"
-              placeholder="Your Email"
-              className="lg:px-2 border text-gray-500 border-gray-400 rounded-l outline-none"
+              name="email"
+              placeholder="Enter Your Email"
+              className="px-4 border text-gray-500 border-gray-400 rounded-l outline-none"
+              required
             />
-            <button className="p-3 w-[110px] rounded rounded-l-none hover:bg-[#5EC38B] hover:text-white border shadow border-l-0">
+            <button type='submit' className="p-3 w-[110px] rounded rounded-l-none hover:bg-[#5EC38B] hover:text-white border shadow border-l-0">
               Subscribe
             </button>
-          </div>
+          </form>
         </div>
       </div>
 

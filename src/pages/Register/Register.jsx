@@ -63,10 +63,12 @@ const Register = () => {
 
         <div className="registerLeftDiv">
           <div className="registerLogoDiv">
-            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
+            <Link to='/'>
+              <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
+            </Link>
           </div>
           <p className="registerLeftPara">
-          Unlocking the Power of Virtual Collaboration
+            Unlocking the Power of Virtual Collaboration
           </p>
         </div>
 
@@ -77,26 +79,7 @@ const Register = () => {
             with a few simple steps
           </p>
 
-          <form>
-
-            <div className="mb-4">
-              <label className="registerFormLabel">
-                <span className=" mr-2">Email</span>
-                <span className="registerFormStar">*</span>
-              </label>
-
-              <input
-                onChange={e => setEmail(e.target.value)}
-                type="email"
-                name="email"
-                value={email}
-                //{...register("email", { required: true })}
-                className="registerInputBorder"
-              />
-              {/* {errors.email && (
-                <p className="registerError">Email is required</p>
-              )} */}
-            </div>
+          <form onSubmit={handleSignUp}>
 
             <div className="mb-4">
               <label className="registerFormLabel">
@@ -111,9 +94,32 @@ const Register = () => {
                 value={username}
                 //  {...register("name", { required: true })}
                 className="registerInputBorder"
+                required
               />
               {/* {errors.name && <p className="registerError">Name is required</p>} */}
             </div>
+
+            <div className="mb-4">
+              <label className="registerFormLabel">
+                <span className=" mr-2">Email</span>
+                <span className="registerFormStar">*</span>
+              </label>
+
+              <input
+                onChange={e => setEmail(e.target.value)}
+                type="email"
+                name="email"
+                value={email}
+                //{...register("email", { required: true })}
+                className="registerInputBorder"
+                required
+              />
+              {/* {errors.email && (
+                <p className="registerError">Email is required</p>
+              )} */}
+            </div>
+
+
 
             <div className="mb-4">
               <label className="registerFormLabel">
@@ -128,6 +134,7 @@ const Register = () => {
                 value={password}
                 // {...register("password", { required: true })}
                 className="registerInputBorder"
+                required
               />
               {/* {errors.password && (
                 <p className="registerError">Password is required</p>
@@ -136,7 +143,6 @@ const Register = () => {
 
             <div>
               <button
-                onClick={handleSignUp}
                 type="submit"
                 className="registerBtn"
                 style={{ backgroundColor: "#00C38B" }}

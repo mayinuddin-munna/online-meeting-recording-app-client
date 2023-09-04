@@ -51,20 +51,22 @@ const Login = () => {
         {/* left div */}
         <div className="registerLeftDiv hidden sm:flex md:block">
           <div className="registerLogoDiv">
-            <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
+            <Link to='/'>
+              <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
+            </Link>
           </div>
-          <p className="registerLeftPara lg:mt-20">
+          <p className="registerLeftPara">
             Unlocking the Power of Virtual Collaboration
           </p>
         </div>
         {/* right div */}
         <div className=" registerRightDiv">
-          <p className="mb-4 text-xl">
+          <p className="registerRightHeading">
             Lets get started
             <br />
             with a few simple steps
           </p>
-          <form>
+          <form onSubmit={handleLogin}>
 
             <div className="mb-4">
 
@@ -80,6 +82,7 @@ const Login = () => {
                 value={email}
                 // {...register("email", { required: true })}
                 className="registerInputBorder"
+                required
               />
 
               {/* {errors.email && (
@@ -101,6 +104,7 @@ const Login = () => {
                 value={password}
                 // {...register("password", { required: true })}
                 className="registerInputBorder"
+                required
               />
 
               {/* {errors.password && (
@@ -116,7 +120,6 @@ const Login = () => {
 
             <div>
               <button
-                onClick={handleLogin}
                 type="submit"
                 className="registerBtn"
                 style={{ backgroundColor: "#00C38B" }}

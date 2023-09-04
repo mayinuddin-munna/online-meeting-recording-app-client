@@ -38,14 +38,14 @@ const ReactTab = () => {
         {tab.map((item) => (
           <TabPanel key={item._id}>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mb-5">
-            <div className="">
+            <div className="px-3 md:px-4 lg:px-8">
               <img className="w-full object-cover rounded-lg" src={item.img} alt="" />
               </div>
               <div className="ms-5 me-5">
-                <h1 className="text-5xl font-bold mt-5 mb-4 md:text-3xl lg:text-5xl text-center">
+                <h1 className="text-3xl font-bold mt-5 mb-4 md:text-4xl lg:text-5xl text-center">
                   {item.title}
                 </h1>
-                <p className="text-left leading-9 text-base lg:text-2xl text-slate-600 ms-5 md:me-5 inline-block p-9">
+                <p className="text-left leading-9 text-base lg:text-2xl text-slate-600 ms-5 md:me-5 inline-block">
                   {item.content}
                 </p>
               </div>

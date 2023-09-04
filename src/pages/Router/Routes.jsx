@@ -28,6 +28,8 @@ import Room from "../Room";
 
 // Room Provider don't touch this code my team ⚠️⚠️⚠️
 import { RoomProvider } from "../../context/RoomContext";
+import Forum from "../forum/Forum";
+import AboutUs from "../aboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -65,10 +67,17 @@ const router = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
+        path: "/forum",
+        element: <Forum />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
         path: "/blog",
         element: <Blog />,
       },
-
       {
         path: "/blog/:id",
         element: <Blog />,
