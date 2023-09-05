@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import UserReviews from "../../Shared/UserReviews/UserReviews";
 
 const variants = {
   open: {
@@ -41,7 +42,6 @@ export const MenuItem = ({ i }) => {
       {/* <div className="icon-placeholder" style={style} /> */}
       <div className="text-placeholder" style={style}>
         <Link to="/dashboard/userReviews">AddReview</Link>
-        {/* <Link to="/dashboard/userReviews">AddReview</Link> */}
       </div>
     </motion.li>
   );

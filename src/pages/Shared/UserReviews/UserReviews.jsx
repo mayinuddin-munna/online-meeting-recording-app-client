@@ -16,7 +16,7 @@ const UserReviews = () => {
         reset();
     };
     return (
-        <div className="min-h-screen container px-10 mx-auto gap-4 flex items-center justify-center flex-col md:flex-row bg-gray-100">
+        <div className="container px-10 mx-auto gap-4 flex items-center justify-center flex-col md:flex-row bg-gray-100">
             <div className='flex-1 rounded shadow-md'>
                 <div>
                     <img src={ReviewsBunner} alt="ReviewsBunne" />

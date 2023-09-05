@@ -5,6 +5,7 @@ import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import "./Dashboard.css";
+import UserReviews from "../../Shared/UserReviews/UserReviews";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -34,13 +35,15 @@ const Dashboard = () => {
   return (
     <section className="dashboard-body">
       <motion.nav
-        style={{
-          // position: "absolute",
-          // top: "0",
-          // left: "0",
-          // bottom: "0",
-          // width: "300px",
-        }}
+        style={
+          {
+            // position: "absolute",
+            // top: "0",
+            // left: "0",
+            // bottom: "0",
+            // width: "300px",
+          }
+        }
         initial={false}
         animate={isOpen ? "open" : "closed"}
         custom={height}
@@ -48,7 +51,12 @@ const Dashboard = () => {
       >
         <motion.div className="background" variants={sidebar} />
         <Navigation />
-        <h1 className="text-5xl font-bold ml-96 text-white m-12">Welcome to Galaxy Meeting.</h1>
+        <div  className="font-bold ml-96 m-12">
+          <h1 className="text-5xl text-white m-12">
+            Welcome to Galaxy Meeting.
+          </h1>
+          <UserReviews />
+        </div>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
     </section>
