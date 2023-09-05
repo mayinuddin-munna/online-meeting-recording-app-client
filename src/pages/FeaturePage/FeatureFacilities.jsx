@@ -37,7 +37,7 @@ const FeatureFacilities = () => {
     //   </div>
     // </section>
 
-    <section className="py-10 bg-white sm:py-16 lg:py-24">
+    <section className="py-10 bg-white sm:py-16 lg:py-24 my-10">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 text-center sm:grid-cols-2 gap-y-8 lg:grid-cols-4 sm:gap-12">
           <div>
@@ -86,6 +86,7 @@ const FeatureFacilities = () => {
           </div>
         </div>
       </div>
+
     </section>
 
   );
