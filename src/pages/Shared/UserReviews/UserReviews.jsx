@@ -3,12 +3,24 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import ReviewsBunner from '../../../assets/reviews/reviews-bunner.jpg'
 import ButtonGradient from '../../../components/ButtonGradient';
+import { getAuth } from 'firebase/auth';
+import { useDispatch, useSelector } from 'react-redux';
+
+// const auth = getAuth(app);
+
 const UserReviews = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const user = useSelector((state) => state.data.user.user);
+    console.log(user)
+  const dispatch = useDispatch();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const selectedPosition = watch('position');
+
     const onSubmit = async (data) => {
+        const { username, email } = user;
+        const postData = {...data, name:username, email}
         try {
-            const response = await axios.post('http://localhost:8000/add-review', data);
-            console.log(response.data);
+            const response = await axios.post('http://localhost:8000/add-review', postData);
+            // console.log(response.data);
 
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -16,7 +28,7 @@ const UserReviews = () => {
         reset();
     };
     return (
-        <div className="min-h-screen container px-10 mx-auto gap-4 flex items-center justify-center flex-col md:flex-row bg-gray-100">
+        <div className="container px-10 mx-auto gap-4 flex items-center justify-center flex-col md:flex-row bg-gray-100">
             <div className='flex-1 rounded shadow-md'>
                 <div>
                     <img src={ReviewsBunner} alt="ReviewsBunne" />
@@ -25,59 +37,49 @@ const UserReviews = () => {
             <div className="bg-white w-full p-6 rounded shadow-md flex-1">
                 {/* <h2 className="text-xl font-semibold mb-4">Leave a Review</h2> */}
                 <form onSubmit={handleSubmit(onSubmit)}>
+                   
+                   
                     <div className="mb-4">
-                        <label htmlFor="userName" className="block text-sm font-medium text-gray-700">
-                            User Name
-                        </label>
-                        <input
-                            type="text"
-                            id="userName"
-                            {...register('name', { required: true })}
-                            className={`mt-1 p-2 w-full rounded-md border ${errors.userName ? 'border-red-500' : 'border-gray-300'
-                                }`}
-                        />
-                        {errors.userName && (
-                            <p className="text-red-500 text-xs mt-1">User Name is required</p>
-                        )}
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-                            className={`mt-1 p-2 w-full rounded-md border ${errors.email ? 'border-red-500' : 'border-gray-300'
-                                }`}
-                        />
-                        {errors.email && (
-                            <p className="text-red-500 text-xs mt-1">Valid email is required</p>
-                        )}
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="position" className="block text-sm font-medium text-gray-700">
-                            Position
-                        </label>
-                        <select
-                            id="position"
-                            {...register('position', { required: true })}
-                            className={`mt-1 p-2 w-full rounded-md border ${errors.position ? 'border-red-500' : 'border-gray-300'
-                                }`}
-                        >
-                            <option value="">Select a Position</option>
-                            <option value="Graphic Designer">Graphic Designer</option>
-                            <option value="Project Manager">Project Manager</option>
-                            <option value="IT Manager">IT Manager</option>
-                            <option value="Sales Representative">Sales Representative</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="Student">Student</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        {errors.position && (
-                            <p className="text-red-500 text-xs mt-1">Position is required</p>
-                        )}
-                    </div>
+        <label htmlFor="position" className="block text-sm font-medium text-gray-700">
+          Position
+        </label>
+        <select
+          id="position"
+          {...register('position', { required: true })}
+          className={`mt-1 p-2 w-full rounded-md border ${errors.position ? 'border-red-500' : 'border-gray-300'
+          }`}
+        >
+          <option value="">Select a Position</option>
+          <option value="Graphic Designer">Graphic Designer</option>
+          <option value="Project Manager">Project Manager</option>
+          <option value="IT Manager">IT Manager</option>
+          <option value="Sales Representative">Sales Representative</option>
+          <option value="Web Developer">Web Developer</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
+        </select>
+        {errors.position && (
+          <p className="text-red-500 text-xs mt-1">Position is required</p>
+        )}
+      </div>
+
+      {selectedPosition === 'Other' && ( // Conditionally render input field if "Other" is selected
+        <div className="mb-4">
+          <label htmlFor="otherPosition" className="block text-sm font-medium text-gray-700">
+            Other Position
+          </label>
+          <input
+            type="text"
+            id="otherPosition"
+            {...register('otherPosition', { required: true })}
+            className={`mt-1 p-2 w-full rounded-md border ${errors.otherPosition ? 'border-red-500' : 'border-gray-300'
+            }`}
+          />
+          {errors.otherPosition && (
+            <p className="text-red-500 text-xs mt-1">Other Position is required</p>
+          )}
+        </div>
+      )}
                     <div className="mb-4">
                         <label htmlFor="feedback" className="block text-sm font-medium text-gray-700">
                             Your Feedback

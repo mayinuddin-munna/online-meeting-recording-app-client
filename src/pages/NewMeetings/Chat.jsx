@@ -15,29 +15,22 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on("users", (users) => {
-      console.log(users);
-
-      const messagesArr = [];
-
-      for (const { userId, username } of users) {
-        const newMessage = { type: "UserStatus", userId, username };
-
-        messagesArr.push(newMessage);
-      }
-
-      setMessages([...messages, ...messagesArr]);
+      const messagesArr = users.map(({ userId, username }) => ({
+        type: "UserStatus",
+        userId,
+        username
+      }));
+      setMessages([...messages, ...messagesArr])
       setUsers(users);
     });
 
-    // first
     socket.on("session", ({ userId, username }) => {
       setUser({ userId, username });
     });
 
     socket.on("user connected", ({ userId, username }) => {
       const newMessage = { type: "UserStatus", userId, username };
-
-      setMessages([...messages, newMessage]);
+      setMessages(prevMessages => [...prevMessages, newMessage]);
     });
 
     socket.on("new message", ({ userId, username, message }) => {
@@ -45,18 +38,26 @@ const Chat = () => {
         type: "message",
         userId: userId,
         username: username,
-        message,
+        message
       };
-      setMessages([...messages, newMessage]);
+      setMessages(prevMessages => [...prevMessages, newMessage]);
     });
+
+    return () => {
+      socket.off("users");
+      socket.off("session");
+      socket.off("user connected");
+      socket.off("new message");
+    };
   }, [messages]);
 
+  
   // login
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
     const userName = form.userName.value;
-    // console.log(userName);
+    console.log(userName);
     setNewUser(userName);
 
     // setUser
@@ -64,39 +65,29 @@ const Chat = () => {
     // socket
     socket.auth = { username: newUser };
     socket.connect();
-  };
+  }
 
-  // message
-  const handleMessage = useCallback(
-    (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const textMessage = form.textMessage.value;
-      // console.log(textMessage);
-      setMessage(textMessage);
+  // message 
+  const handleMessage = useCallback (event => {
+    event.preventDefault();
+    const form = event.target;
+    const textMessage = form.textMessage.value;
+    // console.log(textMessage);
+    setMessage(textMessage);
 
+    socket.emit("new message", textMessage, () => {
+      // After the message is sent successfully, update the state
       const newMessage = {
         type: "message",
         userId: user.userId,
         username: user.username,
-        message: textMessage,
+        message: textMessage
       };
+      setMessages(prevMessages => [...prevMessages, newMessage]);
+      setMessage('');
+    });
 
-      // socket
-      socket.emit("new message", textMessage);
-      // const newMessage = {
-      //   type: "message",
-      //   userId: user.userId,
-      //   username: user.username,
-      //   message: textMessage
-
-      // };
-      setMessages((prevMessages) => [...prevMessages, newMessage]);
-      setMessage("");
-    },
-    [socket, user]
-  );
-
+  }, [user]);
   return (
     <>
       <div className={user.userId ? "hidden" : "block"}>
@@ -107,8 +98,8 @@ const Chat = () => {
           <Player
             autoplay
             loop
-            src="https://lottie.host/615840d2-e7ec-4093-9a2f-19c103614a02/8G8ZWN8QRD.json"
-            style={{ height: "300px", width: "300px" }}
+            src="https://lottie.host/aacf9ba2-bc1c-4ae8-b6b5-d5772d78ac16/K47dHc1US0.json"
+            style={{ height: "400px", width: "400px" }}
           >
             <Controls
               visible={!true}

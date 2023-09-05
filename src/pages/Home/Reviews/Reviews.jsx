@@ -22,20 +22,21 @@ const Reviews = () => {
   // getUserData()
 
   useEffect(() => {
-    fetch("http://localhost:8000/get-review")
+    fetch("http://localhost:8000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
 
   return (
-    <div className="container mx-auto h-full my-24">
-      <div className="mx-auto text-center my-12">
-        <h3 className="text-4xl font-bold uppercase">
-          What People Say About Our Services
+    <div className="container mx-auto my-24">
+      
+        <h3 className="text-6xl text-center font-bold">
+          What People Say
+          <br /> About Our Services
         </h3>
-      </div>
+
       <div>
-        <div className="my-12 mx-auto px-32">
+        <div className="my-12 mx-auto">
           <Swiper
             navigation={true}
             autoplay={{
@@ -48,12 +49,12 @@ const Reviews = () => {
           >
             {reviews?.map((review) => (
               <SwiperSlide key={review._id}>
-                <div className="flex items-center justify-between border-2">
-                  <div className="flex-1 pl-3 md:pl-12 md:py-24">
-                    <p className="text-gray-500 max-w-[400px] text-2xl font-bold">
+                <div className="grid grid-cols-2 items-center justify-between border-2">
+                  <div className="pl-3 md:pl-12 md:py-24">
+                    <p className="text-gray-500 text-2xl font-bold">
                       "{review.details}"
                     </p>
-                    <p className="flex gap-1 my-2 sm:my-4 text-pink-600">
+                    <p className="flex my-2 text-pink-600">
                       <ReactRating
                         initialRating={review.rating}
                         emptySymbol={
@@ -77,7 +78,7 @@ const Reviews = () => {
                     </p>
                     <h5 className="font-semibold text-2xl">{review.name}</h5>
                   </div>
-                  <div className="flex-1 clip-path-reviews h-full flex flex-col justify-center pl-3 md:pl-12 py-[40px] md:py-[136px] lg:py-[152px]">
+                  <div className="clip-path-reviews flex flex-col justify-center pl-3 md:pl-12 py-[150px] md:py-[136px] lg:py-[152px]">
                     <div className="flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-3 text-white md:ml-16 xl:ml-24">
                       <div className="rounded-full my-2 mt-4 h-20 w-20 overflow-hidden">
                         <img

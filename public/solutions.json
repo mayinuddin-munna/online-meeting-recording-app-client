@@ -1,5 +1,12 @@
 [
     {
+      "_id": 0,
+      "title": "Blog",
+      "route": "/blog",
+      "img": "https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60",
+      "content": " Elevate education with Galaxy Meet. Experience interactive online classes, real-time quizzes, and collaborative virtual whiteboards, creating an enriched learning journey. Break geographical barriers, engage students actively, and empower educators to foster deeper connections."
+    },
+    {
       "_id": 1,
       "title": "Education",
       "img": "https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60",
@@ -7,7 +14,7 @@
     },
     {
       "_id": 2,
-      "title": "IT",
+      "title": "Information technology",
       "img": "https://plus.unsplash.com/premium_photo-1661721903096-017523abaa9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEhhcHB5JTIwb25saW5lJTIwbWVldGluZyUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=700&q=60",
       "content": "Streamline technical assistance with Galaxy Meet's seamless tech support features. Our platform empowers you to provide instant solutions by leveraging screen sharing and remote access tools. Effectively resolve IT issues, minimize downtime, and ensure smooth operations across your organization or educational institution.."
     },

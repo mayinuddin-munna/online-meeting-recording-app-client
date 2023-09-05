@@ -5,18 +5,20 @@ import ScrollableFeed from "react-scrollable-feed";
 
 const ChatWindow = ({ user, messages, handleMessage }) => {
   return (
-    <div className="relative mt-10 border-2 border-black rounded-md mx-5 md:mx-20 lg:mx-40">
+    <div className="relative mt-10 border-2 border-black rounded-md mx-5 md:mx-20 lg:mx-40 bg-slate-500">
       <div className="flex items-center sticky-top justify-start gap-5 border-b-[1px] border-black mx-auto">
         <div className="avatar">
           <div className="w-24 rounded-full">
             <img src={img} />
           </div>
         </div>
-        <div className="text-xl lg:text-5xl text-center Caprasimo">
-          Logged in as{" "}
-          <span className="text-2xl lg:text-7xl font-bold">
-            {user.username}
-          </span>
+        <div className="text-xl lg:text-3xl text-center Caprasimo">
+          <p>
+            Logged in as {' '}
+            <span className="text-2xl lg:text-3xl font-bold">
+               {user.username}
+            </span>
+          </p>
         </div>
       </div>
       <ScrollableFeed className="max-h-[calc(100%-2px)] overflow-y-auto">
@@ -34,13 +36,13 @@ const ChatWindow = ({ user, messages, handleMessage }) => {
               <div
                 key={i}
                 className={
-                  message.userId === user.userId
-                    ? "flex ml-auto pb-4 "
-                    : "mr-auto pb-4 flex-row-reverse"
+                 `${ message.userId === user.userId
+                  ? "flex ml-auto pb-4 "
+                  : "mr-auto pb-4 flex-row-reverse"} pt-5`
                 }
               >
-                <div>
-                  <div className="avatar">
+                <div className={message.userId === user.userId ? "flex flex-row-reverse ml-auto pb-4 " : 'flex mr-auto pb-4 '}>
+                  <div >
                     <div className="w-16 rounded-full mr-1">
                       <img src={img} title={message.username} />
                     </div>
@@ -70,14 +72,14 @@ const ChatWindow = ({ user, messages, handleMessage }) => {
             type="text"
             name="textMessage"
             placeholder="Type your message..."
-            className="input input-bordered text-xl w-full py-2"
+            className="rounded-md lg:rounded-r-none text-xl w-full p-2"
             required
           />
         </div>
-        <div className="py-2 px-5 items-center rounded-md flex justify-between cursor-pointer w-[200px] bg-black text-white text-xl  mt-5 md:mt-0">
+        <button className="py-2 px-5 items-center rounded-md flex justify-between w-[200px] bg-black text-white text-xl lg:rounded-l-none mt-5 md:mt-0">
           <input type="submit" value="Send" />
           <BsSendFill />
-        </div>
+        </button>
       </form>
     </div>
   );

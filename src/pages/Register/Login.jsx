@@ -53,9 +53,8 @@ const Login = () => {
           <div className="registerLogoDiv">
             <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
-          <p className="registerLeftPara">
-            Your text here. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit.
+          <p className="registerLeftPara lg:mt-20">
+            Unlocking the Power of Virtual Collaboration
           </p>
         </div>
         {/* right div */}

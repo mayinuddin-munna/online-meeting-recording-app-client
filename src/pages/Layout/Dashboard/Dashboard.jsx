@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { Outlet } from "react-router-dom";
-import styles from './Dashboard.module.css';
+import "./Dashboard.css";
+import UserReviews from "../../Shared/UserReviews/UserReviews";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -33,19 +33,33 @@ const Dashboard = () => {
   const { height } = useDimensions(containerRef);
 
   return (
-    <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-      className={styles.navContainer} // Use the imported CSS Module class
-    >
-      <motion.div className={styles.background} variants={sidebar} />
-      <Navigation />
-      <Outlet />
-      <h1 className={`${styles.title} text-2xl text-white lg:ml-96 ml-24`}>Welcome to Galaxy Meeting!</h1>
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+    <section className="dashboard-body">
+      <motion.nav
+        style={
+          {
+            // position: "absolute",
+            // top: "0",
+            // left: "0",
+            // bottom: "0",
+            // width: "300px",
+          }
+        }
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <motion.div className="background" variants={sidebar} />
+        <Navigation />
+        <div  className="font-bold ml-96 m-12">
+          <h1 className="text-5xl text-white m-12">
+            Welcome to Galaxy Meeting.
+          </h1>
+          <UserReviews />
+        </div>
+        <MenuToggle toggle={() => toggleOpen()} />
+      </motion.nav>
+    </section>
   );
 };
 
