@@ -30,7 +30,7 @@ const Parallax = () => {
                     grid grid-cols-1 lg:grid-cols-3 justify-center items-center text-center
                     p-2 lg:p-8 max-w-md lg:max-w-7xl"
           >
-            <div className="p-4 lg:p-12 sm:border-b-2 lg:border-b-0 lg:border-r-2">
+            <div className="p-4 lg:p-12 border-b-2 lg:border-b-0 lg:border-r-2">
               <h2 className="text-2xl lg:text-6xl font-bold uppercase mb-4">
                 85%
               </h2>
@@ -38,7 +38,7 @@ const Parallax = () => {
                 of users say Galaxy Meeting has improved communication
               </p>
             </div>
-            <div className="p-4 lg:p-12 sm:border-b-2 lg:border-b-0 lg:border-r-2">
+            <div className="p-4 lg:p-12 border-b-2 lg:border-b-0 lg:border-r-2">
               <h2 className="text-2xl lg:text-6xl font-bold uppercase mb-4">
                 100%
               </h2>

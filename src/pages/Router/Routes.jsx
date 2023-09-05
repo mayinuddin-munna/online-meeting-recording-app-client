@@ -28,6 +28,8 @@ import Room from "../Room";
 
 // Room Provider don't touch this code my team ⚠️⚠️⚠️
 import { RoomProvider } from "../../context/RoomContext";
+import Forum from "../forum/Forum";
+import AboutUs from "../aboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +41,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
+
       {
         path: "/email-verification",
         element: <EmailVerification />,
@@ -72,6 +67,14 @@ const router = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
+        path: "/forum",
+        element: <Forum />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
         path: "/blog",
         element: <Blog />,
       },
@@ -80,6 +83,14 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
   {
     path: "/dashboard",

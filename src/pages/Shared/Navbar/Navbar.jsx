@@ -52,7 +52,8 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <SolutionsDropdown />
-      {/* <Link to="/blog">Blog</Link> */}
+      <Link to="/about-us">About us</Link>
+      <Link to="/forum">Forum</Link>
       {user && <Link to="/dashboard">Dashboard</Link>}
       {/* <Link to="/online-meeting">New Meeting</Link> */}
       <Link to="/join">New Meeting</Link>

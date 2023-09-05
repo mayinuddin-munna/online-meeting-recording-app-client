@@ -11,7 +11,7 @@ const Poster = () => {
           Ensure your Business Continuity and Service Level
         </h2>
         <ButtonArrow>
-          <Link>
+          <Link to='/register'>
             Create an account
           </Link>
         </ButtonArrow>
