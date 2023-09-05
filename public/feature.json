@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "1",
+        "name": "Online Meetings",
+        "info": "Conduct online meetings with ease and convenience. Collaborate with team members, clients, or partners from anywhere in the world. Share presentations, discuss projects, and make decisions in real-time.",
+        "image": "https://i.ibb.co/j59dMv7/1-Online-Meetings.png"
+    },
+    {
+        "_id": "2",
+        "name": "Video Conferencing",
+        "info": "Engage in face-to-face video conferences with participants. Seamlessly connect with colleagues and clients through high-quality video calls. Enhance communication and build relationships.",
+        "image": "https://i.ibb.co/qmDrNCS/2-Video-Conferencing.jpg"
+    },
+    {
+        "_id": "3",
+        "name": "Screen Sharing",
+        "info": "Easily share your screen with participants to showcase presentations, documents, or software. Collaborate visually by giving others a view of your screen. Perfect for demos and training sessions.",
+        "image": "https://i.ibb.co/4NtTw1Q/3-Screen-Sharing.jpg"
+    },
+    {
+        "_id": "4",
+        "name": "Record meetings",
+        "info": "Record meetings for later reference or sharing with those who couldn't attend. Capture valuable discussions, presentations, and insights. Maintain an archive of past meetings.",
+        "image": "https://i.ibb.co/Z6qD81B/7-Record-Meetings.png"
+    },
+    {
+        "_id": "5",
+        "name": "Virtual Events",
+        "info": "Host virtual events and conferences with a large number of attendees. Deliver keynote speeches, panel discussions, and networking opportunities in a virtual environment. Reach a global audience.",
+        "image": "https://i.ibb.co/DrL4tzY/5-Virtual-Events.jpg"
+    },
+    {
+        "_id": "6",
+        "name": "Webinars",
+        "info": "Deliver webinars and informational sessions to a global audience. Educate, engage, and interact with participants through live web broadcasts. Share knowledge and expertise.",
+        "image": "https://i.ibb.co/rdYGFXL/4-Online-webinars.png"
+    },
+    {
+        "_id": "7",
+        "name": "Team Chat",
+        "info": "Facilitate team communication through real-time chat discussions. Share ideas, updates, and files instantly with team members. Keep everyone in sync and streamline collaboration.",
+        "image": "https://i.ibb.co/NYt5stT/6-Team-Chat.png"
+    },
+    {
+        "_id": "8",
+        "name": "File Sharing",
+        "info": "Effortlessly share files and documents during meetings and discussions. Upload, share, and access files within the online meeting platform. Collaborate more effectively.",
+        "image": "https://i.ibb.co/YPdNsng/8-File-Sharing.png"
+    }
+]

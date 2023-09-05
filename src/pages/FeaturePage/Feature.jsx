@@ -9,10 +9,9 @@ const Feature = () => {
     const [features, setFeatures] = useState([]);
 
     useEffect(() => {
-        fetch("solutions.json")
+        fetch("feature.json")
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
                 setFeatures(data);
             })
     }, []);
