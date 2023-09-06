@@ -2,10 +2,8 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { ImMenu3, ImCross } from "react-icons/im";
+import {ImCross } from "react-icons/im";
 
-// import { ImMenu3 } from "react-icons/im";
-// import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
@@ -51,11 +49,24 @@ const Navbar = () => {
         Home
       </Link>
       <Link to="/features">Feature</Link>
-      <SolutionsDropdown />
-      {/* <Link to="/blog">Blog</Link> */}
+      {/* <SolutionsDropdown /> */}
       {user && <Link to="/dashboard">Dashboard</Link>}
-      {/* <Link to="/online-meeting">New Meeting</Link> */}
       <Link to="/join">New Meeting</Link>
+      <details className="relative">
+        <summary className="menu-content">Solutions</summary>
+        <ul className="p-2 bg-white shadow-lg rounded sm:w-auto absolute left-0 mt-1 z-10">
+          <li className="menu-item">
+            <Link to="/blog" className="menu-content">
+              Blog
+            </Link>
+          </li>
+          <li className="menu-item">
+          <Link to="/blog" className="menu-content">
+              Forum
+            </Link>
+          </li>
+        </ul>
+      </details>
       {user ? (
         <>
           <Link onClick={handelLogout}>Logout</Link>
@@ -100,7 +111,9 @@ const Navbar = () => {
             </li>
           </ul>
           <ul className="hidden md:block">
-            <li className="nav-items font-semibold text-lg">{navItem}</li>
+            <li className="nav-items font-semibold text-lg flex justify-center items-center">
+              {navItem}
+            </li>
           </ul>
         </div>
       </div>
