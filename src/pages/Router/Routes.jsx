@@ -21,15 +21,14 @@ import Blog from "../Blog/Blog";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserReviews from "../Shared/UserReviews/UserReviews";
-
+import Forum from "../forum/Forum";
+import AboutUs from "../aboutUs/AboutUs";
 // Room route
 import Join from "../Join";
 import Room from "../Room";
 
 // Room Provider don't touch this code my team ⚠️⚠️⚠️
 import { RoomProvider } from "../../context/RoomContext";
-import Forum from "../forum/Forum";
-import AboutUs from "../aboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +40,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
       {
         path: "/email-verification",
         element: <EmailVerification />,
@@ -85,16 +91,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard/userReviews",
@@ -111,7 +113,6 @@ const router = createBrowserRouter([
       </RoomProvider>
     ),
   },
-
   {
     path: "room/:id",
     element: (
