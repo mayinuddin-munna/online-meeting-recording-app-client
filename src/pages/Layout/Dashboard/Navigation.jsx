@@ -24,4 +24,4 @@ export const Navigation = () => (
   </motion.ul>
 );
 
-const itemIds = [0];
+const itemIds = [0, 1];

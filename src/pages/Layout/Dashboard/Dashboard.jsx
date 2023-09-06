@@ -55,7 +55,7 @@ const Dashboard = () => {
           <h1 className="text-5xl text-white m-12">
             Welcome to Galaxy Meeting.
           </h1>
-          <UserReviews />
+          {/* <UserReviews /> */}
         </div>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>

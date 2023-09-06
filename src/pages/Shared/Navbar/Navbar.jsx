@@ -49,7 +49,13 @@ const Navbar = () => {
         Home
       </Link>
       <Link to="/features">Feature</Link>
+<<<<<<< HEAD
       {/* <SolutionsDropdown /> */}
+=======
+      <SolutionsDropdown />
+      <Link to="/about-us">About us</Link>
+      <Link to="/forum">Forum</Link>
+>>>>>>> 4757b52312026d1464325fcd0c2215def80181b7
       {user && <Link to="/dashboard">Dashboard</Link>}
       <Link to="/join">New Meeting</Link>
       <details className="relative">
