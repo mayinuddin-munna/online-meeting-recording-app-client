@@ -7,6 +7,7 @@ import ReactTab from "./ReactTab/ReactTab";
 import NoWorries from "./Noworries/NoWorries";
 import Contact from "../Contact/Contact";
 import UserGrowth from "./UserGrowth/UserGrowth";
+import CompaniesLogo from "./CompaniesLogo/CompaniesLogo";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <NoWorries />
       <UserGrowth />
       <Parallax />
+      <CompaniesLogo />
       <Reviews />
       <Poster />
       <Contact />

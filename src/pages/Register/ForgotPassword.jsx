@@ -59,12 +59,11 @@ const ForgotPassword = () => {
             <img src="https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png" alt="Logo" className="h-16" />
           </div>
           <p className="registerLeftPara">
-            Your text here. Lorem ipsum dolor sit amet consectetur adipisicing
-            elite.
+          Unlocking the Power of Virtual Collaboration
           </p>
         </div>
         <div className="registerRightDiv">
-          <Link to="/">
+          <Link to="/login">
             <IoChevronBackCircleOutline size={36} />
           </Link>
           <p className="mb-4 text-xl pt-10">Forgot password?</p>

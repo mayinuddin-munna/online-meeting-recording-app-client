@@ -3,6 +3,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdAlternateEmail } from 'react-icons/md';
+import portfolio from '../../assets/portfolio.png';
 
 const AboutUs = () => {
 
@@ -37,39 +40,72 @@ const AboutUs = () => {
             <h5 className='font-bold text-center text-2xl md:text-4xl lg:text-5xl my-5 px-5'>
                 The People Behind <br className='md:hidden' /> Galaxy Meet
             </h5>
-            <section>
-                <div className="container mx-auto grid gap-5 grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+            <section className='mt-5'>
+                <div className="container mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {/* Feature 1 */}
-                    {aboutUs.map((about, index) => (
+                    {aboutUs.map((about) => (
                         <div
-                            key={index}
-                            className={`bg-slate-200  py-10 selection:rounded-lg shadow-md flex flex-col md:flex-row justify-center gap-5 rounded-xl ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                            key={about._id}
+                            className={`bg-slate-200 py-10  shadow-md flex flex-col justify-center gap-5 rounded-xl sm:px-2 
+                            px-4 md:px-5 sm:mx-2 mx-4 md:mx-5 w-full`}
                         >
-                            <div className=' flex items-center ' >
+                            <div className=' flex items-center justify-center' >
                                 <img
                                     src={about.image}
                                     alt={about.name}
-                                    className="w-32 h-32  rounded-full "
+                                    className="w-36 h-36  rounded-full"
                                 />
                             </div>
 
                             {/* Content */}
-                            <div className="text-left w-1/2">
-                                <div className=" flex items-center gap-5 justify-center pt-10">
-
-                                    <h3 className="text-4xl font-semibold mb-2 ">
-
-                                        {about.name}</h3>
+                            <div>
+                                <div className=" flex items-center gap-5 justify-center py-5">
+                                    <h3 className="text-3xl md:text-4xl font-bold mb-2">
+                                        {about.name}
+                                    </h3>
                                 </div>
-                                <p className="text-gray-600 text-lg">
+                                <p className="text-lg mb-2">
+                                    <span className="font-semibold pr-2">
+                                        Position:
+                                    </span>
                                     {about.position}
                                 </p>
+                                <p className="text-lg mb-2 flex justify-start gap-2 items-center">
 
-                                <div className="flex flex-col md:flex-row justify-center mx-auto gap-5">
-                                    <Link>
-                                        {about.detail}
+                                    <span className="font-semibold pr-2 flex justify-start gap-2 items-center">
+                                        <MdAlternateEmail /> Email:
+                                    </span>
+
+                                    <span className='text-blue-600'>
+                                        {about.socialMedia.email}
+                                    </span>
+                                </p>
+
+                                <p className="text-lg mb-2">
+                                    <span className="font-semibold pr-2">
+                                        Bio:
+                                    </span>
+                                    {about.detail}
+                                </p>
+
+                                <div className='flex items-center justify-evenly my-10 mb-2'>
+                                    <Link to={about.socialMedia.facebook} target='_blank'>
+                                        <FaFacebook className='text-2xl text-blue-600' />
+                                    </Link>
+
+                                    <Link to={about.socialMedia.github} target='_blank'>
+                                        <FaGithub className='text-3xl' />
+                                    </Link>
+
+                                    <Link to={about.socialMedia.linkedin} target='_blank'>
+                                        <FaLinkedin className='text-2xl text-blue-600' />
+                                    </Link>
+
+                                    <Link to={about.socialMedia.portfolio} target='_blank'>
+                                        <img src={portfolio} className=' w-8' />
                                     </Link>
                                 </div>
+
                             </div>
                         </div>
                     ))}

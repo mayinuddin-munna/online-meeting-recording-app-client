@@ -2,53 +2,57 @@
     {
         "_id": "1",
         "name": "Mayinuddin Munna ",
-        "image": "https://i.ibb.co/XtkrNBq/download.jpg",
+        "image": "https://i.ibb.co/nQBJnD2/formal-png.jpg",
         "position": "Team Leader",
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://www.facebook.com/profile.php?id=100073611545089",
-            "github": "https://github.com/alicejohnson",
+            "github": "https://github.com/munnahosssain",
             "linkedin": "https://www.linkedin.com/in/alicejohnson",
-            "email": "munnaa311@outlook.com"
+            "email": "munnaa311@outlook.com",
+            "portfolio": "https://www.facebook.com/profile.php?id=100073611545089"
         }
     },
     {
         "_id": "2",
         "name": "Ulfath Ara Islam",
-        "image": "https://i.ibb.co/nqyB16Z/spyxfamily-part-2-2000x1270.jpg",
+        "image": "https://i.ibb.co/kJyHy0b/profile-img.jpg",
         "position": "Team Member",
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
-            "facebook": " https://www.facebook.com/sahid.ali.3597",
-            "github": "https://github.com/bobsmith",
+            "facebook": "https://www.facebook.com/sahid.ali.3597",
+            "github": "https://github.com/UlfathAraIslam",
             "linkedin": "https://www.linkedin.com/in/bobsmith",
-            "email": "mouliajsahid@gmail.com"
+            "email": "mouliajsahid@gmail.com",
+            "portfolio": "https://www.facebook.com/sahid.ali.3597"
         }
     },
     {
         "_id": "3",
         "name": "Md. Asadullah ",
-        "image": "https://i.ibb.co/XtkrNBq/download.jpg",
+        "image": "https://i.ibb.co/DRzjBm9/260458321-106299495218990-4684583336044264276-n-1-50.jpg",
         "position": "Team Member",
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://www.facebook.com/asadullah.hm1",
-            "github": "https://github.com/charliebrown",
+            "github": "https://github.com/asad2002web",
             "linkedin": "https://www.linkedin.com/in/charliebrown",
-            "email": " asadullahgalib23@gmail.com"
+            "email": " asadullahgalib23@gmail.com",
+            "portfolio": "https://www.facebook.com/asadullah.hm1"
         }
     },
     {
         "_id": "4",
         "name": "Md Abu Jar Gifary Doha ",
-        "image": "https://i.ibb.co/XtkrNBq/download.jpg",
+        "image": "https://drive.google.com/file/d/1gy2-Ma7Zk1OpZEO55k6z9FZUn08jLKi6/view?usp=sharing",
         "position": "Team Member",
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://www.facebook.com/abujargifarydoha/",
-            "github": "https://github.com/davidlee",
+            "github": "https://github.com/Doha0",
             "linkedin": "https://www.linkedin.com/in/davidlee",
-            "email": "mdabujargifarydoha@gmail.com"
+            "email": "mdabujargifarydoha@gmail.com",
+            "portfolio": "https://www.facebook.com/abujargifarydoha/"
         }
     },
     {
@@ -59,9 +63,10 @@
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://www.facebook.com/muhammadarifin.24",
-            "github": "https://github.com/evewilson",
+            "github": "https://github.com/Md-arefin",
             "linkedin": "https://www.linkedin.com/in/evewilson",
-            "email": "ansariarefin617@gmail.com"
+            "email": "ansariarefin617@gmail.com",
+            "portfolio": "https://portfolio-c1106.web.app"
         }
     },
     {
@@ -72,9 +77,10 @@
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://facebook.com/of.webdev",
-            "github": "https://github.com/frankdavis",
+            "github": "https://github.com/ofwebdev",
             "linkedin": "https://www.linkedin.com/in/frankdavis",
-            "email": "of.webdev@gmail.com"
+            "email": "of.webdev@gmail.com",
+            "portfolio": "https://facebook.com/of.webdev"
         }
     }
 ]
