@@ -6,7 +6,7 @@ const FeatureDetails = ({ features, index }) => {
     console.log(index);
 
     return (
-        <section className="sm:py-20 lg:py-36">
+        <section className="sm:py-16 lg:py-32">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="grid justify-center items-center md:grid-cols-2 md:gap-x-20 gap-y-10">
                     <div>
