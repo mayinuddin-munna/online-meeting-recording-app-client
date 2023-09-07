@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
 
@@ -24,7 +25,7 @@ const Register = () => {
           .then(() => {
             const userData = { email: email, username: username }
 
-            fetch('https://silver-sport-server.vercel.app/users', {
+            fetch('https://galaxy-meeting.vercel.app/add-users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"
@@ -150,6 +151,7 @@ const Register = () => {
                 Sign Up
               </button>
             </div>
+            <SocialLogin></SocialLogin>
 
             <div className="mt-10">
               <p>By signing up, you agree to our Terms of Service.</p>
