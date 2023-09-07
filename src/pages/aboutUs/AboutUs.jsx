@@ -37,7 +37,7 @@ const AboutUs = () => {
                 </Player>
             </div>
 
-            <h5 className='font-bold text-center text-2xl md:text-4xl lg:text-5xl my-5 px-5'>
+            <h5 className='font-bold text-center text-2xl md:text-4xl lg:text-5xl mb-16 px-5'>
                 The People Behind <br className='md:hidden' /> Galaxy Meet
             </h5>
             <section className='mt-5'>

@@ -28,7 +28,7 @@ import Room from "../Room";
 
 // Room Provider don't touch this code my team ⚠️⚠️⚠️
 import { RoomProvider } from "../../context/RoomContext";
-import Forum from "../forum/Forum";
+import CommunityPage from "../communityPage/CommunityPage";
 import AboutUs from "../aboutUs/AboutUs";
 
 const router = createBrowserRouter([
@@ -63,8 +63,8 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/forum",
-        element: <Forum />,
+        path: "/community",
+        element: <CommunityPage /> ,
       },
       {
         path: "/about-us",

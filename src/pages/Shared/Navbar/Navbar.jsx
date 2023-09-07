@@ -52,11 +52,11 @@ const Navbar = () => {
       </Link>
       <Link to="/features">Feature</Link>
       <SolutionsDropdown />
+      <Link to="/community">Community</Link>
       <Link to="/about-us">About us</Link>
-      <Link to="/forum">Forum</Link>
+      <Link to="/join">New Meeting</Link>
       {user && <Link to="/dashboard">Dashboard</Link>}
       {/* <Link to="/online-meeting">New Meeting</Link> */}
-      <Link to="/join">New Meeting</Link>
       {user ? (
         <>
           <Link onClick={handelLogout}>Logout</Link>

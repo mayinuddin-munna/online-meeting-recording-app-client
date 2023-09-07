@@ -8,9 +8,9 @@
         "socialMedia": {
             "facebook": "https://www.facebook.com/profile.php?id=100073611545089",
             "github": "https://github.com/munnahosssain",
-            "linkedin": "https://www.linkedin.com/in/alicejohnson",
+            "linkedin": "https://www.linkedin.com/in/mayinuddin-munna-b8b9541a1/",
             "email": "munnaa311@outlook.com",
-            "portfolio": "https://www.facebook.com/profile.php?id=100073611545089"
+            "portfolio": "https://mayinuddin-munna.web.app/home"
         }
     },
     {
@@ -22,9 +22,9 @@
         "socialMedia": {
             "facebook": "https://www.facebook.com/sahid.ali.3597",
             "github": "https://github.com/UlfathAraIslam",
-            "linkedin": "https://www.linkedin.com/in/bobsmith",
+            "linkedin": "https://www.linkedin.com/in/ulfath-ara-islam/",
             "email": "mouliajsahid@gmail.com",
-            "portfolio": "https://www.facebook.com/sahid.ali.3597"
+            "portfolio": "https://ulfath-ara-islam.netlify.app/"
         }
     },
     {
@@ -36,23 +36,23 @@
         "socialMedia": {
             "facebook": "https://www.facebook.com/asadullah.hm1",
             "github": "https://github.com/asad2002web",
-            "linkedin": "https://www.linkedin.com/in/charliebrown",
+            "linkedin": "https://www.linkedin.com/in/asad2002web/",
             "email": " asadullahgalib23@gmail.com",
-            "portfolio": "https://www.facebook.com/asadullah.hm1"
+            "portfolio": "https://asadullah.xyz"
         }
     },
     {
         "_id": "4",
         "name": "Md Abu Jar Gifary Doha ",
-        "image": "https://drive.google.com/file/d/1gy2-Ma7Zk1OpZEO55k6z9FZUn08jLKi6/view?usp=sharing",
+        "image": "https://i.ibb.co/F5X5jK2/Doha.jpg",
         "position": "Team Member",
         "detail": "Passionate MERN developer specializing in crafting remarkable web experiences. From building dynamic front-end interfaces to optimizing back-end performance, I thrive on turning ideas into robust, user-friendly applications. My code is my canvas, and I create digital art that leaves a lasting impression. Let's bring your vision to life together!",
         "socialMedia": {
             "facebook": "https://www.facebook.com/abujargifarydoha/",
             "github": "https://github.com/Doha0",
-            "linkedin": "https://www.linkedin.com/in/davidlee",
+            "linkedin": "https://www.linkedin.com/in/doha0/",
             "email": "mdabujargifarydoha@gmail.com",
-            "portfolio": "https://www.facebook.com/abujargifarydoha/"
+            "portfolio": "https://doha-portfolio.web.app/"
         }
     },
     {
@@ -64,7 +64,7 @@
         "socialMedia": {
             "facebook": "https://www.facebook.com/muhammadarifin.24",
             "github": "https://github.com/Md-arefin",
-            "linkedin": "https://www.linkedin.com/in/evewilson",
+            "linkedin": "https://www.linkedin.com/in/rakibul-ansari-arefin-290aa4231/",
             "email": "ansariarefin617@gmail.com",
             "portfolio": "https://portfolio-c1106.web.app"
         }
@@ -78,7 +78,7 @@
         "socialMedia": {
             "facebook": "https://facebook.com/of.webdev",
             "github": "https://github.com/ofwebdev",
-            "linkedin": "https://www.linkedin.com/in/frankdavis",
+            "linkedin": "https://www.linkedin.com/in/ofwebdev/",
             "email": "of.webdev@gmail.com",
             "portfolio": "https://facebook.com/of.webdev"
         }
