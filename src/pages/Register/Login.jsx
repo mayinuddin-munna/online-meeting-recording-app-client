@@ -5,6 +5,7 @@ import backgroundImage from "../../assets/register-bg.png";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
 
@@ -125,11 +126,7 @@ const Login = () => {
               </button>
             </div>
 
-            <div
-              onClick={handleGoogleSignIn}
-              className="flex justify-center mt-4">
-              <FcGoogle size={40} />
-            </div>
+            <SocialLogin></SocialLogin>
 
             <div className="mt-6">
               <p>By signing up, you agree to our Terms of Service.</p>

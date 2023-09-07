@@ -24,8 +24,9 @@ const SocialLogin = () => {
 
     return (
         <div className="mt-4">
-            <button onClick={handleGoogleSignIn} className="flex flex-row justify-center items-center font-medium
-            px-4 py-3 bg-white rounded-md hover:bg-[#5EC38B] hover:text-white text-black border border-black hover:border-[#5EC38B]">
+            <button onClick={handleGoogleSignIn}
+                style={{ backgroundColor: "#00C38B" }}
+                className="flex flex-row justify-center items-center registerBtn">
                 <FcGoogle size={28}></FcGoogle> <span className='pl-2'>Sign-in with Google</span>
             </button>
         </div>
