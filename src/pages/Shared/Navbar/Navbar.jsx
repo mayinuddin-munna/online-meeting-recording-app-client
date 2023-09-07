@@ -56,7 +56,7 @@ const Navbar = () => {
       <Link to="/forum">Forum</Link>
       {user && <Link to="/dashboard">Dashboard</Link>}
       {/* <Link to="/online-meeting">New Meeting</Link> */}
-      <Link to="/join">New Meeting</Link>
+      <Link to="/meetup">New Meeting</Link>
       {user ? (
         <>
           <Link onClick={handelLogout}>Logout</Link>

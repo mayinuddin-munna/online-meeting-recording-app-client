@@ -29,6 +29,8 @@ import Room from "../Room";
 
 // Room Provider don't touch this code my team ⚠️⚠️⚠️
 import { RoomProvider } from "../../context/RoomContext";
+import MeetingRoom from "../Meetup/MeetingRoom";
+import Meetup from "../Meetup/Meetup";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +92,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/meetup",
+    element: <Meetup />,
+  },
+  {
+    path: "/:name/:room",
+    element: <MeetingRoom />,
+  },
+
   {
     path: "/dashboard",
     element: (
