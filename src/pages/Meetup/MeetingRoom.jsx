@@ -192,7 +192,7 @@ const MeetingRoom = () => {
   };
 
   return (
-    <div className="bg-slate-200 py-9 px-4 flex h-screen md:p-8">
+    <div className="bg-slate-200 py-9 px-4 flex md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">
         <div
           ref={alertbox}
@@ -221,28 +221,24 @@ const MeetingRoom = () => {
             onClick={muteUnmute}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <BsFillMicMuteFill/>
             <i id="audio" className="fa-solid fa-microphone-slash text-xl"></i>
           </div>
           <div
             onClick={VideoControl}
             className=" cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <BsFillCameraVideoOffFill/>
             <i id="video" className="fa-solid fa-video-slash text-xl"></i>
           </div>
           <div
             onClick={invite}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <BiCopy/>
             <i className="fa-solid fa-user-plus text-xl"></i>
           </div>
           <div
             onClick={leave}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
           >
-            <BiSolidPhoneCall/>
             <i className="fa-solid fa-phone text-xl"></i>
           </div>
         </div>

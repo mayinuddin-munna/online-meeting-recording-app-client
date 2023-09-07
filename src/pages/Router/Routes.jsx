@@ -92,16 +92,22 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/meetup",
-    element: <Meetup />,
+    element: (
+      <PrivateRoute>
+        <Meetup />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/:name/:room",
-    element: <MeetingRoom />,
+    element: (
+      <PrivateRoute>
+        <MeetingRoom />
+      </PrivateRoute>
+    ),
   },
-
   {
     path: "/dashboard",
     element: (
@@ -115,23 +121,6 @@ const router = createBrowserRouter([
         element: <UserReviews />,
       },
     ],
-  },
-
-  {
-    path: "join",
-    element: (
-      <RoomProvider>
-        <Join />
-      </RoomProvider>
-    ),
-  },
-  {
-    path: "room/:id",
-    element: (
-      <RoomProvider>
-        <Room />
-      </RoomProvider>
-    ),
   },
 ]);
 
