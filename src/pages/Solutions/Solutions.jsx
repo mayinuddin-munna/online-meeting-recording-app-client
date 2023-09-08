@@ -19,7 +19,6 @@ const Solutions = () => {
     fetch("solutions.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setSolutions(data);
       });
   }, []);

@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../../assets/Logo.png";
-import { FaDribbble, FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import {  FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import { FaTwitter as FaTwitterAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -19,12 +19,12 @@ const Footer = () => {
   }
   return (
     <footer className="bg-gray-800 text-white  pb-5">
-      <div className="container md:text-center mx-auto py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="flex flex-col items-center ">
+      <div className="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-col items-center">
           <div className="mb-4">
             <img src={Logo} alt="Logo" className="w-17 h-16" />
           </div>
-          <div className="flex gap-2 space-x-2 mt-10">
+          <div className="flex gap-2 mb-5 space-x-2 mt-10">
             <Link to="#">
               <FaFacebook className="text-white text-2xl" />
             </Link>
@@ -37,18 +37,15 @@ const Footer = () => {
             <Link to="#">
               <FaGithub className="text-white text-2xl" />
             </Link>
-            <Link to="#">
-              <FaDribbble className="text-white text-2xl" />
-            </Link>
           </div>
         </div>
-        <div className="space-y-4 md:ms-2 lg:ms-32 ">
+        <div className="space-y-4 ms-28 ">
           <p className="font-semibold">Our Team</p>
           <p>FAQ</p>
           <p>Contact</p>
           <p>Reviews</p>
         </div>
-        <div className="flex flex-col md:text-center md:ms-5 md:mt-3 space-y-4 ">
+        <div className="flex flex-col lg:ms-0 ms-28 md:text-center md:mt-3 space-y-4 ">
           <p className="font-semibold text-2xl text-start">Newsletter</p>
           <form onSubmit={handleSubscribe} className="flex">
             <input

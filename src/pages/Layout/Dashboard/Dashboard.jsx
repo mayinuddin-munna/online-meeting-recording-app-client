@@ -1,10 +1,10 @@
+import "./Dashboard.css";
 import React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import "./Dashboard.css";
 import UserReviews from "../../Shared/UserReviews/UserReviews";
 
 const sidebar = {
@@ -35,15 +35,6 @@ const Dashboard = () => {
   return (
     <section className="dashboard-body">
       <motion.nav
-        style={
-          {
-            // position: "absolute",
-            // top: "0",
-            // left: "0",
-            // bottom: "0",
-            // width: "300px",
-          }
-        }
         initial={false}
         animate={isOpen ? "open" : "closed"}
         custom={height}
