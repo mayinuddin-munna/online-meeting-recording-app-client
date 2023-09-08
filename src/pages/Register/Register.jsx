@@ -23,7 +23,7 @@ const Register = () => {
       .then((authUser) => {
         updateUserProfile(username)
           .then(() => {
-            const userData = { email: email, username: username }
+            const userData = { email: email, username: username, role: "user" }
 
             fetch('https://galaxy-meeting.vercel.app/add-users', {
               method: "POST",

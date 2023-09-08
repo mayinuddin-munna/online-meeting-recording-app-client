@@ -3,6 +3,7 @@ const SaveUser = (user) => {
         name: user.displayName,
         email: user.email,
         photo: user.photoURL,
+        role: "user"
     };
 
     fetch("https://galaxy-meeting.vercel.app/add-users", {
