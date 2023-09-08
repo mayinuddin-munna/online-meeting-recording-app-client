@@ -22,7 +22,6 @@ const SolutionsDropdown = () => {
     setIsDropdownOpen(false);
   };
 
-  // Add an onMouseEnter event to the dropdown menu
   const handleDropdownMouseEnter = () => {
     setIsDropdownOpen(true);
   };

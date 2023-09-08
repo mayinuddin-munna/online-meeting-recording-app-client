@@ -9,7 +9,7 @@ import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
 import SolutionsDropdown from "./SolutionsDropdown";
-import { FaBars } from "react-icons/fa6";
+import { FaBars, FaCaretDown } from "react-icons/fa6";
 
 const auth = getAuth(app);
 
@@ -53,22 +53,27 @@ const Navbar = () => {
       <Link to="/community">Community</Link>
       <Link to="/about-us">About us</Link>
       <Link to="/meetup">New Meeting</Link>
+
+      {/* dropdown  */}
+      {/* <div className="relative group">
+        <div className="flex">
+          <button className="rounded-md group-hover:text-red focus:outline-none">
+            Solutions
+          </button>
+          <p className="mt-1">
+            <FaCaretDown />{" "}
+          </p>
+        </div>
+        <div className="absolute hidden bg-white sm:w-auto text-gray-700 group-hover:block z-10 mt-2 p-2 space-y-1 rounded-lg shadow-lg">
+          <Link to="/blog" className="block px-4 py-2 hover:bg-blue-100">
+            Blog
+          </Link>
+          <Link to="/solutions2" className="block px-4 py-2 hover:bg-blue-100">
+            Solution 2
+          </Link>
+        </div>
+      </div> */}
       {user && <Link to="/dashboard">Dashboard</Link>}
-      {/* <details className="relative">
-        <summary className="menu-content">Solutions</summary>
-        <ul className="p-2 bg-white shadow-lg rounded sm:w-auto absolute left-0 mt-1 z-10">
-          <li className="menu-item">
-            <Link to="/blog" className="menu-content">
-              Blog
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/blog" className="menu-content">
-              Forum
-            </Link>
-          </li>
-        </ul>
-      </details> */}
       {user ? (
         <>
           <Link onClick={handelLogout}>Logout</Link>
@@ -89,7 +94,7 @@ const Navbar = () => {
     <div
       className={`${
         isSticky
-          ? " backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
+          ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
       } transition duration-300 ease-in-out z-10}
       style={{ transition: "all 0.3s ease" }`}
