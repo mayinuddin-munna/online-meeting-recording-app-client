@@ -1,46 +1,44 @@
 [
-    {
-      "_id": 1,
-      "title": "Education",
-      
-      "img": "https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60",
-      "content": " Elevate education with Galaxy Meet. Experience interactive online classes, real-time quizzes, and collaborative virtual whiteboards, creating an enriched learning journey. Break geographical barriers, engage students actively, and empower educators to foster deeper connections."
-    },
-    {
-      "_id": 2,
-      "title": "Information technology",
-      "img": "https://plus.unsplash.com/premium_photo-1661721903096-017523abaa9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEhhcHB5JTIwb25saW5lJTIwbWVldGluZyUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=700&q=60",
-      "content": "Streamline technical assistance with Galaxy Meet's seamless tech support features. Our platform empowers you to provide instant solutions by leveraging screen sharing and remote access tools. Effectively resolve IT issues, minimize downtime, and ensure smooth operations across your organization or educational institution.."
-    },
-    {
-      "_id": 3,
-      "title": "Service",
-      "img": "https://plus.unsplash.com/premium_photo-1661777972788-960595e378ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
-      "content": "Elevate customer satisfaction with Galaxy Meet's customer service capabilities. Provide tailored experiences through personalized video calls and engaging product demos. By addressing issues face-to-face, you can foster stronger connections with your customers and ensure their needs are met effectively."
-    },
-    {
-      "_id": 4,
-      "title": "Sales",
-      "img": "https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "content": "Transform your sales strategy with Galaxy Meet. Display your products and services virtually, offering in-depth demos that leave a lasting impression. Accelerate deal closures by engaging potential customers through real-time presentations. With Galaxy Meet, you can connect, captivate, and convert like never before."
-    },
-    {
-      "_id": 5,
-      "title": "Marketing",
-      "img": "https://media.istockphoto.com/id/1335043984/photo/young-woman-using-a-headset-and-laptop-at-home-office.webp?b=1&s=170667a&w=0&k=20&c=9LGbkofh4F3iflnVkq-tpTvxTtWVr448x7VMiex3xdI=",
-      "content": "Ignite innovation in your marketing endeavors with Galaxy Meet. Facilitate dynamic teamwork by seamlessly sharing marketing materials, brainstorming ideas during online meetings. Elevate your campaigns with real-time collaboration, ensuring that your marketing efforts are fueled by collective creativity and expertise."
-    },
-    {
-      "_id": 6,
-      "title": "Healthcare",
-      "img": "https://plus.unsplash.com/premium_photo-1661580561759-81f0cc557f42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b25saW5lJTIwbWVldGluZyUyMGhlYWx0aGNhcmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
-      "content": "Revolutionize healthcare delivery with Galaxy Meet. Enable secure medicine consultations, seamlessly share medical reports, and extend professional medical guidance remotely. By leveraging our platform, you enhance healthcare access, ensuring patients receive the care they need regardless of location."
-    },
-    {
-      "_id": 7,
-      "title": "Finance",
-      "img": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b25saW5lJTIwbWVldGluZyUyMHNlY3VyZSUyMGZpbmFuY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
-      "content": "Elevate financial conversations with Galaxy Meet's security features. Guarantee data privacy through secure virtual meetings, confidential document sharing, and encrypted communication. Whether discussing sensitive matters, our platform ensures the highest level of security for your financial discussions."
-    }
-  ]
-  
+  {
+    "_id": 1,
+    "title": "Education",
+    "img": "https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60",
+    "content": " Elevate education with Galaxy Meet. Experience interactive online classes, real-time quizzes, and collaborative virtual whiteboards, creating an enriched learning journey. Break geographical barriers, engage students actively, and empower educators to foster deeper connections."
+  },
+  {
+    "_id": 2,
+    "title": "Information technology",
+    "img": "https://plus.unsplash.com/premium_photo-1661721903096-017523abaa9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEhhcHB5JTIwb25saW5lJTIwbWVldGluZyUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=700&q=60",
+    "content": "Streamline technical assistance with Galaxy Meet's seamless tech support features. Our platform empowers you to provide instant solutions by leveraging screen sharing and remote access tools. Effectively resolve IT issues, minimize downtime, and ensure smooth operations across your organization or educational institution.."
+  },
+  {
+    "_id": 3,
+    "title": "Service",
+    "img": "https://plus.unsplash.com/premium_photo-1661777972788-960595e378ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
+    "content": "Elevate customer satisfaction with Galaxy Meet's customer service capabilities. Provide tailored experiences through personalized video calls and engaging product demos. By addressing issues face-to-face, you can foster stronger connections with your customers and ensure their needs are met effectively."
+  },
+  {
+    "_id": 4,
+    "title": "Sales",
+    "img": "https://images.pexels.com/photos/4226256/pexels-photo-4226256.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "content": "Transform your sales strategy with Galaxy Meet. Display your products and services virtually, offering in-depth demos that leave a lasting impression. Accelerate deal closures by engaging potential customers through real-time presentations. With Galaxy Meet, you can connect, captivate, and convert like never before."
+  },
+  {
+    "_id": 5,
+    "title": "Marketing",
+    "img": "https://media.istockphoto.com/id/1335043984/photo/young-woman-using-a-headset-and-laptop-at-home-office.webp?b=1&s=170667a&w=0&k=20&c=9LGbkofh4F3iflnVkq-tpTvxTtWVr448x7VMiex3xdI=",
+    "content": "Ignite innovation in your marketing endeavors with Galaxy Meet. Facilitate dynamic teamwork by seamlessly sharing marketing materials, brainstorming ideas during online meetings. Elevate your campaigns with real-time collaboration, ensuring that your marketing efforts are fueled by collective creativity and expertise."
+  },
+  {
+    "_id": 6,
+    "title": "Healthcare",
+    "img": "https://plus.unsplash.com/premium_photo-1661580561759-81f0cc557f42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b25saW5lJTIwbWVldGluZyUyMGhlYWx0aGNhcmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
+    "content": "Revolutionize healthcare delivery with Galaxy Meet. Enable secure medicine consultations, seamlessly share medical reports, and extend professional medical guidance remotely. By leveraging our platform, you enhance healthcare access, ensuring patients receive the care they need regardless of location."
+  },
+  {
+    "_id": 7,
+    "title": "Finance",
+    "img": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b25saW5lJTIwbWVldGluZyUyMHNlY3VyZSUyMGZpbmFuY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
+    "content": "Elevate financial conversations with Galaxy Meet's security features. Guarantee data privacy through secure virtual meetings, confidential document sharing, and encrypted communication. Whether discussing sensitive matters, our platform ensures the highest level of security for your financial discussions."
+  }
+]

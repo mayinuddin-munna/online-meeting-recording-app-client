@@ -6,6 +6,7 @@ import router from "./pages/Router/Routes.jsx";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import AuthProvider from "./providers/AuthProvider";
+import reportWebVitals from "./pages/Meetup/reportWebVitals";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -14,3 +15,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </AuthProvider>
   </Provider>
 );
+
+reportWebVitals();

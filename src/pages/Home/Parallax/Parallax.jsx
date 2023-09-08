@@ -10,10 +10,10 @@ const Parallax = () => {
       }}
     >
       <div
-        className="py-12 lg:py-72 px-12 lg:px-36"
+        className="py-12 lg:py-72 px-12 lg:px-36 "
         style={{
           backgroundImage:
-            "linear-gradient(to right,  rgba(16, 185, 129, 0.7), rgba(6 ,182, 212, 0.7), rgba(45, 212, 191, 0.7)",
+            "linear-gradient(to right,  rgba(96, 165, 250, .8), rgba(34 ,211, 238, .8), rgba(94, 234, 212, .8)",
         }}
       >
         <div>
