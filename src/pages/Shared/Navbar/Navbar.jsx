@@ -57,7 +57,7 @@ const Navbar = () => {
       {/* dropdown  */}
       <div className="relative group">
         <div className="flex">
-        <button className="group-hover:text-red focus:outline-none">Solutions</button>
+        <button className="rounded-md group-hover:text-red focus:outline-none">Solutions</button>
         <p className="mt-1">
           <FaCaretDown />{" "}
         </p>
