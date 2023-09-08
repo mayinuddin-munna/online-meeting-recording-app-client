@@ -12,7 +12,7 @@ const Reviews = () => {
 
   // async function getUserData() {
   //   try {
-  //     const response = await axios.get("https://galaxy-meeting.vercel.app/get-review");
+  //     const response = await axios.get("https://galaxy-meeting.onrender.com/get-review");
   //     setReviews(response.data);
   //   }
   //   catch (error) {
@@ -22,7 +22,7 @@ const Reviews = () => {
   // getUserData()
 
   useEffect(() => {
-    fetch("https://galaxy-meeting.vercel.app/get-review")
+    fetch("https://galaxy-meeting.onrender.com/get-review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
