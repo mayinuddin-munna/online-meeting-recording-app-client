@@ -55,7 +55,6 @@ const AuthProvider = ({ children }) => {
             email: authUser.email,
           });
           const token = response.data.token;
-          console.log(token);
           localStorage.setItem("access-token", token);
 
           dispatch(

@@ -1,11 +1,4 @@
-import { Children } from "react";
-import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
 import Home from "../Home/Home";
@@ -21,14 +14,7 @@ import Blog from "../Blog/Blog";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserReviews from "../Shared/UserReviews/UserReviews";
-import Forum from "../forum/Forum";
 import AboutUs from "../aboutUs/AboutUs";
-// Room route
-import Join from "../Join";
-import Room from "../Room";
-
-// Room Provider don't touch this code my team ⚠️⚠️⚠️
-import { RoomProvider } from "../../context/RoomContext";
 import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";

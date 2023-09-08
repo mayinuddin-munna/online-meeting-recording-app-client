@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
 import Peer from "peerjs";
 import io from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
-import { BsFillCameraVideoOffFill, BsFillMicMuteFill } from "react-icons/bs";
-import { BiCopy, BiSolidPhoneCall } from "react-icons/bi";
+import React, { useEffect, useRef, useState } from "react";
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
