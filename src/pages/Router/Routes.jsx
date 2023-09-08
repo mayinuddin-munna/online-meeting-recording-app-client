@@ -31,6 +31,7 @@ import Room from "../Room";
 import { RoomProvider } from "../../context/RoomContext";
 import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
+import CommunityPage from "../communityPage/CommunityPage";
 
 const router = createBrowserRouter([
   {
@@ -41,14 +42,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
       {
         path: "/email-verification",
@@ -71,12 +64,8 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/forget-password",
-        element: <ForgotPassword />,
-      },
-      {
-        path: "/forum",
-        element: <Forum />,
+        path: "/community",
+        element: <CommunityPage />,
       },
       {
         path: "/about-us",
@@ -91,6 +80,18 @@ const router = createBrowserRouter([
         element: <Blog />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgotPassword />,
   },
   {
     path: "/meetup",

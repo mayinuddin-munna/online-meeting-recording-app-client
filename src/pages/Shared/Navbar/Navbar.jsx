@@ -52,8 +52,9 @@ console.log(user);
       </Link>
       <Link to="/features">Feature</Link>
       <SolutionsDropdown />
+      <Link to="/community">Community</Link>
       <Link to="/about-us">About us</Link>
-      <Link to="/forum">Forum</Link>
+      {/* <Link to="/join">New Meeting</Link> */}
       {user && <Link to="/dashboard">Dashboard</Link>}
       <Link to="/meetup">New Meeting</Link>
       {user ? (
