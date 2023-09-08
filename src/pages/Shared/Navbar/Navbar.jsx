@@ -20,7 +20,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
-
+console.log(user);
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
@@ -55,7 +55,6 @@ const Navbar = () => {
       <Link to="/about-us">About us</Link>
       <Link to="/forum">Forum</Link>
       {user && <Link to="/dashboard">Dashboard</Link>}
-      {/* <Link to="/online-meeting">New Meeting</Link> */}
       <Link to="/meetup">New Meeting</Link>
       {user ? (
         <>

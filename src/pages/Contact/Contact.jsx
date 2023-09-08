@@ -7,8 +7,6 @@ import Swal from "sweetalert2";
 const Contact = () => {
   const form = useRef(null);
 
-  console.log(import.meta.env.VITE_PUBLIC_KEY);
-
   const sendEmail = (e) => {
     e.preventDefault();
 

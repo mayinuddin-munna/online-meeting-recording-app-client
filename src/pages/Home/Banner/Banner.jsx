@@ -51,7 +51,6 @@ const Banner = () => {
                   </svg>
                 </Link>
               </div>
-
               <div className="relative inline-flex w-full max-w-xl lg:px-8 xl:w-5/12">
                 <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                   <div className="grid gap-4 justify-center items-center mb-1 sm:mb-2">

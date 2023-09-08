@@ -51,9 +51,12 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
       if (authUser) {
         try {
-          const response = await axios.post('https://galaxy-meeting.vercel.app/jwt', { email: authUser.email });
+          const response = await axios.post("http://localhost:8000/jwt", {
+            email: authUser.email,
+          });
           const token = response.data.token;
-          localStorage.setItem('access-token', token);
+          console.log(token);
+          localStorage.setItem("access-token", token);
 
           dispatch(
             loginUser({
@@ -65,11 +68,11 @@ const AuthProvider = ({ children }) => {
           );
           dispatch(setLoading(false));
         } catch (error) {
-          console.error('Error fetching JWT token:', error);
+          console.error("Error fetching JWT token:", error);
           dispatch(setLoading(false));
         }
       } else {
-        localStorage.removeItem('access-token');
+        localStorage.removeItem("access-token");
         dispatch(setLoading(false));
       }
     });
