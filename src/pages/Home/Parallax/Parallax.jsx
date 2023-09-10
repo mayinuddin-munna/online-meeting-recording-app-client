@@ -1,5 +1,5 @@
-import React from "react";
 import Counter from "./Counter";
+import React, { useState } from "react";
 import parallaxImg from "../../../assets/Parallax/Parallax.png";
 
 const Parallax = () => {
