@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (authUser) => {
       if (authUser) {
         try {
-          const response = await axios.post("http://localhost:8000/jwt", {
+          const response = await axios.post("https://galaxy-meeting.onrender.com/jwt", {
             email: authUser.email,
           });
           const token = response.data.token;

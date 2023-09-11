@@ -1,8 +1,7 @@
+import Swal from "sweetalert2";
 import React, { useContext, useState } from "react";
-// import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/register-bg.png";
-import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
@@ -23,9 +22,9 @@ const Register = () => {
       .then((authUser) => {
         updateUserProfile(username)
           .then(() => {
-            const userData = { email: email, username: username }
+            const userData = { email: email, username: username, role: "user" }
 
-            fetch('https://galaxy-meeting.vercel.app/add-users', {
+            fetch('https://galaxy-meeting.onrender.com/add-users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"

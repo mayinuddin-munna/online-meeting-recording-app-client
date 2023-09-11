@@ -3,9 +3,10 @@ const SaveUser = (user) => {
         name: user.displayName,
         email: user.email,
         photo: user.photoURL,
+        role: "user"
     };
 
-    fetch("https://galaxy-meeting.vercel.app/add-users", {
+    fetch("https://galaxy-meeting.onrender.com/add-users", {
         method: "POST",
         headers: {
             "content-type": "application/json",
