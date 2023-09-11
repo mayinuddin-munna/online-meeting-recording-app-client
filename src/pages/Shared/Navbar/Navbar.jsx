@@ -70,14 +70,14 @@ const Navbar = () => {
         </div>
       </div> */}
       {user && <Link to="/dashboard">Dashboard</Link>}
-      {/* {user && ( */}
-      <Link
-        to="/meetup"
-        className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
-      >
-        New Meeting
-      </Link>
-      {/* )} */}
+      {user && (
+        <Link
+          to="/meetup"
+          className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
+        >
+          New Meeting
+        </Link>
+      )}
       {user ? (
         <Link onClick={handelLogout}>Logout</Link>
       ) : (

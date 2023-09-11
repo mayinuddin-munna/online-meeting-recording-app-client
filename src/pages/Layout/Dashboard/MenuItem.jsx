@@ -23,25 +23,24 @@ const variants = {
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+  const style = { border: `3px solid ${colors[i]} padding:"10px"` };
   return (
     <motion.li
       style={{
         margin: "0",
-        padding: "0",
         listStyle: "none",
         marginBottom: "20px",
-        // display: "flex",
-        // alignItems: "center",
         cursor: "pointer",
       }}
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      {/* <div className="icon-placeholder" style={style} /> */}
       <div className="text-placeholder" style={style}>
-        <Link to="/dashboard/userReviews">AddReview</Link>
+        {/* <Link className="text-5xl text-white m-12" to="/">
+          Home
+        </Link> */}
+        <Link to="/dashboard/userReviews">Home</Link>
       </div>
     </motion.li>
   );
