@@ -18,12 +18,15 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(Logo);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
+      setLogoSrc('https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png');
     } else {
       setIsSticky(false);
+      setLogoSrc(Logo);
     }
   };
 
@@ -73,7 +76,7 @@ const Navbar = () => {
       {/* {user && ( */}
       <Link
         to="/meetup"
-        className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
+        className="w-48 text-center rounded-full hover:bg-[#5EC38B] hover:text-white border shadow"
       >
         New Meeting
       </Link>
@@ -104,7 +107,7 @@ const Navbar = () => {
       >
         <div className="flex items-center">
           <Link to="/">
-            <img className="w-16 ms-5 z-20" src={Logo} alt="Logo" />
+            <img className="w-16 ms-5 z-20" src={logoSrc} alt="Logo" />
           </Link>
         </div>
         <div>
