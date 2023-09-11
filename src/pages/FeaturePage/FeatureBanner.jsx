@@ -17,7 +17,7 @@ const FeatureBanner = () => {
           </p>
           <div className="flex flex-wrap justify-center">
             <Link
-              to="/join"
+              to="/login"
               type="button"
               className="px-8 py-3 m-2 text-lg font-semibold rounded bg-[#1D2E42] text-white hover:bg-[#5EC38B]"
             >

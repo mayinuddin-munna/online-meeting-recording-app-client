@@ -3,7 +3,7 @@ import React from 'react';
 const FeatureDetails = ({ features, index }) => {
 
     const { image, name, info } = features;
-    console.log(index);
+
 
     return (
         <section className="sm:py-16 lg:py-32">
