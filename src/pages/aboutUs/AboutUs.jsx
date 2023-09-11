@@ -12,7 +12,7 @@ const AboutUs = () => {
     const [aboutUs, setAboutUs] = useState([]);
 
     useEffect(() => {
-        fetch("about.json")
+        fetch("http://localhost:8000/aboutUs")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

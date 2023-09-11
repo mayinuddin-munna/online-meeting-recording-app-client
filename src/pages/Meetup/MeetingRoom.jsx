@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
-  // const socket = io('http://localhost:5000/')
+  // const socket = io('http://localhost:8000/')
 
   const { name } = useParams();
   const { room } = useParams();

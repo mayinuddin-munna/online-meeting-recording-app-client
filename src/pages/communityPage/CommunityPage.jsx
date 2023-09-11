@@ -10,7 +10,7 @@ const CommunityPage = () => {
 
 
     useEffect(() => {
-        fetch('community.json')
+        fetch("http://localhost:8000/get-communities")
             .then(res => res.json())
             .then(data => {
                 console.log(data);
