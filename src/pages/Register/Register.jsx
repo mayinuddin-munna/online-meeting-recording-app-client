@@ -12,6 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
 
   const navigate = useNavigate();
 
@@ -20,9 +21,9 @@ const Register = () => {
 
     createUser(email, password)
       .then((authUser) => {
-        updateUserProfile(username)
+        updateUserProfile(username, photoURL)
           .then(() => {
-            const userData = { email: email, username: username, role: "user" }
+            const userData = { email: email, username: username, photo: photoURL, role: "user" }
 
             fetch('https://galaxy-meeting.onrender.com/add-users', {
               method: "POST",
@@ -141,6 +142,22 @@ const Register = () => {
               )} */}
             </div>
 
+            <div className="mb-4">
+              <label className="registerFormLabel">
+                <span className=" mr-2">PhotoURL</span>
+                <span className="registerFormStar">*</span>
+              </label>
+
+              <input
+                onChange={e => setPhotoURL(e.target.value)}
+                type="text"
+                name="photoURL"
+                value={photoURL}
+                className="registerInputBorder"
+                required
+              />
+            </div>
+
             <div>
               <button
                 type="submit"
@@ -150,7 +167,7 @@ const Register = () => {
                 Sign Up
               </button>
             </div>
-            <SocialLogin></SocialLogin>
+            {/* <SocialLogin></SocialLogin> */}
 
             <div className="mt-10">
               <p>By signing up, you agree to our Terms of Service.</p>
