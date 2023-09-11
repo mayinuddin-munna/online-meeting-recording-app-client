@@ -36,7 +36,7 @@ const CommunityPage = () => {
             <div className='m-10 lg:w-3/4 mx-auto px-4'>
                 {
                     contents.map(content =>
-                        <div key={content._id} className='w-full my-10 bg-zinc-200 border-2 rounded-lg p-5 lg:px-16 lg:py-10'>
+                        <div key={content._id} className='w-full my-10 bg-zinc-100 rounded-lg p-5 lg:px-16 lg:py-10'>
                             <div className='flex flex-col gap-5 md:flex-row items-center justify-between'>
                                 <div className='flex gap-5 items-center'>
                                     <div>
