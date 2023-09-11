@@ -190,7 +190,7 @@ const MeetingRoom = () => {
   };
 
   return (
-    <div className="bg-slate-200 py-9 px-4 flex md:p-8">
+    <div className="bg-slate-200 px-4 flex h-screen md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">
         <div
           ref={alertbox}

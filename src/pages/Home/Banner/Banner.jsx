@@ -26,7 +26,7 @@ const Banner = () => {
           <div className="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-white lg:text-5xl sm:leading-none">
+                <h2 className="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-white lg:text-[54px] sm:leading-none">
                   Galaxy Meet <br className="hidden md:block" />
                   without a Hitch
                 </h2>
@@ -52,19 +52,19 @@ const Banner = () => {
                 </Link>
               </div>
               <div className="relative inline-flex w-full max-w-xl lg:px-8 xl:w-5/12">
-                <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/30 rounded shadow-2xl p-7 sm:p-10">
                   <div className="grid gap-4 justify-center items-center mb-1 sm:mb-2">
                     <input
                       type="text"
                       placeholder="Enter meeting link"
-                      className="px-8 py-3 text-gray-200 border rounded-sm border-black"
+                      className="px-8 py-3 text-gray-200 rounded-sm"
                     ></input>
                     <div style={{ position: 'relative' }}>
                       <select
                         className="px-6 py-3 text-lg rounded-sm bg-[#5EC38B] text-white appearance-none w-[250px] cursor-pointer"
                       >
-                        <option>Join with a link</option>
                         <option>Create a new meeting</option>
+                        <option>Join with a link</option>
                       </select>
                       <FaArrowAltCircleDown
                         style={{

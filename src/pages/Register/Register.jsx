@@ -24,7 +24,7 @@ const Register = () => {
           .then(() => {
             const userData = { email: email, username: username, role: "user" }
 
-            fetch('https://galaxy-meeting.vercel.app/add-users', {
+            fetch('https://galaxy-meeting.onrender.com/add-users', {
               method: "POST",
               headers: {
                 "content-type": "application/json"
