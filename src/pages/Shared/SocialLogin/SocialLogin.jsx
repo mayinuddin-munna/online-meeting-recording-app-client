@@ -1,9 +1,9 @@
-import React from "react";
-import { useContext } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { AuthContext } from "../../../providers/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
-import SaveUser from "./SaveUser";
+import React from 'react';
+import { useContext } from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { AuthContext } from '../../../providers/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
+import SaveUser from './SaveUser';
 
 const SocialLogin = () => {
   const { googleSignIn } = useContext(AuthContext);

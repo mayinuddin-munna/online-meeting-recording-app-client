@@ -79,7 +79,16 @@ const Navbar = () => {
         </Link>
       )}
       {user ? (
-        <Link onClick={handelLogout}>Logout</Link>
+        <>
+          {user &&
+            <div>
+              <div className="w-10 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+                <img src={user.photoURL} />
+              </div>
+            </div>
+          }
+          <Link onClick={handelLogout}>Logout</Link>
+        </>
       ) : (
         <Link to="/login">
           <button className="p-2 w-32 rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
@@ -92,11 +101,10 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${
-        isSticky
-          ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
-          : "bg-transparent -top-24"
-      } transition duration-300 ease-in-out z-10}
+      className={`${isSticky
+        ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
+        : "bg-transparent -top-24"
+        } transition duration-300 ease-in-out z-10}
       style={{ transition: "all 0.3s ease" }`}
     >
       <div
