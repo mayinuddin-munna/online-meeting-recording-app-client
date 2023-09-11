@@ -4,6 +4,7 @@ import ChatWindow from "./ChatWindow/ChatWindow";
 import { io } from "socket.io-client";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import moment from "moment/moment";
 
 const socket = io("http://localhost:8000");
 
@@ -23,13 +24,11 @@ const Chat = () => {
 
     // setUser
     setUserDefault(user.username);
-    
+
     // socket
     socket.auth = { username: user.username };
     socket.connect();
   }, [userDefault])
-
-  console.log(userDefault);
 
   useEffect(() => {
     socket.on("users", (users) => {
@@ -51,12 +50,14 @@ const Chat = () => {
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
 
-    socket.on("new message", ({ userId, username, message }) => {
+    socket.on("new message", ({ userId, username, message, time }) => {
+      const currentTime = moment().locale("en").format("hh:mm A");
       const newMessage = {
         type: "message",
         userId: userId,
         username: username,
-        message
+        message,
+        time :currentTime
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
@@ -77,30 +78,35 @@ const Chat = () => {
     event.preventDefault();
     const form = event.target;
     const textMessage = form.textMessage.value;
-    console.log(textMessage);
+    // console.log(textMessage);
     setMessage(textMessage);
 
+
+
     socket.emit("new message", textMessage, () => {
+      
+      console.log('currentTime', currentTime);
       // After the message is sent successfully, update the state
       const newMessage = {
         type: "message",
         userId: userDefault.userId,
         username: userDefault.username,
-        message: textMessage
+        message: textMessage,
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
-      setMessage('');
+      // setMessage('');
     });
 
   }, [userDefault]);
   return (
     <>
-        <ChatWindow
-         userDefault={userDefault}
-          message={message}
-          messages={messages}
-          handleMessage={handleMessage}
-        />
+      <ChatWindow
+        userDefault={userDefault}
+        message={message}
+        messages={messages}
+        handleMessage={handleMessage}
+        photoURL={user.photoURL}
+      />
     </>
   );
 };

@@ -220,7 +220,7 @@ const MeetingRoom = () => {
             </div>
           </div>
          { 
-            openChat &&  <Chat />
+            openChat ? <Chat /> : ""
          }
         </div>
         <div className="footer flex container  justify-center rounded mx-auto gap-6 bg-gray-300 p-3 md:gap-8   ">

@@ -3,10 +3,12 @@ import img from "../../../assets/Luffy.png";
 import { BsSendFill } from "react-icons/bs";
 import ScrollableFeed from "react-scrollable-feed";
 
-const ChatWindow = ({ userDefault, messages, handleMessage }) => {
+const ChatWindow = ({ userDefault, messages, handleMessage, photoURL }) => {
+
+  console.log(messages);
 
   return (
-    <div className="relative border-2 border-black rounded-md  bg-slate-500">
+    <div className="relative md:mb-5 rounded-md  bg-slate-500">
       <ScrollableFeed className="max-h-[calc(100%-2px)] overflow-y-auto">
         <div className="h-[60vh] overflow-auto relative text-center mt-5 flex flex-col p-4">
           {messages.map((message, i) => {
@@ -22,27 +24,32 @@ const ChatWindow = ({ userDefault, messages, handleMessage }) => {
               <div
                 key={i}
                 className={
-                 `${ message.userId === userDefault.userId
-                  ? "flex ml-auto pb-4 "
-                  : "mr-auto pb-4 flex-row-reverse"} pt-5`
+                  `${message.userId === userDefault.userId
+                    ? "flex ml-auto pb-4 "
+                    : "mr-auto pb-4 flex-row-reverse"} pt-5`
                 }
               >
-                <div className={message.userId === userDefault.userId ? "flex flex-row-reverse ml-auto pb-4 " : 'flex mr-auto pb-4 '}>
-                  <div >
-                    <div className="w-16 rounded-full mr-1">
-                      <img src={img} title={message.username} />
+                <div className="flex flex-col items-center">
+                  <div className={message.userId === userDefault.userId ? "flex flex-row-reverse ml-auto pb-4 " : 'flex mr-auto pb-4 '}>
+                    <div >
+                      <div className="w-16 rounded-full mr-1">
+                        <img src={photoURL} className='rounded-full' title={message.username} />
+                      </div>
+                    </div>
+                    {/* msg */}
+                    <div className="flex-shrink-1 bg-slate-400 rounded py-2 px-3 ml-3 text-black">
+                      <div className="font-bold mb-1">
+                        {message.userId === userDefault.userId
+                          ? "You"
+                          : message.username}
+                      </div>
+                      {message.message}
                     </div>
                   </div>
-                  {/* msg */}
-                  <div className="flex-shrink-1 bg-slate-400 rounded py-2 px-3 ml-3 text-black">
-                    <div className="font-bold mb-1">
-                      {message.userId === userDefault.userId
-                        ? "You"
-                        : message.username}
-                    </div>
-                    {message.message}
-                  </div>
+
+                  {message.time}
                 </div>
+
               </div>
             );
           })}
@@ -62,7 +69,7 @@ const ChatWindow = ({ userDefault, messages, handleMessage }) => {
             required
           />
         </div>
-        <button  className="py-2 px-5 items-center rounded-md flex justify-between w-[200px] bg-black text-white text-xl lg:rounded-l-none mt-5 md:mt-0">
+        <button className="py-2 px-5 items-center rounded-md flex justify-between w-[200px] bg-black text-white text-xl lg:rounded-l-none mt-5 md:mt-0">
           <input type="submit" className="cursor-pointer" value="Send" />
           <BsSendFill />
         </button>
