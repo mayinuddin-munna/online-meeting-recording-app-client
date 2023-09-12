@@ -18,12 +18,15 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(Logo);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
+      setLogoSrc('https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png');
     } else {
       setIsSticky(false);
+      setLogoSrc(Logo);
     }
   };
 
@@ -112,7 +115,7 @@ const Navbar = () => {
       >
         <div className="flex items-center">
           <Link to="/">
-            <img className="w-16 ms-5 z-20" src={Logo} alt="Logo" />
+            <img className="w-16 ms-5 z-20" src={logoSrc} alt="Logo" />
           </Link>
         </div>
         <div>
