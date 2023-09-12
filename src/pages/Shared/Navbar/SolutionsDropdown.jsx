@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { FaCaretDown } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { FaCaretDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SolutionsDropdown = () => {
   const [solutions, setSolutions] = useState([]);
@@ -22,7 +22,6 @@ const SolutionsDropdown = () => {
     setIsDropdownOpen(false);
   };
 
-  // Add an onMouseEnter event to the dropdown menu
   const handleDropdownMouseEnter = () => {
     setIsDropdownOpen(true);
   };
@@ -33,14 +32,16 @@ const SolutionsDropdown = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className='flex'>
+      <div className="flex">
         <Link
-          to='/solutions'
+          to="/solutions"
           className="px-3 py-2 rounded-md font-medium group-hover:text-red"
         >
           Solutions
         </Link>
-        <p className='mt-5 lg:mt-3 ms-[-16px]'><FaCaretDown /> </p>
+        <p className="mt-5 lg:mt-3 ms-[-16px]">
+          <FaCaretDown />{" "}
+        </p>
       </div>
       {isDropdownOpen && (
         <div

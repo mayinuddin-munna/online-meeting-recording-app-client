@@ -1,6 +1,6 @@
 .user-growth-btn1 {
-    @apply px-8 py-3 text-lg font-semibold rounded-sm bg-[#1D2E42] text-white hover:bg-[#5EC38B];
+  @apply px-8 py-3 text-lg font-semibold rounded-sm bg-[#5EC38B] hover:bg-green-500 text-white;
 }
-.user-growth-btn2{
-    @apply px-8 py-3 text-lg font-semibold border rounded-sm border-black hover:bg-[#5EC38B] hover:border-white hover:text-white;
+.user-growth-btn2 {
+  @apply px-8 py-3 text-lg font-semibold border rounded-sm border-black hover:bg-[#5EC38B] hover:border-white hover:text-white;
 }

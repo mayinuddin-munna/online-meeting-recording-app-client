@@ -19,7 +19,7 @@ const UserReviews = () => {
         const { username, email } = user;
         const postData = {...data, name:username, email}
         try {
-            const response = await axios.post('http://localhost:8000/add-review', postData);
+            const response = await axios.post('https://galaxy-meeting.vercel.app/add-review', postData);
             // console.log(response.data);
 
         } catch (error) {

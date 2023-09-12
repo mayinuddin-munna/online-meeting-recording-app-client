@@ -12,7 +12,7 @@ const Reviews = () => {
 
   // async function getUserData() {
   //   try {
-  //     const response = await axios.get("http://localhost:8000/get-review");
+  //     const response = await axios.get("https://galaxy-meeting.onrender.com/get-review");
   //     setReviews(response.data);
   //   }
   //   catch (error) {
@@ -22,19 +22,17 @@ const Reviews = () => {
   // getUserData()
 
   useEffect(() => {
-    fetch("http://localhost:8000/reviews")
+    fetch("https://galaxy-meeting.onrender.com/get-review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
 
   return (
     <div className="container mx-auto my-24">
-      
-        <h3 className="text-6xl text-center font-bold">
-          What People Say
-          <br /> About Our Services
-        </h3>
-
+      <h3 className="text-2xl md:text-5xl xl:text-5xl text-center font-bold">
+        What People Say
+        <br className="md:hidden" /> About Our Services
+      </h3>
       <div>
         <div className="my-12 mx-auto">
           <Swiper
@@ -49,13 +47,14 @@ const Reviews = () => {
           >
             {reviews?.map((review) => (
               <SwiperSlide key={review._id}>
-                <div className="grid grid-cols-2 items-center justify-between border-2">
-                  <div className="pl-3 md:pl-12 md:py-24">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between border-2">
+                  <div className="md:w-1/2 pl-3 md:pl-12 md:py-24">
                     <p className="text-gray-500 text-2xl font-bold">
-                      "{review.details}"
+                      {review.details}
                     </p>
-                    <p className="flex my-2 text-pink-600">
+                    <p className="flex my-4 text-pink-600">
                       <ReactRating
+                        className="mx-auto md:mx-0"
                         initialRating={review.rating}
                         emptySymbol={
                           <div className="text-gray-300">
@@ -76,10 +75,10 @@ const Reviews = () => {
                         }
                       />
                     </p>
-                    <h5 className="font-semibold text-2xl">{review.name}</h5>
                   </div>
-                  <div className="clip-path-reviews flex flex-col justify-center pl-3 md:pl-12 py-[150px] md:py-[136px] lg:py-[152px]">
-                    <div className="flex flex-col lg:flex-row justify-center items-center gap-1 sm:gap-3 text-white md:ml-16 xl:ml-24">
+                  {/*  */}
+                  <div className="clip-path-reviews flex flex-col justify-center pl-3 md:pl-12 py-[50px] md:py-[136px] lg:py-[152px] my-5 md:my-0 md:w-1/2">
+                    <div className="flex flex-col lg:flex-row justify-center items-center gap-2 sm:gap-3 md:text-white md:ml-16 xl:ml-24">
                       <div className="rounded-full my-2 mt-4 h-20 w-20 overflow-hidden">
                         <img
                           className="w-full h-full object-cover"
@@ -89,8 +88,8 @@ const Reviews = () => {
                       </div>
 
                       <div>
-                        <h2 className="text-xl font-semibold">
-                          Junishi Tsuneoka
+                        <h2 className="text-center md:text-start font-semibold text-2xl">
+                          {review.name}
                         </h2>
                         <p>Marketing Manager</p>
                       </div>

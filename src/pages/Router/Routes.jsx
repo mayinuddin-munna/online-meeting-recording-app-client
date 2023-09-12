@@ -1,11 +1,4 @@
-import { Children } from "react";
-import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Error from "../Shared/Error/Error";
 import Main from "../Layout/Main";
 import Home from "../Home/Home";
@@ -21,13 +14,10 @@ import Blog from "../Blog/Blog";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserReviews from "../Shared/UserReviews/UserReviews";
-
-// Room route
-import Join from "../Join";
-import Room from "../Room";
-
-// Room Provider don't touch this code my team ⚠️⚠️⚠️
-import { RoomProvider } from "../../context/RoomContext";
+import AboutUs from "../aboutUs/AboutUs";
+import MeetingRoom from "../Meetup/MeetingRoom";
+import Meetup from "../Meetup/Meetup";
+import CommunityPage from "../communityPage/CommunityPage";
 
 const router = createBrowserRouter([
   {
@@ -38,14 +28,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
       },
       {
         path: "/email-verification",
@@ -68,8 +50,12 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/forget-password",
-        element: <ForgotPassword />,
+        path: "/community",
+        element: <CommunityPage />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
       },
       {
         path: "/blog",
@@ -82,32 +68,46 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/meetup",
+    element: (
+      <PrivateRoute>
+        <Meetup />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/:name/:room",
+    element: (
+      <PrivateRoute>
+        <MeetingRoom />
+      </PrivateRoute>
+    ),
+  },
+  {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard/userReviews",
         element: <UserReviews />,
       },
     ],
-  },
-
-  {
-    path: "join",
-    element: (
-      <RoomProvider>
-        <Join />
-      </RoomProvider>
-    ),
-  },
-
-  {
-    path: "room/:id",
-    element: (
-      <RoomProvider>
-        <Room />
-      </RoomProvider>
-    ),
   },
 ]);
 
