@@ -62,14 +62,6 @@ const Dashboard = () => {
     </>
   );
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:8000`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setRollData(data);
-  //     });
-  // }, [user?.email]);
-
   return (
     <section className="dashboard-body">
       <motion.nav

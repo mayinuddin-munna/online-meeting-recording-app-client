@@ -7,7 +7,7 @@ import { BsFillChatRightTextFill } from 'react-icons/bs';
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
-  // const socket = io('http://localhost:8000/')
+  // const socket = io('https://galaxy-meeting.onrender.com/')
 
   const [openChat, setOpenChat] = useState(false)
 
