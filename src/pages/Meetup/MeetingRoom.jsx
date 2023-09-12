@@ -2,10 +2,14 @@ import Peer from "peerjs";
 import io from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
+import Chat from "../NewMeetings/Chat";
+import { BsFillChatRightTextFill } from 'react-icons/bs';
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
-  // const socket = io('http://localhost:5000/')
+  // const socket = io('http://localhost:8000/')
+
+  const [openChat, setOpenChat] = useState(false)
 
   const { name } = useParams();
   const { room } = useParams();
@@ -189,6 +193,7 @@ const MeetingRoom = () => {
     }, 3000);
   };
 
+  console.log(openChat);
   return (
     <div className="bg-slate-200 px-4 flex h-screen md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">
@@ -204,16 +209,20 @@ const MeetingRoom = () => {
           video chat.
         </h2>
 
-        <div
-          className=" p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto overflow-scroll "
-          ref={mydiv}
-        >
-          <div className="left border h-fit rounded overflow-hidden bg-slate-400 relative">
-            <h1 className="text-3xl text-center absolute capitalize">You</h1>
-            <video muted={true} autoPlay={true} ref={myvideo}></video>
+        <div className="flex w-full gap-5 justify-between items-center">
+          <div
+            className=" p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto overflow-y-scroll "
+            ref={mydiv}
+          >
+            <div className="left border h-fit rounded overflow-hidden bg-slate-400 relative">
+              <h1 className="text-3xl text-center absolute capitalize">You</h1>
+              <video muted={true} autoPlay={true} ref={myvideo}></video>
+            </div>
           </div>
+         { 
+            openChat ? <Chat /> : ""
+         }
         </div>
-
         <div className="footer flex container  justify-center rounded mx-auto gap-6 bg-gray-300 p-3 md:gap-8   ">
           <div
             onClick={muteUnmute}
@@ -238,6 +247,13 @@ const MeetingRoom = () => {
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
           >
             <i className="fa-solid fa-phone text-xl"></i>
+          </div>
+
+          <div
+            onClick={()=>setOpenChat(!openChat)}
+            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
+          >
+            <BsFillChatRightTextFill />
           </div>
         </div>
       </div>
