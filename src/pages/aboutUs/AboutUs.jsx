@@ -40,14 +40,14 @@ const AboutUs = () => {
             <h5 className='font-bold text-center text-2xl md:text-4xl lg:text-5xl mb-16 px-5'>
                 The People Behind <br className='md:hidden' /> Galaxy Meet
             </h5>
-            <section className='mt-5'>
+            <section className='mt-5 mx-4'>
                 <div className="container mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     {/* Feature 1 */}
                     {aboutUs.map((about) => (
                         <div
                             key={about._id}
-                            className={`bg-slate-200 py-10  shadow-md flex flex-col justify-center gap-5 rounded-xl sm:px-2 
-                            px-4 md:px-5 sm:mx-2 mx-4 md:mx-5 w-full`}
+                            className={`bg-slate-200 p-5 shadow-md flex flex-col justify-center gap-5 rounded-xl sm:px-2 
+                             md:px-5 sm:mx-2 md:mx-5 w-full`}
                         >
                             <div className=' flex items-center justify-center' >
                                 <img
