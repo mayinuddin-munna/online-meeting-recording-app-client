@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
-import SolutionsDropdown from "./SolutionsDropdown";
 import { FaBars } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 
@@ -23,7 +22,7 @@ const Navbar = () => {
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
-      setLogoSrc('https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png');
+      setLogoSrc("https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png");
     } else {
       setIsSticky(false);
       setLogoSrc(Logo);
@@ -50,42 +49,41 @@ const Navbar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <SolutionsDropdown />
-      <Link to="/community">Community</Link>
-      <Link to="/about-us">About us</Link>
 
-      {/* <div className="relative group pr-3">
+      <div className="relative inline-block group pr-3">
         <div className="flex">
           <button className="rounded-md group-hover:text-red focus:outline-none">
-            Solutions
+            Explore
           </button>
           <p className="mt-1">
             <FaCaretDown />{" "}
           </p>
         </div>
-        <div className="absolute hidden bg-white sm:w-auto text-gray-700 group-hover:block z-10 mt-2 p-2 space-y-1 rounded-lg shadow-lg">
-          <Link to="/blog" className="block px-4 py-2 hover:bg-blue-100">
-            Blog
+        <div className="absolute hidden bg-white sm:w-auto group-hover:block z-20 space-y-1 rounded-lg shadow-lg">
+          <Link to="/solutions" className="block px-4 py-2 ">
+            Solution
           </Link>
-          <Link to="/solutions2" className="block px-4 py-2 hover:bg-blue-100">
-            Solution 2
+          <Link to="/community" className="block px-4 py-2 ">
+            Community
+          </Link>
+          <Link to="/about-us" className="block px-4 py-2 ">
+            About Us
           </Link>
         </div>
-      </div> */}
+      </div>
       {user && <Link to="/dashboard">Dashboard</Link>}
-      {/* {user && ( */}
       <Link
         to="/meetup"
-        className="w-48 text-center rounded-full hover:bg-[#5EC38B] hover:text-white border shadow"
       >
-        New Meeting
+        <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">New Meeting</button>
+        
       </Link>
-      {/* )} */}
+      
       {user ? (
         <Link onClick={handelLogout}>Logout</Link>
       ) : (
         <Link to="/login">
-          <button className="p-2 w-32 rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
+          <button className="p-2 w-32 rounded-full bg-[#5EC38B] text-white border shadow">
             Login
           </button>
         </Link>
@@ -99,8 +97,7 @@ const Navbar = () => {
         isSticky
           ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
-      } transition duration-300 ease-in-out z-10}
-      style={{ transition: "all 0.3s ease" }`}
+      } transition duration-300 ease-in-out z-10}`}
     >
       <div
         className={`container mx-auto py-2 flex items-center justify-between`}
