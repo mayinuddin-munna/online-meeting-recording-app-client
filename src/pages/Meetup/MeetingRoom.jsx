@@ -193,7 +193,6 @@ const MeetingRoom = () => {
     }, 3000);
   };
 
-  console.log(openChat);
   return (
     <div className="bg-slate-200 px-4 flex h-screen md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">

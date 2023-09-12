@@ -11,8 +11,8 @@ const socket = io("http://localhost:8000");
 const Chat = () => {
 
   const { user } = useContext(AuthContext);
+  console.log(user);
 
-  const [newUser, setNewUser] = useState("");
   const [userDefault, setUserDefault] = useState({});
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
@@ -20,15 +20,13 @@ const Chat = () => {
 
 
   useEffect(() => {
-    // setNewUser();
-
     // setUser
-    setUserDefault(user.username);
+    setUserDefault({ userId: user.uid, username: user.username, photoURL: user.photoURL, });
 
     // socket
-    socket.auth = { username: user.username };
+    socket.auth = { userId: user.uid, username: user.username, photoURL: user.photoURL, };
     socket.connect();
-  }, [userDefault])
+  }, [])
 
   useEffect(() => {
     socket.on("users", (users) => {
@@ -50,14 +48,16 @@ const Chat = () => {
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
 
-    socket.on("new message", ({ userId, username, message, time }) => {
+    socket.on("new message", ({ userId, username, message, time, photoURL }) => {
       const currentTime = moment().locale("en").format("hh:mm A");
       const newMessage = {
         type: "message",
         userId: userId,
         username: username,
+        photoURL: photoURL,
         message,
-        time :currentTime
+        time: currentTime,
+
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
@@ -70,9 +70,6 @@ const Chat = () => {
     };
   }, [messages]);
 
-
-
-
   // message 
   const handleMessage = useCallback(event => {
     event.preventDefault();
@@ -81,10 +78,10 @@ const Chat = () => {
     // console.log(textMessage);
     setMessage(textMessage);
 
-
+    form.textMessage.value = "";
 
     socket.emit("new message", textMessage, () => {
-      
+
       console.log('currentTime', currentTime);
       // After the message is sent successfully, update the state
       const newMessage = {
@@ -92,9 +89,11 @@ const Chat = () => {
         userId: userDefault.userId,
         username: userDefault.username,
         message: textMessage,
+
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
-      // setMessage('');
+
+      setMessage('');
     });
 
   }, [userDefault]);
@@ -105,7 +104,6 @@ const Chat = () => {
         message={message}
         messages={messages}
         handleMessage={handleMessage}
-        photoURL={user.photoURL}
       />
     </>
   );
