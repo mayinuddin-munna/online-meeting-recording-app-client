@@ -1,15 +1,13 @@
 import "./Dashboard.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import UserReviews from "../../Shared/UserReviews/UserReviews";
-import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
-import usePremiumMember from "../../../hooks/usePremiumMember";
+import { useSelector } from "react-redux";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -32,16 +30,16 @@ const sidebar = {
 };
 
 const Dashboard = () => {
-  const { user } = useAuth();
   const containerRef = useRef(null);
   const [rollData, setRollData] = useState([]);
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const user = useSelector((state) => state.data.user.user);
 
   const [isAdmin] = useAdmin();
-  const [isPremiumMember] = usePremiumMember();
-
-  const adminBar = (
+  
+  // console.log(user);
+  const admin = (
     <>
       {/* ----------Admin------------ */}
       <div className="avatar my-4">
@@ -49,31 +47,7 @@ const Dashboard = () => {
           <img src={user?.photoURL} />
         </div>
       </div>
-      <div className="mb-4">Welcome, {user?.displayName}</div>
-      {/* <li>
-        <NavLink to="/dashboard/manageClass">Manage Classes</NavLink>
-      </li>
-      <li>
-        <NavLink to="/dashboard/manageUsers">Manage Users</NavLink>
-      </li> */}
-    </>
-  );
-
-  const premiumMember = (
-    <>
-      {/* ----------Instructor------------ */}
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.displayName}</div>
-      {/* <li>
-        <NavLink to="/dashboard/addAClass">Add a Class</NavLink>
-      </li>
-      <li>
-        <NavLink to="/dashboard/myClasses">My classes</NavLink>
-      </li> */}
+      <div className="mb-4">Welcome, {user?.email}</div>
     </>
   );
 
@@ -84,21 +58,12 @@ const Dashboard = () => {
           <img src={user?.photoURL} />
         </div>
       </div>
-      <div className="mb-4">Welcome, {user?.displayName}</div>
-      {/* <li>
-        <Link to="/dashboard/selectedClass">Selected Class</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/enrolledClass">Enrolled Class</Link>
-      </li>
-      <li>
-        <Link to="/dashboard/payment">Payment History</Link>
-      </li> */}
+      <div className="mb-4">Welcome, {user?.email}</div>
     </>
   );
 
   useEffect(() => {
-    fetch(`https://galaxy-meeting.onrender.com`)
+    fetch(`http://localhost:8000`)
       .then((res) => res.json())
       .then((data) => {
         setRollData(data);
@@ -119,7 +84,7 @@ const Dashboard = () => {
           <h1 className="text-5xl text-white m-12">
             Welcome to Galaxy Meeting.
           </h1>
-          {isAdmin ? adminBar : isPremiumMember ? premiumMember : users}
+          {isAdmin ? admin : users}
         </div>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
