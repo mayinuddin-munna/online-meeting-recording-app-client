@@ -1,11 +1,10 @@
 import "./Dashboard.css";
-import React, { useEffect, useState } from "react";
 import { useRef } from "react";
+import React, { useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
 import { useSelector } from "react-redux";
 
@@ -31,17 +30,15 @@ const sidebar = {
 
 const Dashboard = () => {
   const containerRef = useRef(null);
-  const [rollData, setRollData] = useState([]);
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const user = useSelector((state) => state.data.user.user);
 
   const [isAdmin] = useAdmin();
   
-  console.log(user);
+  /* ----------Admin------------ */
   const admin = (
     <>
-      {/* ----------Admin------------ */}
       <div className="avatar my-4">
         <div className="mx-auto w-24 rounded-full">
           <img src={user?.photoURL} />
@@ -51,6 +48,7 @@ const Dashboard = () => {
     </>
   );
 
+  /* ----------Users------------ */
   const users = (
     <>
       <div className="avatar my-4">
