@@ -45,6 +45,10 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
+  const dropdownItemStyle = {
+    color: isSticky ? "black" : "",
+  };
+
   const navItem = (
     <>
       <Link to="/">Home</Link>
@@ -55,30 +59,30 @@ const Navbar = () => {
           <button className="rounded-md group-hover:text-red focus:outline-none">
             Explore
           </button>
-          <p className="mt-1">
-            <FaCaretDown />{" "}
-          </p>
+          <FaCaretDown className="mt-1" />{" "}
         </div>
-        <div className="absolute hidden bg-white sm:w-auto group-hover:block z-20 space-y-1 rounded-lg shadow-lg">
-          <Link to="/solutions" className="block px-4 py-2 ">
+
+        <div
+          className="absolute hidden bg-white sm:w-auto group-hover:block z-20 me-5 space-y-1 rounded-lg shadow-lg"
+          style={dropdownItemStyle}
+        >
+          <Link to="/solutions" className="block px-4 py-2">
             Solution
           </Link>
-          <Link to="/community" className="block px-4 py-2 ">
+          <Link to="/community" className="block px-4 py-2">
             Community
           </Link>
-          <Link to="/about-us" className="block px-4 py-2 ">
+          <Link to="/about-us" className="block px-4 py-2">
             About Us
           </Link>
         </div>
       </div>
       {user && <Link to="/dashboard">Dashboard</Link>}
-      <Link
-        to="/meetup"
-      >
-        <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">New Meeting</button>
-        
+      <Link to="/meetup">
+        <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">
+          New Meeting
+        </button>
       </Link>
-      
       {user ? (
         <Link onClick={handelLogout}>Logout</Link>
       ) : (
@@ -97,7 +101,7 @@ const Navbar = () => {
         isSticky
           ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
-      } transition duration-300 ease-in-out z-10}`}
+      } transition duration-300 ease-in-out z-10`}
     >
       <div
         className={`container mx-auto py-2 flex items-center justify-between`}
