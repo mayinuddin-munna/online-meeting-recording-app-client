@@ -22,10 +22,10 @@ export const Navigation = () => (
       width: "230px",
     }}
   >
-    {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+    {itemIds.map((menus) => (
+      <MenuItem i={menus} key={menus} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [0, 1, 2];
+const itemIds = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];

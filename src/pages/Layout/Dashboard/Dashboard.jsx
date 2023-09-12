@@ -38,7 +38,7 @@ const Dashboard = () => {
 
   const [isAdmin] = useAdmin();
   
-  // console.log(user);
+  console.log(user);
   const admin = (
     <>
       {/* ----------Admin------------ */}
@@ -62,13 +62,13 @@ const Dashboard = () => {
     </>
   );
 
-  useEffect(() => {
-    fetch(`http://localhost:8000`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRollData(data);
-      });
-  }, [user?.email]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setRollData(data);
+  //     });
+  // }, [user?.email]);
 
   return (
     <section className="dashboard-body">
