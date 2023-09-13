@@ -72,7 +72,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div> */}
-      {user && <Link to="/dashboard">Dashboard</Link>}
+      {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
         <Link
           to="/meetup"
@@ -85,7 +85,7 @@ const Navbar = () => {
         <>
           {user &&
             <div>
-              <div className="w-10 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+              <div className="flex items-center justify-center w-10 h-10 mx-2 overflow-hidden rounded-lg">
                 <img src={user.photoURL} />
               </div>
             </div>

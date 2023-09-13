@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const FeatureBanner = () => {
   return (
-    <section className="mb-10 md:mb-20">
+    <section className="feature_ban mb-10 md:mb-20">
       <div className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300">
         <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-36 md:px-10 lg:px-32 dark:text-gray-900">
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl xl:max-w-3xl dark:text-gray-900">

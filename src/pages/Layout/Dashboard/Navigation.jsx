@@ -11,15 +11,15 @@ const variants = {
   },
 };
 
-const adminItems = ["Reviews", "Webinars", "Recording", "Settings"];
-const usersItems = [
+const usersItems = ["Profile", "Reviews", "Webinars", "Recording", "Settings"];
+const adminItems = [
   "UserManagement",
   "RoomManagement",
   "AccountManagement",
   "Advanced",
 ];
 
-export const Navigation = ({ isAdmin, users }) => (
+export const Navigation = ({ isAdmin }) => (
   <motion.ul
     variants={variants}
     style={{
@@ -28,6 +28,7 @@ export const Navigation = ({ isAdmin, users }) => (
       position: "absolute",
       top: "100px",
       width: "230px",
+      zIndex: "100",
     }}
   >
     {isAdmin
