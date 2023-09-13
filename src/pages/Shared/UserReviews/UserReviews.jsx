@@ -34,7 +34,7 @@ const UserReviews = () => {
     reset();
   };
   return (
-    <div className="grid grid-cols-1 justify-items-center  px-10 py-10 lg:py-36
+    <div className="grid grid-cols-1 justify-items-center px-10 py-10 lg:py-36
     bg-fixed bg-cover bg-center bg-no-repeat w-full h-full"
       style={{ backgroundImage: `url(${feedbackBackground})` }}>
       {/* <div className="rounded shadow-md">
@@ -42,8 +42,9 @@ const UserReviews = () => {
           <img src={ReviewsBanner} alt="ReviewBanner" />
         </div>
       </div> */}
-      <div className="bg-white/20 backdrop-blur-3xl sm:w-5/12 lg:w-10/12 border border-white/20 p-6 rounded shadow-2xl">
-        {/* <h2 className="text-xl font-semibold mb-4">Leave a Review</h2> */}
+      <h2 className="text-5xl font-bold mb-8 text-white">Give a Feedback</h2>
+      <div className=" bg-white/20 backdrop-blur-3xl sm:w-5/12 lg:w-6/12 border border-white/20 p-6 rounded shadow-2xl">
+
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label

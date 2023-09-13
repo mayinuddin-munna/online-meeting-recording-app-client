@@ -22,10 +22,13 @@ export const Navigation = () => (
       position: "absolute",
       top: "100px",
       width: "230px",
+      zIndex: "100"
     }}
   >
-    {dashboardNavItems.map((item) => (
-      <MenuItem item={item} key={item} />
-    ))}
-  </motion.ul>
+    {
+      dashboardNavItems.map((item) => (
+        <MenuItem item={item} key={item} />
+      ))
+    }
+  </motion.ul >
 );
