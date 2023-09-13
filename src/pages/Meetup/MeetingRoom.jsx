@@ -3,13 +3,13 @@ import io from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import Chat from "../NewMeetings/Chat";
-import { BsFillChatRightTextFill } from 'react-icons/bs';
+import { BsFillChatRightTextFill,BsHandIndexThumb } from "react-icons/bs";
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
   // const socket = io('https://galaxy-meeting.onrender.com/')
 
-  const [openChat, setOpenChat] = useState(false)
+  const [openChat, setOpenChat] = useState(false);
 
   const { name } = useParams();
   const { room } = useParams();
@@ -158,7 +158,7 @@ const MeetingRoom = () => {
       media.getVideoTracks()[0].enabled = true; // Turn On
     }
     // ===== another way to do above process ===== //
-    // myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
+    myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
   };
 
   // mute and unmute function
@@ -184,6 +184,15 @@ const MeetingRoom = () => {
     window.location.replace("/");
   };
 
+  // Hand Raise
+  const [isHandRaised, setHandRaised] = useState(false);
+
+  const handRaise = () => {
+    setHandRaised(true); // Raise hand when the button is clicked
+    // You can also send this information to the server or handle it accordingly
+  };
+
+  
   // function for invite the people
   const invite = () => {
     navigator.clipboard.writeText(room);
@@ -208,7 +217,6 @@ const MeetingRoom = () => {
         <h2 className="text-center text-green-600 text-3xl capitalize">
           video chat.
         </h2>
-
         <div className="flex w-full gap-5 justify-between items-center">
           <div
             className=" p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto overflow-y-scroll "
@@ -219,9 +227,7 @@ const MeetingRoom = () => {
               <video muted={true} autoPlay={true} ref={myvideo}></video>
             </div>
           </div>
-         { 
-            openChat ? <Chat /> : ""
-         }
+          {openChat ? <Chat /> : ""}
         </div>
         <div className="footer flex container  justify-center rounded mx-auto gap-6 bg-gray-300 p-3 md:gap-8   ">
           <div
@@ -242,6 +248,14 @@ const MeetingRoom = () => {
           >
             <i className="fa-solid fa-user-plus text-xl"></i>
           </div>
+
+          <div
+            onClick={handRaise}
+            className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
+          >
+            <BsHandIndexThumb size={24}/>
+          </div>
+
           <div
             onClick={leave}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
@@ -250,7 +264,7 @@ const MeetingRoom = () => {
           </div>
 
           <div
-            onClick={()=>setOpenChat(!openChat)}
+            onClick={() => setOpenChat(!openChat)}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
             <BsFillChatRightTextFill />

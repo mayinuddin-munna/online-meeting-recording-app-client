@@ -7,6 +7,7 @@ import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import useAdmin from "../../../hooks/useAdmin";
 import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -69,13 +70,13 @@ const Dashboard = () => {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-        <Navigation />
+        <Navigation isAdmin={isAdmin} users={users} />
         <div className="font-bold ml-96 m-12">
           <h1 className="text-5xl text-white m-12">
             Welcome to Galaxy Meeting.
           </h1>
-          {isAdmin ? admin : users}
         </div>
+        <Outlet/>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
     </section>

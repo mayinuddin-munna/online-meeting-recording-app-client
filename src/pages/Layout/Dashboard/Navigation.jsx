@@ -11,9 +11,15 @@ const variants = {
   },
 };
 
-const dashboardNavItems = ["Reviews", "About", "Services"];
+const adminItems = ["Reviews", "Webinars", "Recording", "Settings"];
+const usersItems = [
+  "UserManagement",
+  "RoomManagement",
+  "AccountManagement",
+  "Advanced",
+];
 
-export const Navigation = () => (
+export const Navigation = ({ isAdmin, users }) => (
   <motion.ul
     variants={variants}
     style={{
@@ -24,8 +30,8 @@ export const Navigation = () => (
       width: "230px",
     }}
   >
-    {dashboardNavItems.map((item) => (
-      <MenuItem item={item} key={item} />
-    ))}
+    {isAdmin
+      ? adminItems.map((item) => <MenuItem item={item} key={item} />)
+      : usersItems.map((item) => <MenuItem item={item} key={item} />)}
   </motion.ul>
 );
