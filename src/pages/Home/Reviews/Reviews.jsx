@@ -91,7 +91,7 @@ const Reviews = () => {
                         <h2 className="text-center md:text-start font-semibold text-2xl">
                           {review.name}
                         </h2>
-                        <p>Marketing Manager</p>
+                        <p className="text-center font-medium">{review.position}</p>
                       </div>
                     </div>
                   </div>

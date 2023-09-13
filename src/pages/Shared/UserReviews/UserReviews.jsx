@@ -13,15 +13,24 @@ const UserReviews = () => {
   const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const selectedPosition = watch("position");
 
+  const token = localStorage.getItem('access-token');
+
   const onSubmit = async (data) => {
-    const { username, email } = user;
-    const postData = { ...data, username, email };
+    const { photoURL } = user;
+    const postData = { ...data, img: photoURL };
+    console.log(postData);
     try {
       const response = await axios.post(
-        "https://galaxy-meeting.onrender.com/add-review",
-        postData
+        "https://galaxy-meeting.onrender.com/add-review", postData,
+        {
+          headers: {
+            "authorization": `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          }
+        },
+
       );
-      // console.log(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -31,13 +40,8 @@ const UserReviews = () => {
     <div className="grid grid-cols-1 justify-items-center px-10 py-10 lg:py-36
     bg-fixed bg-cover bg-center bg-no-repeat w-full h-full"
       style={{ backgroundImage: `url(${feedbackBackground})` }}>
-      {/* <div className="rounded shadow-md">
-        <div>
-          <img src={ReviewsBanner} alt="ReviewBanner" />
-        </div>
-      </div> */}
-      <h2 className="text-5xl font-bold mb-8 text-white">Give a Feedback</h2>
-      <div className="bg-white/20 lg:backdrop-blur-2xl sm:w-5/12 xl:w-6/12 border border-white/20 p-6 rounded shadow-2xl">
+      <h2 className="text-5xl font-bold mb-8 text-center text-white">Give a Feedback</h2>
+      <div className="bg-white/20 lg:backdrop-blur-2xl sm:w-5/12 border border-white/20 p-6 rounded shadow-2xl">
 
         <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -87,9 +91,9 @@ const UserReviews = () => {
               Profession
             </label>
             <input
-              id="profession"
-              {...register("profession", { required: true })}
-              className={`mt-1 p-2 w-full rounded-md border ${errors.profession ? "border-red-500" : "border-gray-300"
+              id="position"
+              {...register("position", { required: true })}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.position ? "border-red-500" : "border-gray-300"
                 }`}
             />
             {errors.position && (
@@ -143,13 +147,16 @@ const UserReviews = () => {
             >
               Ratting (Up to 5)
             </label>
-            <input
-              type="number"
-              id="rating"
-              {...register("age", { min: 1, max: 5 })}
-              className={`mt-1 p-2 w-full rounded-md border ${errors.rating ? "border-red-500" : "border-gray-300"
+            <select {...register("rating", { required: true })}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.otherPosition ? "border-red-500" : "border-gray-300"
                 }`}
-            />
+            >
+              <option value="5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
             {errors.rating && (
               <p className="text-red-500 text-xs mt-1">
                 Between 1 and 5 reviews are allowed
