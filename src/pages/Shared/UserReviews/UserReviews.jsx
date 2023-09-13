@@ -1,9 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import ReviewsBunner from "../../../assets/reviews/reviews-bunner.jpg";
+import ReviewsBanner from "../../../assets/reviews/reviews-bunner.jpg";
 import ButtonGradient from "../../../components/ButtonGradient";
 import { useDispatch, useSelector } from "react-redux";
+import feedbackBackground from "../../../assets/reviews/feedbackBackground.jpg";
 
 const UserReviews = () => {
   const user = useSelector((state) => state.data.user.user);
@@ -23,7 +24,7 @@ const UserReviews = () => {
     const postData = { ...data, name: username, email };
     try {
       const response = await axios.post(
-        "https://galaxy-meeting.vercel.app/add-review",
+        "https://galaxy-meeting.onrender.com/add-review",
         postData
       );
       // console.log(response.data);
@@ -33,21 +34,23 @@ const UserReviews = () => {
     reset();
   };
   return (
-    <div className="container px-10 mx-auto gap-4 flex items-center justify-center flex-col md:flex-row bg-gray-100">
-      <div className="flex-1 rounded shadow-md">
+    <div className="grid grid-cols-1 justify-items-center  px-10 py-10 lg:py-36
+    bg-fixed bg-cover bg-center bg-no-repeat w-full h-full"
+      style={{ backgroundImage: `url(${feedbackBackground})` }}>
+      {/* <div className="rounded shadow-md">
         <div>
-          <img src={ReviewsBunner} alt="ReviewsBunne" />
+          <img src={ReviewsBanner} alt="ReviewBanner" />
         </div>
-      </div>
-      <div className="bg-white w-full p-6 rounded shadow-md flex-1">
+      </div> */}
+      <div className="bg-white/20 backdrop-blur-3xl sm:w-5/12 lg:w-10/12 border border-white/20 p-6 rounded shadow-2xl">
         {/* <h2 className="text-xl font-semibold mb-4">Leave a Review</h2> */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label
               htmlFor="position"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-white"
             >
-              Position
+              Profession
             </label>
             <select
               id="position"
@@ -55,7 +58,7 @@ const UserReviews = () => {
               className={`mt-1 p-2 w-full rounded-md border ${errors.position ? "border-red-500" : "border-gray-300"
                 }`}
             >
-              <option value="">Select a Position</option>
+              <option value="">Select Your Profession</option>
               <option value="Graphic Designer">Graphic Designer</option>
               <option value="Project Manager">Project Manager</option>
               <option value="IT Manager">IT Manager</option>
@@ -73,7 +76,7 @@ const UserReviews = () => {
             <div className="mb-4">
               <label
                 htmlFor="otherPosition"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-white"
               >
                 Other Position
               </label>
@@ -94,7 +97,7 @@ const UserReviews = () => {
           <div className="mb-4">
             <label
               htmlFor="feedback"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-white"
             >
               Your Feedback
             </label>
@@ -111,7 +114,7 @@ const UserReviews = () => {
           <div className="mb-4">
             <label
               htmlFor="rating"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-white"
             >
               Ratting (Up to 5)
             </label>

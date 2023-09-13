@@ -5,8 +5,6 @@ import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import useAdmin from "../../../hooks/useAdmin";
-import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
 const sidebar = {
@@ -33,33 +31,6 @@ const Dashboard = () => {
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const user = useSelector((state) => state.data.user.user);
-
-  const [isAdmin] = useAdmin();
-
-  /* ----------Admin------------ */
-  const admin = (
-    <>
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.email}</div>
-    </>
-  );
-
-  /* ----------Users------------ */
-  const users = (
-    <>
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.email}</div>
-    </>
-  );
 
   return (
     <section className="dashboard-body">
@@ -70,7 +41,9 @@ const Dashboard = () => {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-        <Navigation />
+        <div className="relative z-10">
+          <Navigation />
+        </div>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
       <Outlet />
