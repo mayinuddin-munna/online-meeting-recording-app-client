@@ -7,6 +7,7 @@ import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import useAdmin from "../../../hooks/useAdmin";
 import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -35,7 +36,7 @@ const Dashboard = () => {
   const user = useSelector((state) => state.data.user.user);
 
   const [isAdmin] = useAdmin();
-  
+
   /* ----------Admin------------ */
   const admin = (
     <>
@@ -70,14 +71,9 @@ const Dashboard = () => {
       >
         <motion.div className="background" variants={sidebar} />
         <Navigation />
-        <div className="font-bold ml-96 m-12">
-          <h1 className="text-5xl text-white m-12">
-            Welcome to Galaxy Meeting.
-          </h1>
-          {isAdmin ? admin : users}
-        </div>
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
+      <Outlet />
     </section>
   );
 };

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const UserReviews = () => {
   const user = useSelector((state) => state.data.user.user);
-  console.log(user);
+  // console.log(user);
   const dispatch = useDispatch();
   const {
     register,
@@ -52,9 +52,8 @@ const UserReviews = () => {
             <select
               id="position"
               {...register("position", { required: true })}
-              className={`mt-1 p-2 w-full rounded-md border ${
-                errors.position ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.position ? "border-red-500" : "border-gray-300"
+                }`}
             >
               <option value="">Select a Position</option>
               <option value="Graphic Designer">Graphic Designer</option>
@@ -82,9 +81,8 @@ const UserReviews = () => {
                 type="text"
                 id="otherPosition"
                 {...register("otherPosition", { required: true })}
-                className={`mt-1 p-2 w-full rounded-md border ${
-                  errors.otherPosition ? "border-red-500" : "border-gray-300"
-                }`}
+                className={`mt-1 p-2 w-full rounded-md border ${errors.otherPosition ? "border-red-500" : "border-gray-300"
+                  }`}
               />
               {errors.otherPosition && (
                 <p className="text-red-500 text-xs mt-1">
@@ -103,9 +101,8 @@ const UserReviews = () => {
             <textarea
               id="feedback"
               {...register("details", { required: true })}
-              className={`mt-1 p-2 w-full rounded-md border ${
-                errors.feedback ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.feedback ? "border-red-500" : "border-gray-300"
+                }`}
             />
             {errors.feedback && (
               <p className="text-red-500 text-xs mt-1">Feedback is required</p>
@@ -122,9 +119,8 @@ const UserReviews = () => {
               type="number"
               id="reviews"
               {...register("rating", { required: true, min: 1, max: 5 })}
-              className={`mt-1 p-2 w-full rounded-md border ${
-                errors.rating ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.rating ? "border-red-500" : "border-gray-300"
+                }`}
             />
             {errors.rating && (
               <p className="text-red-500 text-xs mt-1">

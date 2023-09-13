@@ -18,6 +18,7 @@ import AboutUs from "../aboutUs/AboutUs";
 import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
+import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "/dashboard/Profile",
+        element: <Profile />,
+      },
       {
         path: "/dashboard/Reviews",
         element: <UserReviews />,

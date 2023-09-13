@@ -72,7 +72,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div> */}
-      {user && <Link to="/dashboard">Dashboard</Link>}
+      {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
         <Link
           to="/meetup"

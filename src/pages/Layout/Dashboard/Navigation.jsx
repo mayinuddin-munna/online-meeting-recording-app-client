@@ -11,7 +11,7 @@ const variants = {
   },
 };
 
-const dashboardNavItems = ["Reviews", "About", "Services"];
+const dashboardNavItems = ["Profile", "Reviews", "About", "Services"];
 
 export const Navigation = () => (
   <motion.ul
