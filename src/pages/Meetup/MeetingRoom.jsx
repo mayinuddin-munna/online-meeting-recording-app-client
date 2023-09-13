@@ -10,6 +10,7 @@ const MeetingRoom = () => {
   // const socket = io('https://galaxy-meeting.onrender.com/')
 
   const [openChat, setOpenChat] = useState(false);
+  const [isHandRaised, setHandRaised] = useState(false);
 
   const { name } = useParams();
   const { room } = useParams();
@@ -184,13 +185,27 @@ const MeetingRoom = () => {
     window.location.replace("/");
   };
 
-  // Hand Raise
-  const [isHandRaised, setHandRaised] = useState(false);
 
-  const handRaise = () => {
-    setHandRaised(true); // Raise hand when the button is clicked
-    // You can also send this information to the server or handle it accordingly
-  };
+  // Hand Raise
+  function handRaise() {
+    // Update local state
+    setHandRaised(true);
+console.log(isHandRaised);
+    // Broadcast the hand raise event to other participants
+    peer.send({ type: "hand-raise", userId: myUserId });
+  }
+
+  // Listen for incoming messages
+  peer.on("data", (data) => {
+    const message = JSON.parse(data);
+
+    if (message.type === "hand-raise") {
+      // Handle hand raise event
+      const { userId } = message;
+
+      // Update UI to show that userId has raised their hand
+    }
+  })
 
   
   // function for invite the people
