@@ -14,7 +14,7 @@ const Profile = () => {
                     <img src={user?.photoURL} />
                 </div>
             </div>
-            <div className="mb-4">Welcome, {user?.email}</div>
+            <div className="mb-4">Welcome, {user?.username}</div>
         </>
     );
 
@@ -26,7 +26,7 @@ const Profile = () => {
                     <img src={user?.photoURL} />
                 </div>
             </div>
-            <div className="mb-4">Welcome, {user?.email}</div>
+            <div className="mb-4">Welcome, {user?.username}</div>
         </>
     );
 

@@ -41,7 +41,7 @@ const Dashboard = () => {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-        <div className="">
+        <div>
           <Navigation />
         </div>
         <MenuToggle toggle={() => toggleOpen()} />

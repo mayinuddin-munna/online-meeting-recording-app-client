@@ -10,18 +10,12 @@ const UserReviews = () => {
   const user = useSelector((state) => state.data.user.user);
   // console.log(user);
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const selectedPosition = watch("position");
 
   const onSubmit = async (data) => {
     const { username, email } = user;
-    const postData = { ...data, name: username, email };
+    const postData = { ...data, username, email };
     try {
       const response = await axios.post(
         "https://galaxy-meeting.onrender.com/add-review",
@@ -43,9 +37,48 @@ const UserReviews = () => {
         </div>
       </div> */}
       <h2 className="text-5xl font-bold mb-8 text-white">Give a Feedback</h2>
-      <div className=" bg-white/20 backdrop-blur-3xl sm:w-5/12 lg:w-6/12 border border-white/20 p-6 rounded shadow-2xl">
+      <div className="bg-white/20 lg:backdrop-blur-2xl sm:w-5/12 xl:w-6/12 border border-white/20 p-6 rounded shadow-2xl">
 
         <form onSubmit={handleSubmit(onSubmit)}>
+
+          <div className="mb-4">
+            <label
+              htmlFor="feedback"
+              className="block text-sm font-medium text-white"
+            >
+              Name
+            </label>
+            <input
+              id="name"
+              {...register("name", { required: true })}
+              value={user.username}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.name ? "border-red-500" : "border-gray-300"
+                }`}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1">Name is required</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label
+              htmlFor="feedback"
+              className="block text-sm font-medium text-white"
+            >
+              Email
+            </label>
+            <input
+              id="email"
+              {...register("email", { required: true })}
+              value={user.email}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.email ? "border-red-500" : "border-gray-300"
+                }`}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">Email is required</p>
+            )}
+          </div>
+
           <div className="mb-4">
             <label
               htmlFor="position"
@@ -53,21 +86,12 @@ const UserReviews = () => {
             >
               Profession
             </label>
-            <select
-              id="position"
-              {...register("position", { required: true })}
-              className={`mt-1 p-2 w-full rounded-md border ${errors.position ? "border-red-500" : "border-gray-300"
+            <input
+              id="profession"
+              {...register("profession", { required: true })}
+              className={`mt-1 p-2 w-full rounded-md border ${errors.profession ? "border-red-500" : "border-gray-300"
                 }`}
-            >
-              <option value="">Select Your Profession</option>
-              <option value="Graphic Designer">Graphic Designer</option>
-              <option value="Project Manager">Project Manager</option>
-              <option value="IT Manager">IT Manager</option>
-              <option value="Sales Representative">Sales Representative</option>
-              <option value="Web Developer">Web Developer</option>
-              <option value="Student">Student</option>
-              <option value="Other">Other</option>
-            </select>
+            />
             {errors.position && (
               <p className="text-red-500 text-xs mt-1">Position is required</p>
             )}
@@ -121,8 +145,8 @@ const UserReviews = () => {
             </label>
             <input
               type="number"
-              id="reviews"
-              {...register("rating", { required: true, min: 1, max: 5 })}
+              id="rating"
+              {...register("age", { min: 1, max: 5 })}
               className={`mt-1 p-2 w-full rounded-md border ${errors.rating ? "border-red-500" : "border-gray-300"
                 }`}
             />
@@ -132,14 +156,14 @@ const UserReviews = () => {
               </p>
             )}
           </div>
-          <button type="submit">
-            <ButtonGradient bg="bg-gradient-to-r from-purple-500 to-red-500">
-              Review
-            </ButtonGradient>
+          <button type="submit"
+            className="px-8 py-3 m-2 text-lg font-semibold rounded bg-[#5EC38B] text-white hover:bg-green-500"
+          >
+            Send Feedback
           </button>
         </form>
       </div>
-    </div>
+    </div >
   );
 };
 
