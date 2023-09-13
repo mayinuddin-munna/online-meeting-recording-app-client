@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { logoutUser } from "../features/userSlice";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://galaxy-meeting.onrender.com",
 });
 
 const useAxiosSecure = () => {

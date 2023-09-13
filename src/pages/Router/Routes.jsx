@@ -104,7 +104,7 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard/userReviews",
+        path: "/dashboard/Reviews",
         element: <UserReviews />,
       },
     ],

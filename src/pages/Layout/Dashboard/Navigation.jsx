@@ -11,6 +11,8 @@ const variants = {
   },
 };
 
+const dashboardNavItems = ["Reviews", "About", "Services"];
+
 export const Navigation = () => (
   <motion.ul
     variants={variants}
@@ -22,10 +24,8 @@ export const Navigation = () => (
       width: "230px",
     }}
   >
-    {itemIds.map((menus) => (
-      <MenuItem i={menus} key={menus} />
+    {dashboardNavItems.map((item) => (
+      <MenuItem item={item} key={item} />
     ))}
   </motion.ul>
 );
-
-const itemIds = ["Home", "About", "Services", "Portfolio", "Blog", "Contact"];

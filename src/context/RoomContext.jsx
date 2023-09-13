@@ -15,7 +15,7 @@ import {
   toggleChatAction,
 } from "../reducers/chatActions";
 
-const WS = "http://localhost:8000";
+const WS = "https://galaxy-meeting.onrender.com";
 
 export const RoomContext = createContext(null);
 

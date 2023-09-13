@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import moment from "moment/moment";
 
-const socket = io("http://localhost:8000");
+const socket = io("https://galaxy-meeting.onrender.com");
 
 const Chat = () => {
 
