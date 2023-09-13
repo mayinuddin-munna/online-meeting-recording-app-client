@@ -1,13 +1,12 @@
 import "./Dashboard.css";
-import React, { useEffect, useState } from "react";
 import { useRef } from "react";
+import React, { useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
-import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -31,44 +30,10 @@ const sidebar = {
 
 const Dashboard = () => {
   const containerRef = useRef(null);
-  const [rollData, setRollData] = useState([]);
   const { height } = useDimensions(containerRef);
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const user = useSelector((state) => state.data.user.user);
 
   const [isAdmin] = useAdmin();
-  
-  // console.log(user);
-  const admin = (
-    <>
-      {/* ----------Admin------------ */}
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.email}</div>
-    </>
-  );
-
-  const users = (
-    <>
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.email}</div>
-    </>
-  );
-
-  useEffect(() => {
-    fetch(`http://localhost:8000`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRollData(data);
-      });
-  }, [user?.email]);
 
   return (
     <section className="dashboard-body">
@@ -79,15 +44,10 @@ const Dashboard = () => {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-        <Navigation />
-        <div className="font-bold ml-96 m-12">
-          <h1 className="text-5xl text-white m-12">
-            Welcome to Galaxy Meeting.
-          </h1>
-          {isAdmin ? admin : users}
-        </div>
+        <Navigation isAdmin={isAdmin} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
+        <Outlet/>
     </section>
   );
 };

@@ -18,12 +18,15 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(Logo);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
+      setLogoSrc('https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png');
     } else {
       setIsSticky(false);
+      setLogoSrc(Logo);
     }
   };
 
@@ -69,7 +72,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div> */}
-      {user && <Link to="/dashboard">Dashboard</Link>}
+      {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
         <Link
           to="/meetup"
@@ -82,7 +85,7 @@ const Navbar = () => {
         <>
           {user &&
             <div>
-              <div className="w-10 rounded-full ring ring-warning ring-offset-base-100 ring-offset-2">
+              <div className="flex items-center justify-center w-10 h-10 mx-2 overflow-hidden rounded-lg">
                 <img src={user.photoURL} />
               </div>
             </div>
@@ -112,7 +115,7 @@ const Navbar = () => {
       >
         <div className="flex items-center">
           <Link to="/">
-            <img className="w-16 ms-5 z-20" src={Logo} alt="Logo" />
+            <img className="w-16 ms-5 z-20" src={logoSrc} alt="Logo" />
           </Link>
         </div>
         <div>
