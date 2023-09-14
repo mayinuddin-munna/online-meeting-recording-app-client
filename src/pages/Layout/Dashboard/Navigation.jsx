@@ -11,17 +11,12 @@ const variants = {
   },
 };
 
-const usersItems = ["Profile", "Reviews", "Webinars", "Recording", "Settings"];
+const usersItems = ["Profile", "Reviews", "PersonalMeet", "Reports"];
 const adminItems = [
+  "Profile", "Reviews", "PersonalMeet", "Reports",
   "UserManagement",
   "RoomManagement",
   "AccountManagement",
-  "Advanced",
-  "Profile",
-  "Reviews",
-  "Webinars",
-  "Recording",
-  "Settings",
 ];
 
 export const Navigation = ({ isAdmin }) => (
