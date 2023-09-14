@@ -20,6 +20,7 @@ import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
 import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
 import PersonalMeet from "../Layout/Dashboard/Pages/PersonalMeet";
+import Reports from "../Layout/Dashboard/Pages/Reports";
 
 const router = createBrowserRouter([
   {
@@ -116,6 +117,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/PersonalMeet",
         element: <PersonalMeet />,
+      },
+      {
+        path: "/dashboard/Reports",
+        element: <Reports />,
       },
     ],
   },
