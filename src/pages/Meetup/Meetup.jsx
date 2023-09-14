@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-
+import { MdVideocam } from 'react-icons/md';
 const Meetup = () => {
-  
+
   const { user } = useContext(AuthContext);
 
   const socket = io("https://zoom-backend-b2ys.onrender.com/", {
@@ -59,7 +59,7 @@ const Meetup = () => {
     setName(username);
     setVal(meetingId)
 
-    join(username,meetingId);
+    join(username, meetingId);
   }
 
   // onclick navigate to the meeeting page
@@ -69,8 +69,7 @@ const Meetup = () => {
 
   return (
     <div className="mb-40">
-      {/* <h1 className='text-center my-8 text-3xl'>Video chat App</h1> */}
-      {/* host meeting */}
+      
       <div>
         <Player
           autoplay
@@ -84,7 +83,7 @@ const Meetup = () => {
           />
         </Player>
       </div>
-      <div className="flex flex-col container mx-auto  md:flex-row">
+      <div className="border-2 border-indigo-600  p-10 flex flex-col container mx-auto  md:flex-row">
         <div className="mx-auto p-4 w-full  md:w-1/3">
           <h2 className=" text-2xl text-center my-6 text-green-600 ">
             Create The Meeting Id
@@ -176,6 +175,45 @@ const Meetup = () => {
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Join Meet */}
+      <div className="container mx-auto bg-[#F6F6F6] rounded-md p-10 w-full md:w-1/2">
+        <h3 className="text-center text-3xl mb-5">Join the Meeting</h3>
+        <form >
+        <div>
+        <input
+        className="mb-2 w-full block bg-[#D6D6D6] px-6 py-4 text-xl rounded-md"
+          type="text"
+          placeholder="Enter Your Name"
+        />
+        <input
+        className="mb-2 w-full block bg-[#D6D6D6] px-6 py-4 text-xl rounded-md"
+          type="text"
+          placeholder="Enter meeting ID"
+        />
+        </div>
+        <button
+        className="bg-[#5EC38B] text-white text-xl px-6 py-4 rounded-md hover:bg-gradient-to-r from-[#2EA48F] to-[#2EA48F] transition duration-300 w-full md:w-[300px] text-left"
+        >
+          Join a Meeting
+        </button>
+      </form>
+      <div className="my-4">
+      <button
+        className="bg-[#5EC38B] text-white text-xl px-6 py-2 rounded-md hover:bg-gradient-to-r from-[#2EA48F] to-[#2EA48F] transition duration-300 flex items-center gap-2 w-full md:w-[300px]"
+        >
+          <span>Create Meeting ID</span> <MdVideocam/>
+        </button>
+        <div className="bg-[#D6D6D6] mt-3 rounded-md py-4 px-2">
+        <input
+        className="mb-2 w-full block bg-[#D6D6D6] px-6 py-4 text-xl rounded-md"
+          type="text"
+          disabled
+          
+        />
+        </div>
+      </div>
       </div>
     </div>
   );
