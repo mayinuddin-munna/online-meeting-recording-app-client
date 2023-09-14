@@ -1,42 +1,13 @@
 import React from "react";
-import useAdmin from "../../../../../hooks/useAdmin";
 import { useSelector } from "react-redux";
-import UserInfo from "../../UserInfo/UserInfo";
 
 const Profile = () => {
   const user = useSelector((state) => state.data.user.user);
-  const [isAdmin] = useAdmin();
-
-  /* ----------Admin------------ */
-  const admin = (
-    <>
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.username}</div>
-    </>
-  );
-
-  /* ----------Users------------ */
-  const users = (
-    <>
-      <div className="avatar my-4">
-        <div className="mx-auto w-24 rounded-full">
-          <img src={user?.photoURL} />
-        </div>
-      </div>
-      <div className="mb-4">Welcome, {user?.username}</div>
-    </>
-  );
 
   return (
     <>
       <div className="flex md:me-72 mb-12 mt-12 md:mb-0 md:mt-0 md:flex-row">
-      <h1 className="text-5xl text-white m-12">
-             Welcome to Galaxy Meeting.
-         </h1>
+        <h1 className="text-5xl text-white m-12">Welcome to Galaxy Meeting.</h1>
         <img
           src="https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"
           alt="User Profile"
@@ -90,11 +61,6 @@ const Profile = () => {
               />
             </div>
           </div>
-
-          {/* <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
-          
-          
-        </div> */}
           <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
             <div className="w-full px-2 mb-4">
               <label
@@ -142,7 +108,6 @@ const Profile = () => {
               />
             </div>
           </div>
-
           <div className=" mt-6 text-center md:me-14">
             <button
               type="button"
