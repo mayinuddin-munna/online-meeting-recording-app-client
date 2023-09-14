@@ -19,6 +19,7 @@ import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
 import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
+import PersonalMeet from "../Layout/Dashboard/Pages/PersonalMeet";
 
 const router = createBrowserRouter([
   {
@@ -111,6 +112,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/Reviews",
         element: <UserReviews />,
+      },
+      {
+        path: "/dashboard/PersonalMeet",
+        element: <PersonalMeet />,
       },
     ],
   },

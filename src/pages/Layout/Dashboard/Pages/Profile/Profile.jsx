@@ -1,7 +1,6 @@
 import React from "react";
 import useAdmin from "../../../../../hooks/useAdmin";
 import { useSelector } from "react-redux";
-import UserInfo from "../../UserInfo/UserInfo";
 
 const Profile = () => {
   const user = useSelector((state) => state.data.user.user);
@@ -51,29 +50,29 @@ const Profile = () => {
         <form className="p-5">
           <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
             <div className="w-full px-2 mb-4">
-              <label htmlFor="Name" className="block text-gray-600 text-left">
-                Name
+              <label htmlFor="firstName" className="block text-gray-600 text-left">
+                First Name
               </label>
               <input
                 type="text"
                 id="fullName"
                 name="fullName"
-                placeholder="Name"
+                placeholder="First Name"
                 className="border rounded-md p-2 w-full text-center"
               />
             </div>
             <div className="w-full px-2 mb-4">
               <label
-                htmlFor="fullName"
+                htmlFor="lastName"
                 className="block text-gray-600 text-left"
               >
-                Full Name
+                Last Name
               </label>
               <input
                 type="text"
                 id="fullName"
                 name="fullName"
-                placeholder="Full Name"
+                placeholder="Last Name"
                 className="border rounded-md p-2 w-full text-center"
               />
             </div>
@@ -83,9 +82,9 @@ const Profile = () => {
               </label>
               <input
                 type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="Full Name"
+                id="email"
+                name="email"
+                placeholder="galaxy@gmail.com"
                 className="border rounded-md p-2 w-full text-center"
               />
             </div>
@@ -137,7 +136,37 @@ const Profile = () => {
                 type="text"
                 id="postalCode"
                 name="postalCode"
-                placeholder="Postal code"
+                placeholder="Postal Code"
+                className="border rounded-md p-2 w-full text-center"
+              />
+            </div>
+            <div className="w-full mb-4">
+              <label
+                htmlFor="personalMeetingID"
+                className="block text-gray-600 text-left"
+              >
+                Personal Meeting ID
+              </label>
+              <input
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                placeholder="Personal Meeting ID"
+                className="border rounded-md p-2 w-full text-center"
+              />
+            </div>
+            <div className="w-full mb-4">
+              <label
+                htmlFor="userType"
+                className="block text-gray-600 text-left"
+              >
+                Postal Code
+              </label>
+              <input
+                type="text"
+                id="userType"
+                name="userType"
+                placeholder="User Type"
                 className="border rounded-md p-2 w-full text-center"
               />
             </div>
