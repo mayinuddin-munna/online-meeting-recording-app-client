@@ -8,7 +8,7 @@ const UserGrowth = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-x-10 justify-center lg:justify-between p-6 mx-auto sm:py-12 lg:py-24 ">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:text-left">
           <h1 className="text-4xl lg:text-6xl font-bold ">
-            Loved By Users Everywhere
+            Loved by Users Everywhere
           </h1>
           <p className="my-8 text-base lg:text-lg sm:mb-12">
             92% of users expressing their love for the Galaxy Meeting

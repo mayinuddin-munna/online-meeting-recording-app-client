@@ -3,7 +3,8 @@ import io from "socket.io-client";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import Chat from "../NewMeetings/Chat";
-import { BsFillChatRightTextFill,BsHandIndexThumb } from "react-icons/bs";
+import { BsFillChatRightTextFill } from "react-icons/bs";
+import { BiSolidHand } from "react-icons/bi";
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
@@ -159,7 +160,8 @@ const MeetingRoom = () => {
       media.getVideoTracks()[0].enabled = true; // Turn On
     }
     // ===== another way to do above process ===== //
-    myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
+    myvideoStrm.getVideoTracks()[0].enabled =
+      !myvideoStrm.getVideoTracks()[0].enabled;
   };
 
   // mute and unmute function
@@ -185,13 +187,14 @@ const MeetingRoom = () => {
     window.location.replace("/");
   };
 
-
+  const myUserId = "123";
   // Hand Raise
   function handRaise() {
     // Update local state
     setHandRaised(true);
-console.log(isHandRaised);
+    console.log(isHandRaised);
     // Broadcast the hand raise event to other participants
+
     peer.send({ type: "hand-raise", userId: myUserId });
   }
 
@@ -202,12 +205,11 @@ console.log(isHandRaised);
     if (message.type === "hand-raise") {
       // Handle hand raise event
       const { userId } = message;
-
+      console.log(userId);
       // Update UI to show that userId has raised their hand
     }
-  })
+  });
 
-  
   // function for invite the people
   const invite = () => {
     navigator.clipboard.writeText(room);
@@ -268,7 +270,7 @@ console.log(isHandRaised);
             onClick={handRaise}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <BsHandIndexThumb size={24}/>
+            <BiSolidHand size={24} />
           </div>
 
           <div

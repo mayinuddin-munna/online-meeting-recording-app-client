@@ -57,19 +57,20 @@ body {
 @media (min-width: 768px) {
   .clip-path-reviews {
     clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-    background-color: #222222;
+    background-color: #1d2e42;
   }
 }
 .icon-worries {
-  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.bg-colors{
+.bg-colors {
   /* height: 40px; */
-  background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
+  background: #050c1b
+    linear-gradient(90deg, #050c1b, #1a4055 15%, #1a4055 35%, #050c1b 50%);
 }
 
 /* react tab */
-.tab-border{
-  @apply border-b-2 border-green-500 outline-none bg-green-600
+.tab-border {
+  @apply border-b-2 border-green-500 outline-none bg-green-600;
 }
