@@ -11,7 +11,7 @@ const socket = io("http://localhost:8000");
 const Chat = () => {
 
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const [userDefault, setUserDefault] = useState({});
   const [users, setUsers] = useState([]);

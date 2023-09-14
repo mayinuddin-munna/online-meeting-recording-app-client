@@ -5,10 +5,10 @@ import ScrollableFeed from "react-scrollable-feed";
 
 const ChatWindow = ({ userDefault, messages, handleMessage}) => {
 
-  console.log("userDefault", userDefault, "messages" , messages );
+  // console.log("userDefault", userDefault, "messages" , messages );
 
   return (
-    <div className="relative md:mb-5 rounded-md  bg-slate-500">
+    <div className="relative md:mb-5 rounded-md  bg-slate-300">
       <ScrollableFeed className="max-h-[calc(100%-2px)] overflow-y-auto">
         <div className="h-[60vh] overflow-auto relative text-center mt-5 flex flex-col p-4">
           {messages.map((message, i) => {
@@ -46,7 +46,6 @@ const ChatWindow = ({ userDefault, messages, handleMessage}) => {
                       {message.message}
                     </div>
                   </div>
-
                   {message.time}
                 </div>
 
