@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../../../../firebase.config";
 import { logoutUser } from "../../../features/userSlice";
-import SolutionsDropdown from "./SolutionsDropdown";
 import { FaBars } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 
@@ -23,7 +22,7 @@ const Navbar = () => {
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsSticky(true);
-      setLogoSrc('https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png');
+      setLogoSrc("https://i.ibb.co/821XCP8/galaxy-meeting-LIGHT.png");
     } else {
       setIsSticky(false);
       setLogoSrc(Logo);
@@ -46,32 +45,36 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
 
+  const dropdownItemStyle = {
+    color: isSticky ? "black" : "",
+  };
+
   const navItem = (
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <SolutionsDropdown />
-      <Link to="/community">Community</Link>
-      <Link to="/about-us">About us</Link>
-
-      {/* <div className="relative group pr-3">
+      <div className="relative inline-block group pr-3">
         <div className="flex">
           <button className="rounded-md group-hover:text-red focus:outline-none">
-            Solutions
+            Explore
           </button>
-          <p className="mt-1">
-            <FaCaretDown />{" "}
-          </p>
+          <FaCaretDown className="mt-1" />{" "}
         </div>
-        <div className="absolute hidden bg-white sm:w-auto text-gray-700 group-hover:block z-10 mt-2 p-2 space-y-1 rounded-lg shadow-lg">
-          <Link to="/blog" className="block px-4 py-2 hover:bg-blue-100">
-            Blog
+        <div
+          className="absolute hidden bg-white sm:w-auto group-hover:block z-20 me-5 space-y-1 rounded-lg shadow-lg"
+          style={dropdownItemStyle}
+        >
+          <Link to="/solutions" className="block px-4 py-2">
+            Solution
           </Link>
-          <Link to="/solutions2" className="block px-4 py-2 hover:bg-blue-100">
-            Solution 2
+          <Link to="/community" className="block px-4 py-2">
+            Community
+          </Link>
+          <Link to="/about-us" className="block px-4 py-2">
+            About Us
           </Link>
         </div>
-      </div> */}
+      </div>
       {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
         <Link
@@ -83,18 +86,18 @@ const Navbar = () => {
       )}
       {user ? (
         <>
-          {user &&
+          {user && (
             <div>
               <div className="flex items-center justify-center w-10 h-10 mx-2 overflow-hidden rounded-lg">
                 <img src={user.photoURL} />
               </div>
             </div>
-          }
+          )}
           <Link onClick={handelLogout}>Logout</Link>
         </>
       ) : (
         <Link to="/login">
-          <button className="p-2 w-32 rounded-full hover:bg-[#5EC38B] hover:text-white border shadow">
+          <button className="p-2 w-32 rounded-full bg-[#5EC38B] text-white border shadow">
             Login
           </button>
         </Link>
@@ -104,10 +107,11 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${isSticky
-        ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
-        : "bg-transparent -top-24"
-        } transition duration-300 ease-in-out z-10}
+      className={`${
+        isSticky
+          ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
+          : "bg-transparent -top-24"
+      } transition duration-300 ease-in-out z-10}
       style={{ transition: "all 0.3s ease" }`}
     >
       <div
