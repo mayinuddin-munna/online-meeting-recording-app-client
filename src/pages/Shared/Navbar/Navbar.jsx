@@ -53,7 +53,6 @@ const Navbar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <Link to='/user-dashboard'>User Dashboard</Link>
       <Link to='/user-info'>User Info</Link>
 
       <div className="relative inline-block group pr-3">

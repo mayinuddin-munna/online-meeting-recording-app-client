@@ -1,8 +1,11 @@
 import React from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
+import { AuthContext } from "../../../../providers/AuthProvider";
+import Calender from "../Calender/Calender";
 
 const UserInfo = () => {
   return (
+    <>
+    <Calender/>
     <div className="container mx-auto flex flex-col justify-center items-center">
       <div className="flex md:me-72 mb-12 mt-12 md:mb-0 md:mt-0 md:flex-row">
         <img
@@ -118,6 +121,8 @@ const UserInfo = () => {
         </div>
       </form>
     </div>
+    </>
+    
   );
 };
 
