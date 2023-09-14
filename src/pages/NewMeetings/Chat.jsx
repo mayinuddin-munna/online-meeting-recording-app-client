@@ -1,17 +1,34 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import ChatWindow from "./ChatWindow/ChatWindow";
-import UserLogin from "./userLogin/userLogin";
-import { io } from "socket.io-client";
 
-const socket = io("http://localhost:8000");
+import ChatWindow from "./ChatWindow/ChatWindow";
+import { io } from "socket.io-client";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import moment from "moment/moment";
+
+const socket = io("https://galaxy-meeting.onrender.com");
 
 const Chat = () => {
+
+  const { user } = useContext(AuthContext);
+
   const [newUser, setNewUser] = useState("");
-  const [user, setUser] = useState({});
+  const [userDefault, setUserDefault] = useState({});
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+
+
+  useEffect(() => {
+    // setNewUser();
+
+    // setUser
+    setUserDefault(user.username);
+
+    // socket
+    socket.auth = { username: user.username };
+    socket.connect();
+  }, [userDefault])
 
   useEffect(() => {
     socket.on("users", (users) => {
@@ -25,7 +42,7 @@ const Chat = () => {
     });
 
     socket.on("session", ({ userId, username }) => {
-      setUser({ userId, username });
+      setUserDefault({ userId, username });
     });
 
     socket.on("user connected", ({ userId, username }) => {
@@ -33,12 +50,14 @@ const Chat = () => {
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
 
-    socket.on("new message", ({ userId, username, message }) => {
+    socket.on("new message", ({ userId, username, message, time }) => {
+      const currentTime = moment().locale("en").format("hh:mm A");
       const newMessage = {
         type: "message",
         userId: userId,
         username: username,
-        message
+        message,
+        time :currentTime
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
     });
@@ -51,76 +70,43 @@ const Chat = () => {
     };
   }, [messages]);
 
-  
-  // login
-  const handleSubmit = event => {
-    event.preventDefault();
-    const form = event.target;
-    const userName = form.userName.value;
-    console.log(userName);
-    setNewUser(userName);
 
-    // setUser
-    setUser(newUser);
-    // socket
-    socket.auth = { username: newUser };
-    socket.connect();
-  }
+
 
   // message 
-  const handleMessage = useCallback (event => {
+  const handleMessage = useCallback(event => {
     event.preventDefault();
     const form = event.target;
     const textMessage = form.textMessage.value;
     // console.log(textMessage);
     setMessage(textMessage);
 
+
+
     socket.emit("new message", textMessage, () => {
+      
+      console.log('currentTime', currentTime);
       // After the message is sent successfully, update the state
       const newMessage = {
         type: "message",
-        userId: user.userId,
-        username: user.username,
-        message: textMessage
+        userId: userDefault.userId,
+        username: userDefault.username,
+        message: textMessage,
       };
       setMessages(prevMessages => [...prevMessages, newMessage]);
-      setMessage('');
+      // setMessage('');
     });
 
-  }, [user]);
+  }, [userDefault]);
   return (
     <>
-      <div className={user.userId ? "hidden" : "block"}>
-        <div>
-          <h1 className="text-2xl lg:text-4xl text-center mt-10">
-            Welcome Galaxy Meeting
-          </h1>
-          <Player
-            autoplay
-            loop
-            src="https://lottie.host/aacf9ba2-bc1c-4ae8-b6b5-d5772d78ac16/K47dHc1US0.json"
-            style={{ height: "400px", width: "400px" }}
-          >
-            <Controls
-              visible={!true}
-              buttons={["play", "repeat", "frame", "debug"]}
-            />
-          </Player>
-        </div>
-      </div>
-
-      {/* -------Form-------- */}
-
-      {user.userId ? (
-        <ChatWindow
-          user={user}
-          message={message}
-          messages={messages}
-          handleMessage={handleMessage}
-        />
-      ) : (
-        <UserLogin handleSubmit={handleSubmit} />
-      )}
+      <ChatWindow
+        userDefault={userDefault}
+        message={message}
+        messages={messages}
+        handleMessage={handleMessage}
+        photoURL={user.photoURL}
+      />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import UserReviews from "../../Shared/UserReviews/UserReviews";
 
 const variants = {
   open: {
@@ -22,27 +21,27 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem = ({ item }) => {
+  const style = { border: `2px solid ${colors[item]}` };
   return (
     <motion.li
       style={{
         margin: "0",
-        padding: "0",
         listStyle: "none",
         marginBottom: "20px",
-        // display: "flex",
-        // alignItems: "center",
         cursor: "pointer",
       }}
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      {/* <div className="icon-placeholder" style={style} /> */}
-      <div className="text-placeholder" style={style}>
-        <Link to="/dashboard/userReviews">AddReview</Link>
-      </div>
+      <Link
+        to={`/dashboard/${item}`}
+        className="icon-placeholder"
+        style={style}
+      >
+        {item}
+      </Link>
     </motion.li>
   );
 };

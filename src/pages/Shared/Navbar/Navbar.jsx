@@ -53,8 +53,6 @@ const Navbar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <Link to='/user-info'>User Info</Link>
-
       <div className="relative inline-block group pr-3">
         <div className="flex">
           <button className="rounded-md group-hover:text-red focus:outline-none">
@@ -62,7 +60,6 @@ const Navbar = () => {
           </button>
           <FaCaretDown className="mt-1" />{" "}
         </div>
-
         <div
           className="absolute hidden bg-white sm:w-auto group-hover:block z-20 me-5 space-y-1 rounded-lg shadow-lg"
           style={dropdownItemStyle}
@@ -78,14 +75,26 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      {user && <Link to="/dashboard">Dashboard</Link>}
-      <Link to="/meetup">
-        <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">
+      {user && <Link to="/dashboard/Profile">Dashboard</Link>}
+      {user && (
+        <Link
+          to="/meetup"
+          className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
+        >
           New Meeting
-        </button>
-      </Link>
+        </Link>
+      )}
       {user ? (
-        <Link onClick={handelLogout}>Logout</Link>
+        <>
+          {user && (
+            <div>
+              <div className="flex items-center justify-center w-10 h-10 mx-2 overflow-hidden rounded-lg">
+                <img src={user.photoURL} />
+              </div>
+            </div>
+          )}
+          <Link onClick={handelLogout}>Logout</Link>
+        </>
       ) : (
         <Link to="/login">
           <button className="p-2 w-32 rounded-full bg-[#5EC38B] text-white border shadow">
@@ -102,7 +111,8 @@ const Navbar = () => {
         isSticky
           ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
-      } transition duration-300 ease-in-out z-10`}
+      } transition duration-300 ease-in-out z-10}
+      style={{ transition: "all 0.3s ease" }`}
     >
       <div
         className={`container mx-auto py-2 flex items-center justify-between`}

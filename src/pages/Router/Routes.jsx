@@ -18,7 +18,7 @@ import AboutUs from "../aboutUs/AboutUs";
 import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
-import UserInfo from "../Layout/Dashboard/UserInfo/UserInfo";
+import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -57,10 +57,6 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
-      },
-      {
-        path: "/user-info",
-        element: <UserInfo />,
       },
       {
         path: "/blog",
@@ -109,7 +105,11 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard/userReviews",
+        path: "/dashboard/Profile",
+        element: <Profile />,
+      },
+      {
+        path: "/dashboard/Reviews",
         element: <UserReviews />,
       },
     ],

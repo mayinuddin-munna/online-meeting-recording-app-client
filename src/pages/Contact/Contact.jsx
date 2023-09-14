@@ -11,9 +11,9 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      import.meta.env.VITE_SERVICE_ID, 
-      import.meta.env.VITE_TEMPLATE_ID, 
-      form.current, 
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      form.current,
       import.meta.env.VITE_PUBLIC_KEY)
       .then((result) => {
         Swal.fire({
@@ -53,7 +53,7 @@ const Contact = () => {
         </div>
         <form ref={form} onSubmit={sendEmail} className="bg-white-500 p-6 md:p-10 md:w-[75%] lg:w-1/2">
           <p className="text-sm md:text-base">
-            Please fill out the form below, and we'll contact you shortly.
+            Please fill out the form below, and we&apos;ll contact you shortly.
           </p>
           <div className="my-2">
             <label className="block text-sm md:text-base font-medium text-slate-600">User Name</label>
@@ -88,9 +88,9 @@ const Contact = () => {
           </div>
           <div className="my-2 space-y-4">
             <label className="block text-sm md:text-base font-medium text-slate-600">
-            Your message
+              Your message
             </label>
-            <textarea placeholder="Type here..." name="message"  className="w-full p-2 border-2 rounded-lg focus:border-slate-400"/>
+            <textarea placeholder="Type here..." name="message" className="w-full p-2 border-2 rounded-lg focus:border-slate-400" />
           </div>
           <button type="submit" className="mt-8 md:mt-10 flex items-center justify-between w-full px-4 py-2 bg-[#5EC38B] text-white rounded hover:bg-green-500">
             Contact Us

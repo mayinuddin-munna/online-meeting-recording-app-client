@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 const Meetup = () => {
+  
+  const { user } = useContext(AuthContext);
+
   const socket = io("https://zoom-backend-b2ys.onrender.com/", {
     transports: ["websocket"],
   });
@@ -33,28 +38,56 @@ const Meetup = () => {
     setCopys(!copys);
   };
 
-  const change = (e) => {
-    setVal(e.target.value);
-  };
+  // const change = (e) => {
+  //   setVal(e.target.value);
+  // };
+
+
+
+  // // handle the onchange event
+  // const namehandle = (e) => {
+  //   setName(e.target.value);
+  // };
+
+  // handle join meeting form
+  const handleForm = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const username = form.name.value;
+    const meetingId = form.meetingId.value;
+
+    setName(username);
+    setVal(meetingId)
+
+    join(username,meetingId);
+  }
 
   // onclick navigate to the meeeting page
-  const join = () => {
-    navigate(`/${name}/${val}`);
-  };
-
-  // handle the onchange event
-  const namehandle = (e) => {
-    setName(e.target.value);
+  const join = (name, val1) => {
+    navigate(`/${name}/${val1}`);
   };
 
   return (
-    <div>
+    <div className="mb-40">
       {/* <h1 className='text-center my-8 text-3xl'>Video chat App</h1> */}
       {/* host meeting */}
+      <div>
+        <Player
+          autoplay
+          loop
+          src="https://lottie.host/c60ae679-ca6f-46a1-b0f3-93ea3fec8f8c/WGfnHwgjlg.json"
+          className='w-full md:w-1/4'
+        >
+          <Controls
+            visible={!true}
+            buttons={["play", "repeat", "frame", "debug"]}
+          />
+        </Player>
+      </div>
       <div className="flex flex-col container mx-auto  md:flex-row">
         <div className="mx-auto p-4 w-full  md:w-1/3">
           <h2 className=" text-2xl text-center my-6 text-green-600 ">
-            Create The Meeting
+            Create The Meeting Id
           </h2>
           <form
             onSubmit={(e) => {
@@ -115,19 +148,22 @@ const Meetup = () => {
           <h2 className="text-2xl text-center my-6 text-green-600 ">
             join The Meeting
           </h2>
-          <form onSubmit={join} className="flex flex-col mx-auto space-y-6 ">
+          <form onSubmit={handleForm} className="flex flex-col mx-auto space-y-6 ">
             <input
               required={true}
               type="text"
-              value={name}
-              onChange={namehandle}
+              defaultValue={user.username}
+              // value={name}
+              // onChange={namehandle}
+              name="name"
               className="border p-2"
               placeholder="Enter your Name"
             />
             <input
               required
-              value={val}
-              onChange={change}
+              name="meetingId"
+              // value={val}
+              // onChange={change}
               type="text"
               className="border p-2"
               placeholder="Enter your code"

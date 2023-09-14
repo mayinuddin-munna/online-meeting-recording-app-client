@@ -12,7 +12,7 @@ const AboutUs = () => {
     const [aboutUs, setAboutUs] = useState([]);
 
     useEffect(() => {
-        fetch("about.json")
+        fetch("https://galaxy-meeting.onrender.com/aboutUs")
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

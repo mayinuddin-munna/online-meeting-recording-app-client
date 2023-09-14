@@ -1,11 +1,12 @@
 import "./Dashboard.css";
-import React from "react";
 import { useRef } from "react";
+import React, { useState } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import UserReviews from "../../Shared/UserReviews/UserReviews";
+import useAdmin from "../../../hooks/useAdmin";
+import { Outlet } from "react-router-dom";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -28,9 +29,11 @@ const sidebar = {
 };
 
 const Dashboard = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+  const [isOpen, toggleOpen] = useCycle(false, true);
+
+  const [isAdmin] = useAdmin();
 
   return (
     <section className="dashboard-body">
@@ -41,15 +44,10 @@ const Dashboard = () => {
         ref={containerRef}
       >
         <motion.div className="background" variants={sidebar} />
-        <Navigation />
-        <div  className="font-bold ml-96 m-12">
-          <h1 className="text-5xl text-white m-12">
-            Welcome to Galaxy Meeting.
-          </h1>
-          {/* <UserReviews /> */}
-        </div>
+        <Navigation isAdmin={isAdmin} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
+        <Outlet/>
     </section>
   );
 };
