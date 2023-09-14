@@ -1,17 +1,18 @@
+import axios from "axios";
 import Peer from "peerjs";
 import io from "socket.io-client";
+import Chat from "../NewMeetings/Chat";
+import { BiSolidHand } from "react-icons/bi";
+import { BsFillChatRightTextFill } from "react-icons/bs";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import Chat from "../NewMeetings/Chat";
-import { BsFillChatRightTextFill } from "react-icons/bs";
-import { BiSolidHand } from "react-icons/bi";
 
-const MeetingRoom = () => {
+const MeetingRoom = ({userId}) => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
   // const socket = io('https://galaxy-meeting.onrender.com/')
 
   const [openChat, setOpenChat] = useState(false);
-  const [isHandRaised, setHandRaised] = useState(false);
+  const [handRaised, setHandRaised] = useState(false);
 
   const { name } = useParams();
   const { room } = useParams();
@@ -187,28 +188,38 @@ const MeetingRoom = () => {
     window.location.replace("/");
   };
 
-  const myUserId = "123";
-  // Hand Raise
-  function handRaise() {
-    // Update local state
-    setHandRaised(true);
-    console.log(isHandRaised);
-    // Broadcast the hand raise event to other participants
+  // const myUserId = "123";
+  useEffect(() => {
+    // Handle hand raise event from server
+    socket.on('hand-raised', ({ userId }) => {
+      // Update UI to indicate a user raised their hand
+    });
 
-    peer.send({ type: "hand-raise", userId: myUserId });
-  }
+    // Handle hand lower event from server
+    socket.on('hand-lowered', ({ userId }) => {
+      // Update UI to indicate a user lowered their hand
+    });
+  }, []);
 
-  // Listen for incoming messages
-  peer.on("data", (data) => {
-    const message = JSON.parse(data);
+  // http://localhost:5173/api/raise-hand
 
-    if (message.type === "hand-raise") {
-      // Handle hand raise event
-      const { userId } = message;
-      console.log(userId);
-      // Update UI to show that userId has raised their hand
+  const handleRaiseHand = async () => {
+    try {
+      await axios.post('http://localhost:8000/api/raise-hand', { userId });
+      setHandRaised(true);
+    } catch (error) {
+      console.error('Error raising hand:', error);
     }
-  });
+  };
+
+  const handleLowerHand = async () => {
+    try {
+      await axios.post('http://localhost:8000/api/lower-hand', { userId });
+      setHandRaised(false);
+    } catch (error) {
+      console.error('Error lowering hand:', error);
+    }
+  };
 
   // function for invite the people
   const invite = () => {
@@ -219,7 +230,7 @@ const MeetingRoom = () => {
     }, 3000);
   };
 
-  console.log(openChat);
+  // console.log(openChat);
   return (
     <div className="bg-slate-200 px-4 flex h-screen md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">
@@ -266,12 +277,15 @@ const MeetingRoom = () => {
             <i className="fa-solid fa-user-plus text-xl"></i>
           </div>
 
-          <div
+          <button onClick={handRaised ? handleLowerHand : handleRaiseHand}>
+            {handRaised ? "Lower Hand" : "Raise Hand"}
+          </button>
+          {/* <div
             onClick={handRaise}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
             <BiSolidHand size={24} />
-          </div>
+          </div> */}
 
           <div
             onClick={leave}
