@@ -1,10 +1,10 @@
 .dashboard-body {
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  /* overflow: hidden; */
   padding: 0;
   margin: 0;
-  background: linear-gradient(180deg, #166534 0%, #22c55e 100%);
+  /* background: linear-gradient(180deg, #166534 0%, #22c55e 100%); */
 }
 
 .background {

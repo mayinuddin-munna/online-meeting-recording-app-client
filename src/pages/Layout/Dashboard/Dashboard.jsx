@@ -36,7 +36,7 @@ const Dashboard = () => {
   const [isAdmin] = useAdmin();
 
   return (
-    <section className="dashboard-body">
+    <section className="dashboard-body bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400">
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
@@ -47,7 +47,7 @@ const Dashboard = () => {
         <Navigation isAdmin={isAdmin} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
-        <Outlet/>
+      <Outlet />
     </section>
   );
 };

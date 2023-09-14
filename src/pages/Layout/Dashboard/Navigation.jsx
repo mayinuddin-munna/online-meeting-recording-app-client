@@ -28,7 +28,6 @@ export const Navigation = ({ isAdmin }) => (
       position: "absolute",
       top: "100px",
       width: "230px",
-      zIndex: "100",
     }}
   >
     {isAdmin
