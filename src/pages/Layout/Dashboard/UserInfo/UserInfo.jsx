@@ -1,13 +1,12 @@
 import React from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
-import Calender from "../Calender/Calender";
+// import Calender from "../Calender/Calender";
 
 const UserInfo = () => {
   return (
     <>
-    <Calender/>
-    <div className="container mx-auto flex flex-col justify-center items-center">
-      <div className="flex md:me-72 mb-12 mt-12 md:mb-0 md:mt-0 md:flex-row">
+    {/* <Calender/> */}
+    <div className="flex md:me-72 mb-12 mt-12 md:mb-0 md:mt-0 md:flex-row">
         <img
           src="https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"
           alt="User Profile"
@@ -18,9 +17,11 @@ const UserInfo = () => {
           <p className="text-sm text-gray-600">User address</p>
         </div>
       </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+      
       <form className="p-5">
         <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
-          <div className="w-full md:w-1/3 px-2 mb-4">
+          <div className="w-full px-2 mb-4">
             <label htmlFor="Name" className="block text-gray-600 text-left">
               Name
             </label>
@@ -32,7 +33,7 @@ const UserInfo = () => {
               className="border rounded-md p-2 w-full text-center"
             />
           </div>
-          <div className="w-full md:w-1/3 px-2 mb-4">
+          <div className="w-full px-2 mb-4">
             <label
               htmlFor="fullName"
               className="block text-gray-600 text-left"
@@ -47,22 +48,30 @@ const UserInfo = () => {
               className="border rounded-md p-2 w-full text-center"
             />
           </div>
-        </div>
-
-        <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
-          <div className="w-full md:w-1/3 px-2 mb-4">
-            <label htmlFor="email" className="block text-gray-600 text-left">
-              Email Address
+          <div className="w-full px-2 mb-4">
+            <label
+              htmlFor="email"
+              className="block text-gray-600 text-left"
+            >
+              Email
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="sara@gmail.com "
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Full Name"
               className="border rounded-md p-2 w-full text-center"
             />
           </div>
-          <div className="w-full md:w-1/3 px-2 mb-4">
+          
+        </div>
+
+        {/* <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
+          
+          
+        </div> */}
+        <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
+        <div className="w-full px-2 mb-4">
             <label
               htmlFor="phoneNumber"
               className="block text-gray-600 text-left"
@@ -77,9 +86,7 @@ const UserInfo = () => {
               className="border rounded-md p-2 w-full text-center"
             />
           </div>
-        </div>
-        <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
-          <div className="w-full md:w-1/3 mb-4">
+          <div className="w-full mb-4">
             <label
               htmlFor="location"
               className="block text-gray-600 text-left"
@@ -94,7 +101,7 @@ const UserInfo = () => {
               className="border rounded-md p-2 w-full text-center"
             />
           </div>
-          <div className="w-full md:w-1/3 mb-4">
+          <div className="w-full mb-4">
             <label
               htmlFor="postalCode"
               className="block text-gray-600 text-left"
