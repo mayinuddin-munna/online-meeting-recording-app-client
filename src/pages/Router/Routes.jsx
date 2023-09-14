@@ -18,6 +18,8 @@ import AboutUs from "../aboutUs/AboutUs";
 import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
+import UserDashboard from "../Layout/UserDashboard/UserDashboard";
+import UserInfo from "../Layout/UserInfo/UserInfo";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "/user-dashboard",
+        element: <UserDashboard />,
+      },
+      {
+        path: "/user-info",
+        element: <UserInfo />,
       },
       {
         path: "/blog",
