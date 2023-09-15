@@ -6,7 +6,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex md:me-72 mb-12 mt-12 md:mb-0 md:mt-0 md:flex-row">
+      <div className="flex md:me-72 pb-12 pt-12 md:flex-row">
         <h1 className="text-5xl text-white m-12">Welcome to Galaxy Meeting.</h1>
         <img
           src="https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"

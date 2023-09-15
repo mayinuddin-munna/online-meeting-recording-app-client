@@ -1,7 +1,11 @@
 import React from 'react';
 import useAxiosSecure from '../../../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import userImg from "../../../../../assets/user.png"
+import userImg from "../../../../../assets/1.png"
+import MeetingPng from "../../../../../assets/icons/onlineMeeting.png"
+import TotalUser from "../../../../../assets/icons/user.png"
+import ActiveUser from "../../../../../assets/icons/sync.png"
+import QualityMeeting from "../../../../../assets/icons/improvement.png"
 
 const UserManage = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -17,18 +21,70 @@ const UserManage = () => {
     });
 
     return (
-        <section className="text-center w-full h-full">
+        <section className="text-center w-full h-full pb-12 px-4 lg:px-36">
             {/* Navigation bar */}
             <nav className="text-center p-4 ">
                 <div className="container mx-auto">
-                    <h1 className="text-3xl font-semibold">User Dashboard</h1>
+                    <h1 className="text-4xl lg:text-6xl text-center font-semibold text-white">User Dashboard</h1>
                 </div>
             </nav>
 
             {/* Content */}
+
+            <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:grid-cols-4 lg:gap-16 justify-center items-center px-10 py-10 lg:py-20'>
+                <div className='bg-white px-8 py-12 mb-8 rounded-md shadow-md'>
+                    <div className='grid grid-cols-2 '>
+                        <div>
+                            <h2 className='font-bold text-3xl mb-4'>100+</h2>
+                            <p className='font-semibold text-lg'>Total Meetings</p>
+                        </div>
+                        <div className='w-16 ml-4'>
+                            <img src={MeetingPng} alt="" />
+                        </div>
+                        <p className='col-span-2 font-semibold mt-4 text-green-500'>25.36% Since last month</p>
+                    </div>
+                </div>
+                <div className='bg-white px-8 py-12 mb-8 rounded-md shadow-md'>
+                    <div className='grid grid-cols-2 '>
+                        <div>
+                            <h2 className='font-bold text-3xl mb-4'>825</h2>
+                            <p className='font-semibold text-lg'>Total Users</p>
+                        </div>
+                        <div className='w-16 ml-4'>
+                            <img src={TotalUser} alt="" />
+                        </div>
+                        <p className='col-span-2 font-semibold mt-4 text-green-500'>25.36% Since last month</p>
+                    </div>
+                </div>
+                <div className='bg-white px-8 py-12 mb-8 rounded-md shadow-md'>
+                    <div className='grid grid-cols-2 '>
+                        <div>
+                            <h2 className='font-bold text-3xl mb-4'>25+</h2>
+                            <p className='font-semibold text-lg'>Active Meetings</p>
+                        </div>
+                        <div className='w-16 ml-4'>
+                            <img src={ActiveUser} alt="" />
+                        </div>
+                        <p className='col-span-2 font-semibold mt-4 text-green-500'>25.36% Since last month</p>
+                    </div>
+                </div>
+                <div className='bg-white px-8 py-12 mb-8 rounded-md shadow-md'>
+                    <div className='grid grid-cols-2 '>
+                        <div>
+                            <h2 className='font-bold text-3xl mb-4'>98%</h2>
+                            <p className='font-semibold text-lg'>Good Meetings</p>
+                        </div>
+                        <div className='w-16 ml-4'>
+                            <img src={QualityMeeting} alt="" />
+                        </div>
+                        <p className='col-span-2 font-semibold mt-4 text-green-500'>10% Since last month</p>
+                    </div>
+                </div>
+            </div>
+
             <div className="container mx-auto mt-8">
                 <div className="bg-white/20 p-8 rounded-lg shadow-lg">
-                    <h2 className="text-2xl font-semibold mb-6 ">All Users</h2>
+                    <h2 className="text-4xl font-semibold mb-6 text-white">All Users</h2>
                     <div className="overflow-auto">
                         <table className="w-full table-auto">
                             <thead>
@@ -42,7 +98,7 @@ const UserManage = () => {
                             </thead>
                             <tbody>
                                 {users.map((user, idx) => (
-                                    <tr key={user._id} className="hover:bg-white/40">
+                                    <tr key={user._id} className="rounded-lg hover:bg-white/30">
                                         <td className="px-4 py-2">{idx}</td>
                                         <td className="px-4 py-2">
                                             <img
