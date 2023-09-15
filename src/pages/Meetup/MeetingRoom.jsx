@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { useReactMediaRecorder } from "react-media-recorder";
 
-const MeetingRoom = ({userId}) => {
+const MeetingRoom = ({ userId }) => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
   // const socket = io('https://galaxy-meeting.onrender.com/')
 
@@ -281,12 +281,12 @@ const MeetingRoom = ({userId}) => {
   // const myUserId = "123";
   useEffect(() => {
     // Handle hand raise event from server
-    socket.on('hand-raised', ({ userId }) => {
+    socket.on("hand-raised", ({ userId }) => {
       // Update UI to indicate a user raised their hand
     });
 
     // Handle hand lower event from server
-    socket.on('hand-lowered', ({ userId }) => {
+    socket.on("hand-lowered", ({ userId }) => {
       // Update UI to indicate a user lowered their hand
     });
   }, []);
@@ -295,19 +295,19 @@ const MeetingRoom = ({userId}) => {
 
   const handleRaiseHand = async () => {
     try {
-      await axios.post('http://localhost:8000/api/raise-hand', { userId });
+      await axios.post("http://localhost:8000/api/raise-hand", { userId });
       setHandRaised(true);
     } catch (error) {
-      console.error('Error raising hand:', error);
+      console.error("Error raising hand:", error);
     }
   };
 
   const handleLowerHand = async () => {
     try {
-      await axios.post('http://localhost:8000/api/lower-hand', { userId });
+      await axios.post("http://localhost:8000/api/lower-hand", { userId });
       setHandRaised(false);
     } catch (error) {
-      console.error('Error lowering hand:', error);
+      console.error("Error lowering hand:", error);
     }
   };
 
@@ -385,13 +385,6 @@ const MeetingRoom = ({userId}) => {
           </div> */}
 
           <div
-            onClick={leave}
-            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
-          >
-            <i className="fa-solid fa-phone text-xl"></i>
-          </div>
-
-          <div
             onClick={startRecording}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
@@ -402,6 +395,12 @@ const MeetingRoom = ({userId}) => {
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
             Stop Recording
+          </div>
+          <div
+            onClick={leave}
+            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
+          >
+            <i className="fa-solid fa-phone text-xl"></i>
           </div>
           <div
             onClick={() => setOpenChat(!openChat)}
