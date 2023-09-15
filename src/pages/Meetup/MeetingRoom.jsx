@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import Chat from "../NewMeetings/Chat";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import { BsFillChatRightTextFill, BsHandIndexThumb } from "react-icons/bs";
+import { BsFillChatRightTextFill, BsHandIndexThumb, BsRecordCircleFill, BsRecordFill } from "react-icons/bs";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { useReactMediaRecorder } from "react-media-recorder";
 
@@ -155,19 +155,19 @@ const MeetingRoom = () => {
 
   // Munna bhai er code-------
   // video off/on
-  // const VideoControl = () => {
-  //   const enable = media.getVideoTracks()[0].enabled;
-  //   if (enable) {
-  //     // If Video on
-  //     media.getVideoTracks()[0].enabled = false; // Turn off
-  //     document.getElementById("video").style.color = "red"; // Change Color
-  //   } else {
-  //     document.getElementById("video").style.color = "black"; // Change Color
-  //     media.getVideoTracks()[0].enabled = true; // Turn On
-  //   }
-  //   // ===== another way to do above process ===== //
-  //   // myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
-  // };
+  const VideoControl = () => {
+    const enable = media.getVideoTracks()[0].enabled;
+    if (enable) {
+      // If Video on
+      media.getVideoTracks()[0].enabled = false; // Turn off
+      document.getElementById("video").style.color = "red"; // Change Color
+    } else {
+      document.getElementById("video").style.color = "black"; // Change Color
+      media.getVideoTracks()[0].enabled = true; // Turn On
+    }
+    // ===== another way to do above process ===== //
+    // myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
+  };
 
   // const VideoControl = () => {
   //   if (isScreenSharing) {
@@ -182,25 +182,25 @@ const MeetingRoom = () => {
   //   }
   // };
 
-  const VideoControl = () => {
-    if (isRecording) {
-      stopRecording();
-      setIsRecording(false);
-    } else if (isScreenSharing) {
-      // If screen sharing is active, stop it and switch back to the camera
-      const cameraStream = navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-      media.srcObject = cameraStream;
-      setIsScreenSharing(false);
-      document.getElementById("video").style.color = "black";
-    } else {
-      startRecording();
-      setIsRecording(true);
-      document.getElementById("video").style.color = "green";
-    }
-  };
+  // const VideoControl = () => {
+  //   if (isRecording) {
+  //     stopRecording();
+  //     setIsRecording(false);
+  //   } else if (isScreenSharing) {
+  //     // If screen sharing is active, stop it and switch back to the camera
+  //     const cameraStream = navigator.mediaDevices.getUserMedia({
+  //       video: true,
+  //       audio: true,
+  //     });
+  //     media.srcObject = cameraStream;
+  //     setIsScreenSharing(false);
+  //     document.getElementById("video").style.color = "black";
+  //   } else {
+  //     startRecording();
+  //     setIsRecording(true);
+  //     document.getElementById("video").style.color = "green";
+  //   }
+  // };
 
   // const shareScreen = async () => {
   //   try {
@@ -339,37 +339,34 @@ const MeetingRoom = () => {
             <MdOutlineScreenShare />
           </div>
           <div
-            onClick={invite}
-            className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
-          >
-            <i className="fa-solid fa-user-plus text-xl"></i>
-          </div>
-
-          <div
             onClick={handRaise}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
             <BsHandIndexThumb size={24} />
           </div>
-
           <div
-            onClick={leave}
-            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
+            onClick={invite}
+            className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <i className="fa-solid fa-phone text-xl"></i>
+            <i className="fa-solid fa-user-plus text-xl"></i>
           </div>
-
           <div
             onClick={startRecording}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
-            Start Recording
+            <BsRecordFill/>
           </div>
           <div
             onClick={stopRecording}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
-            Stop Recording
+            <BsRecordCircleFill/>
+          </div>
+          <div
+            onClick={leave}
+            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-red-600"
+          >
+            <i className="fa-solid fa-phone text-xl"></i>
           </div>
           <div
             onClick={() => setOpenChat(!openChat)}
