@@ -6,19 +6,22 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex md:me-72 pb-12 pt-12 md:flex-row">
-        <h1 className="text-5xl text-white m-12">Welcome to Galaxy Meeting.</h1>
-        <img
-          src="https://plus.unsplash.com/premium_photo-1661582120130-03b9bdc47a75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lJTIwbWVldGluZyUyMHNhbGVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60"
-          alt="User Profile"
-          className="w-28 h-28 rounded-full mr-10"
-        />
-        <div>
-          <p>{user.username}</p>
-          <p className="text-sm text-gray-600">User address</p>
-        </div>
+      <div className="grid items-center justify-center lg:px-20 pb-12 pt-12 ">
+        <h1 className="text-3xl lg:text-5xl font-bold text-center text-white">Welcome to Galaxy Meeting.</h1>
+
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center">
+
+      <div className="container mx-auto grid grid-cols-1 justify-items-center max-w-sm lg:max-w-2xl">
+        <div className="grid justify-center items-center text-center">
+          <div>
+            <img
+              src={user.photoURL}
+              alt="User Profile"
+              className="w-16 lg:w-24 rounded-full ml-4 lg:ml-16"
+            />
+          </div>
+          <p className="font-semibold text-xl lg:text-3xl text-center text-white">{user.username}</p>
+        </div>
         <form className="p-5">
           <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
             <div className="w-full px-2 mb-4">
