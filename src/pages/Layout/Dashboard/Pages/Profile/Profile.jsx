@@ -22,7 +22,10 @@ const Profile = () => {
         <form className="p-5">
           <div className="md:flex md:flex-wrap -mx-2 gap-x-28">
             <div className="w-full px-2 mb-4">
-              <label htmlFor="firstName" className="block text-gray-600 text-left">
+              <label
+                htmlFor="firstName"
+                className="block text-gray-600 text-left"
+              >
                 First Name
               </label>
               <input
