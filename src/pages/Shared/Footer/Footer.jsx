@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:ms-0 ms-28 md:text-center md:mt-3 space-y-4 ">
           <p className="font-semibold text-2xl text-start">Newsletter</p>
-          <form onSubmit={handleSubscribe} className="flex">
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row">
             <input
               type="email"
               name="email"

@@ -70,6 +70,14 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         element: <Blog />,
       },
+      {
+        path: "/meetup",
+        element: (
+          <PrivateRoute>
+            <Meetup />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
@@ -84,14 +92,7 @@ const router = createBrowserRouter([
     path: "/forget-password",
     element: <ForgotPassword />,
   },
-  {
-    path: "/meetup",
-    element: (
-      <PrivateRoute>
-        <Meetup />
-      </PrivateRoute>
-    ),
-  },
+  
   {
     path: "/:name/:room",
     element: (
