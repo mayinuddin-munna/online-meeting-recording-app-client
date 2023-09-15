@@ -1,13 +1,15 @@
 import React from 'react';
 import MeetingQuality from './MeetingQuality/MeetingQuality';
+import Analytics from './Analytics/Analytics';
 
 
 const MeetingData = () => {
     return (
         <div className='py-16 lg:py-20'>
-            <h2 className='text-5xl text-center font-semibold text-white'>Meeting Analytics</h2>
+            <h2 className='text-4xl lg:text-6xl text-center font-semibold text-white'>Meeting Analytics</h2>
             <MeetingQuality></MeetingQuality>
-            
+            <Analytics></Analytics>
+
 
         </div>
     );
