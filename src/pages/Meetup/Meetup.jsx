@@ -15,12 +15,9 @@ const Meetup = () => {
   // const socket = io('http://localhost:5000/', {
   //   transports: ["websocket"]
   // })
-  // const socket = io('http://localhost:5000/')
 
   const [code, setCode] = useState();
   const [copys, setCopys] = useState(false);
-  const [val, setVal] = useState("");
-  const [name, setName] = useState("");
   const navigate = useNavigate();
 
   // create meeting code
@@ -38,26 +35,12 @@ const Meetup = () => {
     setCopys(!copys);
   };
 
-  // const change = (e) => {
-  //   setVal(e.target.value);
-  // };
-
-
-
-  // // handle the onchange event
-  // const namehandle = (e) => {
-  //   setName(e.target.value);
-  // };
-
   // handle join meeting form
   const handleForm = (event) => {
     event.preventDefault();
     const form = event.target;
     const username = form.name.value;
     const meetingId = form.meetingId.value;
-
-    setName(username);
-    setVal(meetingId)
 
     join(username,meetingId);
   }
@@ -69,7 +52,6 @@ const Meetup = () => {
 
   return (
     <div className="mb-40">
-      {/* <h1 className='text-center my-8 text-3xl'>Video chat App</h1> */}
       {/* host meeting */}
       <div>
         <Player
@@ -153,8 +135,6 @@ const Meetup = () => {
               required={true}
               type="text"
               defaultValue={user.username}
-              // value={name}
-              // onChange={namehandle}
               name="name"
               className="border p-2"
               placeholder="Enter your Name"
@@ -162,8 +142,6 @@ const Meetup = () => {
             <input
               required
               name="meetingId"
-              // value={val}
-              // onChange={change}
               type="text"
               className="border p-2"
               placeholder="Enter your code"
