@@ -19,10 +19,10 @@ import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
 import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
-import UserManage from "../Layout/Dashboard/Pages/UserManage/UserManage";
-import MeetingData from "../Layout/Dashboard/Pages/MeetingData/MeetingData";
 import PersonalMeet from "../Layout/Dashboard/Pages/PersonalMeet";
 import Reports from "../Layout/Dashboard/Pages/Reports";
+import UserManage from "../Layout/Dashboard/Pages/UserManage/UserManage";
+import MeetingData from "../Layout/Dashboard/Pages/MeetingData/MeetingData";
 
 const router = createBrowserRouter([
   {
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/MeetingData",
-        element: <MeetingData />
+        element: <MeetingData />,
       },
     ],
   },

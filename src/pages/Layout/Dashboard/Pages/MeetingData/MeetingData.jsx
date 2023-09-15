@@ -5,7 +5,7 @@ import Analytics from './Analytics/Analytics';
 
 const MeetingData = () => {
     return (
-        <div className='py-16 lg:py-20'>
+        <div className='px-4 lg:px-20 py-16 lg:py-20'>
             <h2 className='text-4xl lg:text-6xl text-center font-semibold text-white'>Meeting Analytics</h2>
             <MeetingQuality></MeetingQuality>
             <Analytics></Analytics>

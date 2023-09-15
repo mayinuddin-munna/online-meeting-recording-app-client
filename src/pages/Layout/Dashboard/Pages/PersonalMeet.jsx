@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCalendar, FaCopy } from "react-icons/fa6";
-import background from "../../../../assets/banner-image/personalMeetBackground.avif";
+// import background from "../../../../assets/banner-image/personalMeetBackground.avif";
 const PersonalMeet = () => {
   return (
     <div className="container mx-auto mt-28 text-gray-100 flex flex-col sm:flex-row justify-center items-center gap-y-4  w-full h-screen">
