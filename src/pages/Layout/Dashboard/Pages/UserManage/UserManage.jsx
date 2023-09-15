@@ -27,7 +27,7 @@ const UserManage = () => {
 
             {/* Content */}
             <div className="container mx-auto mt-8">
-                <div className="bg-white/20 backdrop-blur-xl p-8 rounded-lg shadow-lg">
+                <div className="bg-white/20 p-8 rounded-lg shadow-lg">
                     <h2 className="text-2xl font-semibold mb-6 ">All Users</h2>
                     <div className="overflow-auto">
                         <table className="w-full table-auto">

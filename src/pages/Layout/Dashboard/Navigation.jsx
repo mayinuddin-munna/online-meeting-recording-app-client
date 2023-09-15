@@ -15,8 +15,7 @@ const usersItems = ["Profile", "Reviews", "PersonalMeet", "Reports"];
 const adminItems = [
   "Profile", "Reviews", "PersonalMeet", "Reports",
   "UserManagement",
-  "RoomManagement",
-  "AccountManagement"
+  "MeetingData"
 ];
 
 export const Navigation = ({ isAdmin }) => (
