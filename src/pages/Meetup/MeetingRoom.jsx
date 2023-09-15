@@ -1,8 +1,8 @@
 import Peer from "peerjs";
 import io from "socket.io-client";
+import Chat from "../NewMeetings/Chat";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import Chat from "../NewMeetings/Chat";
 import { BsFillChatRightTextFill, BsHandIndexThumb } from "react-icons/bs";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { useReactMediaRecorder } from "react-media-recorder";
