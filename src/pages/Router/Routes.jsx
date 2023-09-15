@@ -21,6 +21,8 @@ import CommunityPage from "../communityPage/CommunityPage";
 import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
 import UserManage from "../Layout/Dashboard/Pages/UserManage/UserManage";
 import MeetingData from "../Layout/Dashboard/Pages/MeetingData/MeetingData";
+import PersonalMeet from "../Layout/Dashboard/Pages/PersonalMeet";
+import Reports from "../Layout/Dashboard/Pages/Reports";
 
 const router = createBrowserRouter([
   {
@@ -115,12 +117,20 @@ const router = createBrowserRouter([
         element: <UserReviews />,
       },
       {
+        path: "/dashboard/PersonalMeet",
+        element: <PersonalMeet />,
+      },
+      {
+        path: "/dashboard/Reports",
+        element: <Reports />,
+      },
+      {
         path: "/dashboard/UserManagement",
         element: <UserManage />,
       },
       {
         path: "/dashboard/MeetingData",
-        element: <MeetingData />,
+        element: <MeetingData />
       },
     ],
   },

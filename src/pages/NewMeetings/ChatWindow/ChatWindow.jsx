@@ -3,12 +3,12 @@ import img from "../../../assets/Luffy.png";
 import { BsSendFill } from "react-icons/bs";
 import ScrollableFeed from "react-scrollable-feed";
 
-const ChatWindow = ({ userDefault, messages, handleMessage, photoURL }) => {
+const ChatWindow = ({ userDefault, messages, handleMessage}) => {
 
-  console.log(messages);
+  // console.log("userDefault", userDefault, "messages" , messages );
 
   return (
-    <div className="relative md:mb-5 rounded-md  bg-slate-500">
+    <div className="relative md:mb-5 rounded-md  bg-slate-300">
       <ScrollableFeed className="max-h-[calc(100%-2px)] overflow-y-auto">
         <div className="h-[60vh] overflow-auto relative text-center mt-5 flex flex-col p-4">
           {messages.map((message, i) => {
@@ -33,11 +33,11 @@ const ChatWindow = ({ userDefault, messages, handleMessage, photoURL }) => {
                   <div className={message.userId === userDefault.userId ? "flex flex-row-reverse ml-auto pb-4 " : 'flex mr-auto pb-4 '}>
                     <div >
                       <div className="w-16 rounded-full mr-1">
-                        <img src={photoURL} className='rounded-full' title={message.username} />
+                        <img src={message.photoURL} className='rounded-full' title={message.username} />
                       </div>
                     </div>
                     {/* msg */}
-                    <div className="flex-shrink-1 bg-slate-400 rounded py-2 px-3 ml-3 text-black">
+                    <div className="flex-shrink-1 bg-slate-400 rounded py-2 px-3 mx-2 text-black">
                       <div className="font-bold mb-1">
                         {message.userId === userDefault.userId
                           ? "You"
@@ -46,7 +46,6 @@ const ChatWindow = ({ userDefault, messages, handleMessage, photoURL }) => {
                       {message.message}
                     </div>
                   </div>
-
                   {message.time}
                 </div>
 

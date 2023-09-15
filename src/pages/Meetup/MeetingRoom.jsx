@@ -1,24 +1,31 @@
 import Peer from "peerjs";
 import io from "socket.io-client";
+import Chat from "../NewMeetings/Chat";
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
-import Chat from "../NewMeetings/Chat";
-import { BsFillChatRightTextFill,BsHandIndexThumb } from "react-icons/bs";
+import { BsFillChatRightTextFill, BsHandIndexThumb } from "react-icons/bs";
+import { MdOutlineScreenShare } from "react-icons/md";
+import { useReactMediaRecorder } from "react-media-recorder";
 
 const MeetingRoom = () => {
   const socket = io("https://zoom-backend-b2ys.onrender.com/");
   // const socket = io('https://galaxy-meeting.onrender.com/')
 
   const [openChat, setOpenChat] = useState(false);
+  const [isScreenSharing, setIsScreenSharing] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const { status, startRecording, stopRecording, mediaBlobUrl } =
+    useReactMediaRecorder({ video: true, audio: true });
 
   const { name } = useParams();
   const { room } = useParams();
 
   const [ids, setIds] = useState("");
   const [media, setMedia] = useState(null);
+  const mediaStream = useRef(null);
 
   const mydiv = useRef();
-  const myvideo = useRef();
+  const myvideo = useRef(null);
   const alertbox = useRef();
 
   const callRef = useRef();
@@ -146,19 +153,103 @@ const MeetingRoom = () => {
     }
   };
 
+  // Munna bhai er code-------
   // video off/on
+  // const VideoControl = () => {
+  //   const enable = media.getVideoTracks()[0].enabled;
+  //   if (enable) {
+  //     // If Video on
+  //     media.getVideoTracks()[0].enabled = false; // Turn off
+  //     document.getElementById("video").style.color = "red"; // Change Color
+  //   } else {
+  //     document.getElementById("video").style.color = "black"; // Change Color
+  //     media.getVideoTracks()[0].enabled = true; // Turn On
+  //   }
+  //   // ===== another way to do above process ===== //
+  //   // myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
+  // };
+
+  // const VideoControl = () => {
+  //   if (isScreenSharing) {
+  //     // If screen sharing is active, stop it and switch back to the camera
+  //     const cameraStream = navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  //     media.srcObject = cameraStream;
+  //     setIsScreenSharing(false);
+  //     document.getElementById("video").style.color = "black";
+  //   } else {
+  //     shareScreen();
+  //     document.getElementById("video").style.color = "green";
+  //   }
+  // };
+
   const VideoControl = () => {
-    const enable = media.getVideoTracks()[0].enabled;
-    if (enable) {
-      // If Video on
-      media.getVideoTracks()[0].enabled = false; // Turn off
-      document.getElementById("video").style.color = "red"; // Change Color
+    if (isRecording) {
+      stopRecording();
+      setIsRecording(false);
+    } else if (isScreenSharing) {
+      // If screen sharing is active, stop it and switch back to the camera
+      const cameraStream = navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+      media.srcObject = cameraStream;
+      setIsScreenSharing(false);
+      document.getElementById("video").style.color = "black";
     } else {
-      document.getElementById("video").style.color = "black"; // Change Color
-      media.getVideoTracks()[0].enabled = true; // Turn On
+      startRecording();
+      setIsRecording(true);
+      document.getElementById("video").style.color = "green";
+    }
+  };
+
+  // const shareScreen = async () => {
+  //   try {
+  //     const screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+  //     const videoTracks = screenStream.getVideoTracks();
+
+  //     // Replace the video track with the screen-sharing track
+  //     media.getVideoTracks().forEach(track => {
+  //       track.stop();
+  //       media.removeTrack(track);
+  //     });
+  //     media.addTrack(videoTracks[0]);
+
+  //     setIsScreenSharing(true);
+  //   } catch (error) {
+  //     console.error("Error sharing screen:", error);
+  //   }
+  // };
+
+  const shareScreen = async () => {
+    try {
+      if (isScreenSharing) {
+        // If screen sharing is active, stop it and stop recording
+        stopRecording();
+        setIsRecording(false);
+        setIsScreenSharing(false);
+
+        // Start recording with the user's camera stream
+        startRecording(mediaStream.current);
+        setIsRecording(true);
+      } else {
+        const screenStream = await navigator.mediaDevices.getDisplayMedia({
+          video: true,
+        });
+
+        // Start recording with the screen sharing stream
+        startRecording(screenStream);
+        setIsRecording(true);
+
+        // Update the video element with the screen sharing stream
+        myvideo.current.srcObject = screenStream;
+        setIsScreenSharing(true);
+      }
+    } catch (error) {
+      console.error("Error sharing screen:", error);
     }
     // ===== another way to do above process ===== //
-    myvideoStrm.getVideoTracks()[0].enabled = !(myvideoStrm.getVideoTracks()[0].enabled);
+    myvideoStrm.getVideoTracks()[0].enabled =
+      !myvideoStrm.getVideoTracks()[0].enabled;
   };
 
   // mute and unmute function
@@ -192,7 +283,6 @@ const MeetingRoom = () => {
     // You can also send this information to the server or handle it accordingly
   };
 
-  
   // function for invite the people
   const invite = () => {
     navigator.clipboard.writeText(room);
@@ -202,7 +292,6 @@ const MeetingRoom = () => {
     }, 3000);
   };
 
-  console.log(openChat);
   return (
     <div className="bg-slate-200 px-4 flex h-screen md:p-8">
       <div className="flex-1 flex container mx-auto flex-col ">
@@ -225,6 +314,7 @@ const MeetingRoom = () => {
             <div className="left border h-fit rounded overflow-hidden bg-slate-400 relative">
               <h1 className="text-3xl text-center absolute capitalize">You</h1>
               <video muted={true} autoPlay={true} ref={myvideo}></video>
+              {mediaBlobUrl && <video src={mediaBlobUrl} controls />}
             </div>
           </div>
           {openChat ? <Chat /> : ""}
@@ -238,9 +328,15 @@ const MeetingRoom = () => {
           </div>
           <div
             onClick={VideoControl}
-            className=" cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
+            className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
             <i id="video" className="fa-solid fa-video-slash text-xl"></i>
+          </div>
+          <div
+            onClick={shareScreen}
+            className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
+          >
+            <MdOutlineScreenShare />
           </div>
           <div
             onClick={invite}
@@ -253,7 +349,7 @@ const MeetingRoom = () => {
             onClick={handRaise}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
           >
-            <BsHandIndexThumb size={24}/>
+            <BsHandIndexThumb size={24} />
           </div>
 
           <div
@@ -263,6 +359,18 @@ const MeetingRoom = () => {
             <i className="fa-solid fa-phone text-xl"></i>
           </div>
 
+          <div
+            onClick={startRecording}
+            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
+          >
+            Start Recording
+          </div>
+          <div
+            onClick={stopRecording}
+            className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
+          >
+            Stop Recording
+          </div>
           <div
             onClick={() => setOpenChat(!openChat)}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
