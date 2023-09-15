@@ -11,7 +11,7 @@ const Parallax = () => {
       }}
     >
       <div
-        className="py-12 lg:py-52 px-12 lg:px-36 from-[#166534] via[#22c55e] to-[rgb(58,182,103)]"
+        className="py-12 lg:py-52 px-12 lg:px-36 bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(22, 101, 52, .9), rgba(58, 182, 103, .9), rgba(34, 197, 94, .9)",
