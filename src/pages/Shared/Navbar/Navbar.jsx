@@ -77,11 +77,16 @@ const Navbar = () => {
       </div>
       {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
-        <Link
-          to="/meetup"
-          className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
-        >
-          New Meeting
+        // <Link
+        //   to="/meetup"
+        //   className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
+        // >
+        //   New Meeting
+        // </Link>
+        <Link to="/meetup">
+          <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">
+            New Meeting
+          </button>
         </Link>
       )}
       {user ? (
