@@ -3,7 +3,7 @@ import { FaCalendar, FaCopy } from "react-icons/fa6";
 // import background from "../../../../assets/banner-image/personalMeetBackground.avif";
 const PersonalMeet = () => {
   return (
-    <div className="container mx-auto mt-28 text-gray-100 flex flex-col sm:flex-row justify-center items-center gap-y-4  w-full h-screen">
+    <div className="container mx-auto pt-28 text-gray-100 flex flex-col sm:flex-row justify-center items-center gap-y-4  w-full h-screen">
       <div className="w-full sm:w-1/2 p-5">
         <div className="flex flex-col gap-12">
           <div className="flex">
@@ -44,7 +44,7 @@ const PersonalMeet = () => {
               Start
             </button>
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
-            <FaCopy />
+              <FaCopy />
               Copy Invitation
             </button>
             <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">

@@ -9,8 +9,6 @@ const MeetingData = () => {
             <h2 className='text-4xl lg:text-6xl text-center font-semibold text-white'>Meeting Analytics</h2>
             <MeetingQuality></MeetingQuality>
             <Analytics></Analytics>
-
-
         </div>
     );
 };
