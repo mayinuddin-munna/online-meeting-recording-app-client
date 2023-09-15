@@ -6,18 +6,17 @@ const Profile = () => {
 
   return (
     <>
-      <div className="grid items-center justify-center lg:px-20 pb-12 pt-12 ">
+      <div className="grid items-center justify-center px-0 md:px-4 lg:px-20 py-12 ">
         <h1 className="text-3xl lg:text-5xl font-bold text-center text-white">Welcome to Galaxy Meeting.</h1>
-
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 justify-items-center max-w-sm lg:max-w-2xl">
+      <div className="bg-white/10 lg:backdrop-blur-md text-white p-8 rounded-lg shadow-xl container mx-auto grid grid-cols-1 justify-items-center max-w-sm lg:max-w-2xl">
         <div className="grid justify-center items-center text-center">
           <div>
             <img
               src={user.photoURL}
               alt="User Profile"
-              className="w-16 lg:w-24 rounded-full ml-4 lg:ml-16"
+              className="w-16 lg:w-24 rounded-full ml-12 lg:ml-16"
             />
           </div>
           <p className="font-semibold text-xl lg:text-3xl text-center text-white">{user.username}</p>
@@ -27,7 +26,7 @@ const Profile = () => {
             <div className="w-full px-2 mb-4">
               <label
                 htmlFor="firstName"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 First Name
               </label>
@@ -42,7 +41,7 @@ const Profile = () => {
             <div className="w-full px-2 mb-4">
               <label
                 htmlFor="lastName"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Last Name
               </label>
@@ -55,7 +54,7 @@ const Profile = () => {
               />
             </div>
             <div className="w-full px-2 mb-4">
-              <label htmlFor="email" className="block text-gray-600 text-left">
+              <label htmlFor="email" className="block text-lg font-medium mb-2 text-left">
                 Email
               </label>
               <input
@@ -71,7 +70,7 @@ const Profile = () => {
             <div className="w-full px-2 mb-4">
               <label
                 htmlFor="phoneNumber"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Phone Number
               </label>
@@ -86,7 +85,7 @@ const Profile = () => {
             <div className="w-full mb-4">
               <label
                 htmlFor="location"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Location
               </label>
@@ -101,7 +100,7 @@ const Profile = () => {
             <div className="w-full mb-4">
               <label
                 htmlFor="postalCode"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Postal Code
               </label>
@@ -116,7 +115,7 @@ const Profile = () => {
             <div className="w-full mb-4">
               <label
                 htmlFor="personalMeetingID"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Personal Meeting ID
               </label>
@@ -131,7 +130,7 @@ const Profile = () => {
             <div className="w-full mb-4">
               <label
                 htmlFor="userType"
-                className="block text-gray-600 text-left"
+                className="block text-lg font-medium mb-2 text-left"
               >
                 Postal Code
               </label>
