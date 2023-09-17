@@ -51,7 +51,7 @@ const Footer = () => {
           <p>Reviews</p>
         </div>
         <div className="md:text-center  md:mt-3 ms-5 space-y-4">
-          <p className="font-semibold text-2xl text-start">Newsletter</p>
+          <p className="font-semibold text-2xl lg:-mt-4 text-start">Newsletter</p>
           <form
             onSubmit={handleSubscribe}
             className="flex flex-col md:flex-row items-start"
