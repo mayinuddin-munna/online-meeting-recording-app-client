@@ -38,7 +38,6 @@ const Footer = () => {
             <a href="https://tweetdeck.twitter.com/login">
               <FaTwitterAlt className="text-white text-2xl" />
             </a>
-            {/* TODO: github link */}
             <a href="">
               <FaGithub className="text-white text-2xl" />
             </a>
