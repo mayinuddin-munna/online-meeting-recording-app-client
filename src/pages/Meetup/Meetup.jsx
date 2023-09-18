@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { MdVideocam, MdOutlineCopyAll } from "react-icons/md";
+
 const Meetup = () => {
   const { user } = useContext(AuthContext);
 
@@ -99,6 +99,13 @@ const Meetup = () => {
                   type="text"
                   disabled
                   value={code}
+                />
+                <input
+                  disabled
+                  value={code}
+                  type="text"
+                  placeholder="Enter meeting link"
+                  className="px-8 py-3 text-gray-200 rounded-sm"
                 />
                 {!copys ? (
                   <MdOutlineCopyAll
