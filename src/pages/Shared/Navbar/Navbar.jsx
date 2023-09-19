@@ -13,8 +13,8 @@ import { FaCaretDown } from "react-icons/fa";
 const auth = getAuth(app);
 
 const Navbar = () => {
-  const user = useSelector((state) => state.data.user.user);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.data.user.user);
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const [logoSrc, setLogoSrc] = useState(Logo);
@@ -53,11 +53,9 @@ const Navbar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <div className="relative group lg:ml-5 ">
+      <div className="relative group py-2">
         <div className="flex">
-          <button className="group-hover:text-red ms-5">
-            Explore
-          </button>
+          <button className="group-hover:text-red ml-5">Explore</button>
           <FaCaretDown className="mt-1" />
         </div>
         <div
@@ -86,10 +84,8 @@ const Navbar = () => {
       {user ? (
         <>
           {user && (
-            <div>
-              <div className="flex items-center justify-center w-10 h-10 mx-2 overflow-hidden rounded-lg">
-                <img src={user.photoURL} />
-              </div>
+            <div className="flex items-center justify-center w-10 h-10 mx-4 overflow-hidden rounded-lg">
+              <img src={user?.photoURL} />
             </div>
           )}
           <Link onClick={handelLogout}>Logout</Link>
@@ -106,15 +102,14 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${isSticky
+      className={`${
+        isSticky
           ? "z-10 backdrop-opacity-60 bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
-        } transition duration-300 ease-in-out z-10}
+      } transition duration-300 ease-in-out z-10}
       style={{ transition: "all 0.3s ease" }`}
     >
-      <div
-        className={`container mx-auto py-2 flex justify-between`}
-      >
+      <div className={`container mx-auto py-2 flex justify-between`}>
         <div className="lg:flex lg:items-center">
           <Link to="/">
             <img className="w-16 ms-5 z-20" src={logoSrc} alt="Logo" />

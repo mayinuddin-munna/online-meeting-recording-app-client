@@ -1,8 +1,5 @@
 import React from 'react';
-import MeetingPng from "../../../../../../assets/icons/onlineMeeting.png"
-import TotalUser from "../../../../../../assets/icons/user.png"
-import ActiveUser from "../../../../../../assets/icons/sync.png"
-import QualityMeeting from "../../../../../../assets/icons/improvement.png"
+
 
 
 const MeetingQuality = () => {
@@ -18,7 +15,7 @@ const MeetingQuality = () => {
                                 <p className='font-semibold text-lg'>Traffic</p>
                             </div>
 
-                            <div className="relative w-auto pl-4 flex-initial">
+                            <div className="z-0 w-auto pl-4 flex-initial">
                                 <div className="font-semibold text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 shadow-lg rounded-full bg-green-500"><i className="far fa-chart-bar"></i></div>
                             </div>
 
@@ -57,7 +54,7 @@ const MeetingQuality = () => {
                                 <h2 className='font-bold text-3xl mb-4'>87%</h2>
                                 <p className='font-semibold text-lg'>Good Performance</p>
                             </div>
-                            <div className="relative w-auto pl-4 flex-initial">
+                            <div className=" w-auto pl-4 flex-initial">
                                 <div className="text-white p-3 text-center inline-flex items-center justify-center w-20 h-20 shadow-lg rounded-full bg-blue-500"><i className="fas fa-percent"></i></div>
                             </div>
                             <p className="text-sm text-blueGray-500 mt-4"><span className="text-emerald-500 mr-2"><i className="fas fa-arrow-up"></i> 12%</span><span className="whitespace-nowrap">Since last month</span></p>

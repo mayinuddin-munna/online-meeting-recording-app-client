@@ -4,12 +4,12 @@ import background from "../../../../assets/banner-image/personalMeetBackground.a
 
 const Reports = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-gradient-to-r text-white h-screen bg-fixed bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${background})` }}>
+    <div className="flex flex-col justify-center items-center text-white h-screen bg-fixed bg-cover bg-center bg-no-repeat">
       <div className="px-10 py-10 lg:py-36">
         <h1 className="text-4xl font-semibold mb-6">
           You are currently on a basic plan (free)
         </h1>
-        <button className="px-8 py-3 m-2 text-lg text-left font-semibold rounded bg-[#5EC38B] hover:bg-green-600 transition-colors">
+        <button className="px-8 py-3 m-2 text-lg text-left font-semibold rounded bg-[#1D2E42] hover:bg-green-600 transition-colors">
           Upgrade <FaArrowCircleUp className="inline ml-2" />
         </button>
         <p className="text-sm my-4">
