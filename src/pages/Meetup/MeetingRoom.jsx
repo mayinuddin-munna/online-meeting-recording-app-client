@@ -308,7 +308,7 @@ const MeetingRoom = () => {
         </h2>
         <div className="flex w-full gap-5 justify-between items-center">
           <div
-            className=" p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto overflow-y-scroll "
+            className=" p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto"
             ref={mydiv}
           >
             <div className="left border h-fit rounded overflow-hidden bg-slate-400 relative">
@@ -319,7 +319,7 @@ const MeetingRoom = () => {
           </div>
           {openChat ? <Chat /> : ""}
         </div>
-        <div className="footer flex container  justify-center rounded mx-auto gap-6 bg-gray-300 p-3 md:gap-8   ">
+        <div className="flex container justify-center items-end rounded mx-auto gap-6 p-3 md:gap-8   ">
           <div
             onClick={muteUnmute}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"
@@ -354,13 +354,13 @@ const MeetingRoom = () => {
             onClick={startRecording}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
-            <BsRecordFill/>
+            <BsRecordFill />
           </div>
           <div
             onClick={stopRecording}
             className="cursor-pointer flex justify-center rounded-full items-center p-4 bg-slate-400"
           >
-            <BsRecordCircleFill/>
+            <BsRecordCircleFill />
           </div>
           <div
             onClick={leave}
