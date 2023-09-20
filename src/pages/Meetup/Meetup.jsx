@@ -53,7 +53,7 @@ const Meetup = () => {
       <div className="flex flex-col md:flex-row container mx-auto items-center">
         <div className="flex-1 px-10">
         <h1 className="text-3xl font-bold ">Welcome to Our <br /><span className="text-[#2EA48F]">Virtual Meetings</span></h1>
-        <p>To join a meeting, simply enter the meeting ID provided by the host and click the "Join Meeting" button below. If you're the host, you can create a new meeting by clicking "Create Meeting ID."</p>
+        <p className="py-4">To join a meeting, simply enter the meeting ID provided by the host and click the "Join Meeting" button below. If you're the host, you can create a new meeting by clicking "Create Meeting ID."</p>
 
         </div>
         <div className="flex-1">
@@ -95,12 +95,7 @@ const Meetup = () => {
               e.preventDefault();
             }}
           >
-            <button
-              onClick={call}
-              className="bg-[#5EC38B] text-white text-xl px-6 py-2 rounded-md hover:bg-gradient-to-r from-[#2EA48F] to-[#2EA48F] transition duration-300 flex items-center gap-2 w-full md:w-[300px]"
-            >
-              <span>Create Meeting ID</span> <MdVideocam />
-            </button>
+            
             {code && (
               <div className="relative">
                 <input
@@ -122,12 +117,18 @@ const Meetup = () => {
                 )}
               </div>
             )}
+            <button
+              onClick={call}
+              className="bg-[#5EC38B] text-white text-xl px-6 py-2 rounded-md hover:bg-gradient-to-r from-[#2EA48F] to-[#2EA48F] transition duration-300 flex items-center gap-2 w-full md:w-[300px]"
+            >
+              <span>Create Meeting ID</span> <MdVideocam />
+            </button>
           </form>
         </div>
         </div>
          <div className="flex-1 px-10">
          <h1 className="text-3xl font-bold ">Galaxy <span className="text-[#2EA48F]">Meeting Room</span></h1>
-         <p>Welcome to the Galaxy Meeting Room, where the possibilities are as vast as the universe. Step into a world of seamless online collaboration and communication. Whether you're hosting a business conference, educational seminar, or connecting with friends and family, our Galaxy Meeting Room provides a stellar space for your virtual gatherings.</p>
+         <p className="py-4">Welcome to the Galaxy Meeting Room, where the possibilities are as vast as the universe. Step into a world of seamless online collaboration and communication. Whether you're hosting a business conference, educational seminar, or connecting with friends and family, our Galaxy Meeting Room provides a stellar space for your virtual gatherings.</p>
 
         </div>
       </div>
