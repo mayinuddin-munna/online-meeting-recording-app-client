@@ -339,12 +339,12 @@ const MeetingRoom = ({ userId }) => {
           <span className="font-medium">Success alert!</span> Room Code is
           copied
         </div>
-        <h2 className="text-center text-green-600 text-3xl capitalize">
+        <h2 className="text-center text-green-600 text-4xl capitalize">
           video chat.
         </h2>
         <div className="flex w-full gap-5 justify-between items-center">
           <div
-            className="p-2 box-container flex-1 my-4 flex flex-wrap  justify-center gap-4 mx-auto overflow-y-scroll "
+            className=" p-2 box-container flex-1 my-4 flex flex-wrap justify-center gap-4 mx-auto"
             ref={mydiv}
           >
             <div className="left border h-fit rounded overflow-hidden bg-slate-400 relative">
@@ -355,7 +355,7 @@ const MeetingRoom = ({ userId }) => {
           </div>
           {openChat ? <Chat /> : ""}
         </div>
-        <div className="footer flex container justify-center mx-auto gap-6 rounded-xl bg-gray-300 p-3 md:gap-8   ">
+        <div className="flex container justify-center items-end bg-slate-300 rounded mx-auto gap-6 p-3 md:gap-8">
           <div
             onClick={muteUnmute}
             className="cursor-pointer bg-slate-400 flex justify-center rounded-full items-center p-4"

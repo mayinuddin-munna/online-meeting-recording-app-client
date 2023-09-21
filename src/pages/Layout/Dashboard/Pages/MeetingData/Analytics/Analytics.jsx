@@ -137,7 +137,7 @@ const Analytics = () => {
                                         <tbody>
                                             <tr>
                                                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                    <div className="flex items-center"><span className="ml-3 font-bold NaN">Facebook</span></div>
+                                                    <div className="flex items-center"><span className="ml-3 font-bold NaN">Search</span></div>
                                                 </td>
                                                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                     <div className="flex items-center">1,480</div>

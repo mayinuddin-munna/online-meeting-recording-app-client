@@ -6,6 +6,7 @@ import MeetingPng from "../../../../../assets/icons/onlineMeeting.png"
 import TotalUser from "../../../../../assets/icons/user.png"
 import ActiveUser from "../../../../../assets/icons/sync.png"
 import QualityMeeting from "../../../../../assets/icons/improvement.png"
+import Swal from 'sweetalert2';
 
 const UserManage = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -19,6 +20,28 @@ const UserManage = () => {
                     return res.data;
                 }),
     });
+
+    const handleRole = (email, role) => {
+        fetch(
+            `https://galaxy-meeting.onrender.com/users/role?email=${email}&role=${role}`,
+            {
+                method: "PATCH",
+            }
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: 'Role changed successfully',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
+            });
+    };
 
     return (
         <section className="text-center w-full h-full pb-12 px-4 lg:px-36">
@@ -93,7 +116,8 @@ const UserManage = () => {
                                     <th className="px-4 py-2">Image</th>
                                     <th className="px-4 py-2">Name</th>
                                     <th className="px-4 py-2">Email</th>
-                                    <th className="px-4 py-2">Role</th>
+                                    <th className="px-4 py-2">Current Role</th>
+                                    <th className="px-4 py-2">Change Role</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -110,6 +134,17 @@ const UserManage = () => {
                                         <td className="px-4 py-2">{` ${user.username ? user.username : user.name}`}</td>
                                         <td className="px-4 py-2">{user.email}</td>
                                         <td className="px-4 py-2 capitalize">{user.role}</td>
+                                        <td className="py-4 px-6">
+                                            <button
+                                                className={` py-2 px-4 rounded ${user.role === "admin"
+                                                    ? " bg-gray-600 hover:bg-gray-400 text-gray-500"
+                                                    : "bg-[#1D2E42] hover:bg-green-500 text-white"
+                                                    }`}
+                                                onClick={() => handleRole(user.email, "admin")}
+                                            >
+                                                Admin
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
