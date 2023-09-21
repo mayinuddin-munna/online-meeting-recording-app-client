@@ -19,6 +19,10 @@ import MeetingRoom from "../Meetup/MeetingRoom";
 import Meetup from "../Meetup/Meetup";
 import CommunityPage from "../communityPage/CommunityPage";
 import Profile from "../Layout/Dashboard/Pages/Profile/Profile";
+import PersonalMeet from "../Layout/Dashboard/Pages/PersonalMeet";
+import Reports from "../Layout/Dashboard/Pages/Reports";
+import UserManage from "../Layout/Dashboard/Pages/UserManage/UserManage";
+import MeetingData from "../Layout/Dashboard/Pages/MeetingData/MeetingData";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +70,14 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         element: <Blog />,
       },
+      {
+        path: "/meetup",
+        element: (
+          <PrivateRoute>
+            <Meetup />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
@@ -80,14 +92,7 @@ const router = createBrowserRouter([
     path: "/forget-password",
     element: <ForgotPassword />,
   },
-  {
-    path: "/meetup",
-    element: (
-      <PrivateRoute>
-        <Meetup />
-      </PrivateRoute>
-    ),
-  },
+  
   {
     path: "/:name/:room",
     element: (
@@ -111,6 +116,22 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/Reviews",
         element: <UserReviews />,
+      },
+      {
+        path: "/dashboard/PersonalMeet",
+        element: <PersonalMeet />,
+      },
+      {
+        path: "/dashboard/Reports",
+        element: <Reports />,
+      },
+      {
+        path: "/dashboard/UserManagement",
+        element: <UserManage />,
+      },
+      {
+        path: "/dashboard/MeetingData",
+        element: <MeetingData />,
       },
     ],
   },

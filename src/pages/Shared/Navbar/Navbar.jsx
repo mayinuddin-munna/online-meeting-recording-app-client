@@ -13,8 +13,8 @@ import { FaCaretDown } from "react-icons/fa";
 const auth = getAuth(app);
 
 const Navbar = () => {
-  const user = useSelector((state) => state.data.user.user);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.data.user.user);
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const [logoSrc, setLogoSrc] = useState(Logo);
@@ -53,15 +53,13 @@ const Navbar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
-      <div className="relative inline-block group pr-3">
+      <div className="relative group py-2">
         <div className="flex">
-          <button className="rounded-md group-hover:text-red focus:outline-none">
-            Explore
-          </button>
-          <FaCaretDown className="mt-1" />{" "}
+          <button className="group-hover:text-red ml-5">Explore</button>
+          <FaCaretDown className="mt-1" />
         </div>
         <div
-          className="absolute hidden bg-white sm:w-auto group-hover:block z-20 me-5 space-y-1 rounded-lg shadow-lg"
+          className="absolute hidden bg-white sm:w-auto group-hover:block z-20 space-y-1 rounded-lg shadow-lg"
           style={dropdownItemStyle}
         >
           <Link to="/solutions" className="block px-4 py-2">
@@ -77,20 +75,17 @@ const Navbar = () => {
       </div>
       {user && <Link to="/dashboard/Profile">Dashboard</Link>}
       {user && (
-        <Link
-          to="/meetup"
-          className="w-48 text-white text-center rounded-full bg-[#5EC38B]"
-        >
-          New Meeting
+        <Link to="/meetup">
+          <button className="w-48 p-2 rounded-full border-2 text-green-500 border-green-500 hover:bg-[#5EC38B] hover:text-white shadow">
+            New Meeting
+          </button>
         </Link>
       )}
       {user ? (
         <>
           {user && (
-            <div>
-              <div className="flex items-center justify-center w-10 h-10 overflow-hidden rounded-lg">
-                <img src={user.photoURL} />
-              </div>
+            <div className="flex items-center justify-center w-10 h-10 mx-4 overflow-hidden rounded-lg">
+              <img src={user?.photoURL} />
             </div>
           )}
           <Link onClick={handelLogout}>Logout</Link>
@@ -109,15 +104,13 @@ const Navbar = () => {
     <div
       className={`${
         isSticky
-          ? "z-10 backdrop-opacity-60 backdrop-invert bg-[#1D2E42] text-white sticky top-0"
+          ? "z-10 backdrop-opacity-60 bg-[#1D2E42] text-white sticky top-0"
           : "bg-transparent -top-24"
       } transition duration-300 ease-in-out z-10}
       style={{ transition: "all 0.3s ease" }`}
     >
-      <div
-        className={`container mx-auto py-2 flex items-center justify-between`}
-      >
-        <div className="flex items-center">
+      <div className={`container mx-auto py-2 flex justify-between`}>
+        <div className="lg:flex lg:items-center">
           <Link to="/">
             <img className="w-16 ms-5 z-20" src={logoSrc} alt="Logo" />
           </Link>
@@ -125,7 +118,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={handleNavToggle}
-            className="md:hidden me-4 text-3xl ml-28"
+            className="md:hidden text-3xl ml-52 mr-5"
           >
             {isNavOpen ? <FaBars /> : <ImCross />}
           </button>

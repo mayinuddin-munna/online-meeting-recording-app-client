@@ -29,7 +29,7 @@ const Solutions = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <section className="relative py-16">
+      <section className="relative z-0 py-16">
         <div
           className="absolute inset-0 z-0 "
           style={{
