@@ -75,9 +75,8 @@ const Footer = () => {
           </form>
         </div>
       </div>
-
       <hr className="my-4 border-t border-gray-600" />
-      <div className="flex flex-col md:flex-row items-center justify-center gap-5 py-2 text-sm mb-0">
+      <div className="items-center justify-center text-center">
         <p>
           <Link to="/">Terms & Conditions</Link> |{" "}
           <Link to="/">Privacy Policy</Link> | <Link to="/">Cookies</Link>

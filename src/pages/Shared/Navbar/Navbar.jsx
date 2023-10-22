@@ -54,10 +54,10 @@ const Navbar = () => {
       <Link to="/">Home</Link>
       <Link to="/features">Feature</Link>
       <div className="relative group py-2">
-        <div className="flex">
-          <button className="group-hover:text-red ml-5">Explore</button>
+        <Link className="flex transition-opacity">
+          <button className="group-hover:text-red">Explore</button>
           <FaCaretDown className="mt-1" />
-        </div>
+        </Link>
         <div
           className="absolute hidden bg-white sm:w-auto group-hover:block z-20 space-y-1 rounded-lg shadow-lg"
           style={dropdownItemStyle}
@@ -84,7 +84,7 @@ const Navbar = () => {
       {user ? (
         <>
           {user && (
-            <div className="flex items-center justify-center w-10 h-10 mx-4 overflow-hidden rounded-lg">
+            <div className="flex items-center justify-center overflow-hidden rounded-lg">
               <img src={user?.photoURL} />
             </div>
           )}
